@@ -2,9 +2,11 @@ import datetime
 import json
 
 # function takes in the date of the surgery as three parameters (month, day, year)
-def populate(month, day, year, results):
+def populate(month, day, year, results, surgery_type, query_type):
 
 	update = []
+	update.append({"surgery_type": surgery_type})
+	update.append({"query_type": query_type})
 	for result in results:
 		current = {}
 		date = datetime.date(year, month, day) + datetime.timedelta(days=result[0])
@@ -61,4 +63,4 @@ results = [
 	]
 ]
 
-#print populate(11, 17, 2015, results)
+#print populate(11, 17, 2015, results, "blah", "blahblah")
