@@ -2,24 +2,23 @@ import datetime
 import json
 
 # function takes in the date of the surgery as three parameters (month, day, year)
-def populate(month, day, year, file_directory):
+def populate(month, day, year, results):
 
-	json_data=open(file_directory).read()
-	data = json.loads(json_data)
-	#print data
 	update = []
-	for val in data:
+	for result in results:
 		current = {}
-		date = datetime.date(year, month, day) + datetime.timedelta(days=val['days_offset'])
+		date = datetime.date(year, month, day) + datetime.timedelta(days=result[0])
 		current["date"] = str(date)
-		current["conditions"] = val["conditions"]
-		current["ask_doctor"] = val["ask_doctor"]
-		current["insn_text"] = val["insn_text"]
+		current["conditions"] = result[1]
+		current["ask_doctor"] = result[2]
+		current["insn_text"] = result[3]
 		update.append(current)
 
-	jsonFile = open("populated.json", "w+")
-	jsonFile.write(json.dumps(update))
-	jsonFile.close()
+	# jsonFile = open("populated.json", "w+")
+	# jsonFile.write(json.dumps(update))
+	# jsonFile.close()
+
+	return json.dumps(update)
 
 
 	#t = datetime.date(year, month, day)
@@ -39,4 +38,27 @@ def populate(month, day, year, file_directory):
 	twenty_days_prior = t - datetime.timedelta(days=20)
 	print 'twenty   day, month, year:', twenty_days_prior.day, twenty_days_prior.month, twenty_days_prior.year
 '''
-populate(11, 17, 2015, "./template.json")
+
+
+results = [
+	[
+		-14, 
+		"", 
+		0, 
+		"Stop taking these herbal products, nutritional supplements: Echinacea, Ephedra, Feverfew, Garlic, Ginger, Ginkgo biloba, Ginseng, Kava Kava, Saw palmetto, St. John''s West, Fish oil, Vitamin B"
+	],
+	[
+		-7,
+		"",
+		0,
+		"Stop taking all medicines containing aspirin: Aspirin, Anacin, Ascriptin, Pepto-Bismol, Bufferin, Alka-Seltzer, Excedrin, Florinal, Lortab ASA"
+	],
+	[
+		0,
+		"",
+		0,
+		"An adult will need to pick you up after surgery"
+	]
+]
+
+#print populate(11, 17, 2015, results)
