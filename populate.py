@@ -21,7 +21,7 @@ def gen_pdf(json_template):
  	pdf.line(pdf.get_x(), pdf.get_y(), pdf.get_x() + 195, pdf.get_y())
 	pdf.ln(h='')
 
- 	insns = data[2]
+ 	insns = data[2]["insns"]
  	for num in range(len(insns)):
  		insn = insns[num]
 		pdf.set_font("Arial", style="B", size=10)
@@ -54,7 +54,7 @@ def populate(month, day, year, results, surgery_name):
 		current["ask_doctor"] = result[2]
 		current["insn_text"] = result[3]
 		insns.append(current)
-	update.append(insns)
+	update.append({"insns": insns})
 
 	# jsonFile = open("populated.json", "w+")
 	# jsonFile.write(json.dumps(update))
@@ -63,24 +63,8 @@ def populate(month, day, year, results, surgery_name):
 	return json.dumps(update)
 
 
-	#t = datetime.date(year, month, day)
-	#print t
-	#print 'day, month, year:', t.day, t.month, t.year
 
-
-'''
-	one_day_prior = t - datetime.timedelta(days=1)
-	print 'one      day, month, year:', one_day_prior.day, one_day_prior.month, one_day_prior.year
-	two_days_prior = t - datetime.timedelta(days=2)
-	print 'two      day, month, year:', two_days_prior.day, two_days_prior.month, two_days_prior.year
-	seven_days_prior = t - datetime.timedelta(days=7)
-	print 'seven    day, month, year:', seven_days_prior.day, seven_days_prior.month, seven_days_prior.year
-	fourteen_days_prior = t - datetime.timedelta(days=14)
-	print 'fourteen day, month, year:', fourteen_days_prior.day, fourteen_days_prior.month, fourteen_days_prior.year
-	twenty_days_prior = t - datetime.timedelta(days=20)
-	print 'twenty   day, month, year:', twenty_days_prior.day, twenty_days_prior.month, twenty_days_prior.year
-'''
-
+# Test Code
 
 results = [
 	[
@@ -103,12 +87,5 @@ results = [
 	]
 ]
 
-
 blah = populate(11, 17, 2015, results, "blah")
 gen_pdf(blah)
-# blahblah = json.loads(populate(11, 17, 2015, results, "blah", "blahblah"))
-# print blah
-# print blahblah
-# print blahblah[2]
-# print blahblah[2]["surgery_date"]
-# print blahblah[2]["surgery_date"]["printed"]
