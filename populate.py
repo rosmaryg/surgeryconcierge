@@ -29,7 +29,7 @@ def gen_pdf(surgery_name, month, day, year, insns):
 		pdf.set_font("Arial", size=10)
 		pdf.multi_cell(195, 10, txt=insn["insn_text"], align="L")
 
-	pdf.output("Instructions.pdf")
+	pdf.output(name="Instructions.pdf", dest="D")
 
 
 
