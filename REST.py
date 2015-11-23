@@ -6,11 +6,42 @@ import populate
 
 app = Flask(__name__)
 
-@app.route('/surgery/<month>/<day>/<year>/<surgery>/<query>')
-def surgery(month, day, year, surgery, query):	
+
+#Once they open page, call this method
+#lists their surgeries (pulling from test_surgeries)
+#pull surgery name field from table, store id, & month, day, year etc
+
+#add a surgery_id field in the html to the table 
+#In table: See aech surgery' name, month, day, year 
+
+#export surgeryname pdf button next to each row
+
+#get_pdf will take whatever populate puts out -> 
+#
+#connect to test_texttl table ~> 
+# SELECT month, day, year, days_before, conditions, ask_doctor, insn_text FROM 
+# test_texttl WHERE surgery_id=id
+#New json function takes in surgery name, surgery month, surgery day, surgery year, list of steps (date, conditions, ask_doctor, insn_text) [text_tl stuff]
+#
+#resulting json -> get pdf python call
+
+
+
+
+
+@app.route('/surgery', methods=['POST'])
+def surgery():	
+	month = request.form['month']
+	day = request.form['day']
+	year = request.form['year']
+	surgery = request.form['surgery']
+	query = request.form['query']
+#surgerydb 
+#
 	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="insndb")
 	cur = db.cursor()
-	cur.execute("SELECT * FROM pennsy_ibc_presurgery")
+	#SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id=0;
+	cur.execute("SELECT * FROM pennsy_ibc_presurgery;")
 	result = cur.fetchall()
 	db.close()
 	month = int(month)
