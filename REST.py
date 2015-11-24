@@ -65,9 +65,9 @@ def surgery(patient_id):
 @app.route('/insns', methods=['GET'])
 def insns(surgery_id):	
 
-	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="INSERT_DB_NAME_HERE")
+	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgerydb")
 	cur = db.cursor()
-	#SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id=0;
+	#SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE patient_id = patient_id
 	cur.execute("SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE patient_id = " + surgery_id+ ";")
 	result = cur.fetchall()
 	db.close()
