@@ -59,7 +59,7 @@ def gen_pdf(surgery_name, month, day, year, insns):
 
 
 # function takes in the date of the surgery as three parameters (month, day, year)
-def populate(month, day, year, results, surgery_name):
+def timeline_to_json(month, day, year, results, surgery_name):
 
 	update = {}
 	update["surgery_name"] = surgery_name
