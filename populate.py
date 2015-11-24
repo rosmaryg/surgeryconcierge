@@ -2,6 +2,30 @@ import datetime
 import json
 import fpdf
 
+# takes in 2-D array of surgeries and returns json 
+def test_surgeries_to_json(results):
+	json_prep = []
+	for result in results:
+		surgery = {}
+		surgery["id"] = result[0]
+		surgery["surgery_name"] = result[1]
+		surgery["month"] = result[2]
+		surgery["day"] = result[3]
+		surgery["year"] = result[4]
+		json_prep.append(surgery)
+	return json.dumps(json_prep)
+
+# takes in 2-D array of insns and returns json
+def insns_to_json(results):
+	json_prep = []
+	for result in results:
+		insn = {}
+		insn["date"] = result[0]
+		insn["conditions"] = result[1]
+		insn["ask_doctor"] = result[2]
+		insn["insn_text"] = result[3]
+		json_prep.append(insn)
+	return json.dumps(json_prep)
 
 # generate a pdf from the json template that provides instructions
 def gen_pdf(surgery_name, month, day, year, insns):
@@ -108,6 +132,33 @@ insns = [
   ]
 
 
-blah = populate(11, 17, 2015, results, "blah")
-print blah
-gen_pdf(blah, 11, 17, 2015, insns)
+# blah = populate(11, 17, 2015, results, "blah")
+# print blah
+# gen_pdf(blah, 11, 17, 2015, insns)
+
+
+test_surgeries = [
+	[
+		0,
+		"a",
+		10,
+		31,
+		2015
+	],
+	[
+		1,
+		"b",
+		01,
+		13,
+		2017
+	],
+	[
+		3,
+		"r",
+		07,
+		17,
+		2016
+	]
+]
+
+# print test_surgeries_to_json(test_surgeries)
