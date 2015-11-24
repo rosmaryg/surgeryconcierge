@@ -94,7 +94,7 @@ def pdf(surgery_id):
 	cur.execute("SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE surgery_id = " + surgery_id+ ";")
 	insns = populate.insns_to_json(cur.fetchall());
 	db.close()
-	json_result = populate.get_pdf(surg_info[0], insns)
+	json_result = populate.gen_pdf(surg_info[0], insns)
 	return Response(json_result, mimetype='application/json')
 
 
