@@ -68,7 +68,7 @@ def timeline():
 	month = int(month)
 	day = int(day)
 	year = int(year)
-	json_result = populate.populate(month, day, year, result, surgery, query)
+	json_result = populate.timeline_to_json(month, day, year, result, surgery, query)
 	return Response(json_result, mimetype='application/json')
 
 @crossdomain(origin="*")
