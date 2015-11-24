@@ -1,4 +1,6 @@
 from flask import *
+from datetime import timedelta
+from functools import update_wrapper
 import json
 import requests
 import MySQLdb
@@ -6,27 +8,46 @@ import populate
 
 app = Flask(__name__)
 
+def crossdomain(origin=None, methods=None, headers=None,
+                max_age=21600, attach_to_all=True,
+                automatic_options=True):
+    if methods is not None:
+        methods = ', '.join(sorted(x.upper() for x in methods))
+    if headers is not None and not isinstance(headers, basestring):
+        headers = ', '.join(x.upper() for x in headers)
+    if not isinstance(origin, basestring):
+        origin = ', '.join(origin)
+    if isinstance(max_age, timedelta):
+        max_age = max_age.total_seconds()
 
-#Once they open page, call this method
-#lists their surgeries (pulling from test_surgeries)
-#pull surgery name field from table, store id, & month, day, year etc
+    def get_methods():
+        if methods is not None:
+            return methods
 
-#add a surgery_id field in the html to the table 
-#In table: See aech surgery' name, month, day, year 
+        options_resp = current_app.make_default_options_response()
+        return options_resp.headers['allow']
 
-#export surgeryname pdf button next to each row
+    def decorator(f):
+        def wrapped_function(*args, **kwargs):
+            if automatic_options and request.method == 'OPTIONS':
+                resp = current_app.make_default_options_response()
+            else:
+                resp = make_response(f(*args, **kwargs))
+            if not attach_to_all and request.method != 'OPTIONS':
+                return resp
 
-#get_pdf will take whatever populate puts out -> 
-#
-#connect to test_texttl table ~> 
-# SELECT month, day, year, days_before, conditions, ask_doctor, insn_text FROM 
-# test_texttl WHERE surgery_id=id
-#New json function takes in surgery name, surgery month, surgery day, surgery year, list of steps (date, conditions, ask_doctor, insn_text) [text_tl stuff]
-#
-#resulting json -> get pdf python call
+            h = resp.headers
 
+            h['Access-Control-Allow-Origin'] = origin
+            h['Access-Control-Allow-Methods'] = get_methods()
+            h['Access-Control-Max-Age'] = str(max_age)
+            if headers is not None:
+                h['Access-Control-Allow-Headers'] = headers
+            return resp
 
-
+        f.provide_automatic_options = False
+        return update_wrapper(wrapped_function, f)
+    return decorator
 
 
 @app.route('/timeline', methods=['POST'])
@@ -50,9 +71,9 @@ def timeline():
 	json_result = populate.populate(month, day, year, result, surgery, query)
 	return Response(json_result, mimetype='application/json')
 
-@app.route('/surgery', methods=['GET'])
+@crossdomain(origin="*")
+@app.route('/surgery/<patient_id>', methods=['GET'])
 def surgery(patient_id):	
-
 	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgerydb")
 	cur = db.cursor()
 	#SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id=0;
@@ -60,6 +81,7 @@ def surgery(patient_id):
 	result = cur.fetchall()
 	db.close()
 	json_result = populate.test_surgeries_to_json(result)
+	print "type is " + str(type(json.loads(json_result)))
 	return Response(json_result, mimetype='application/json')
 
 @app.route('/insns', methods=['GET'])
