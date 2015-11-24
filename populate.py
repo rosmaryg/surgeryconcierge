@@ -57,7 +57,7 @@ def gen_pdf(surg_info, insns_json):
 		pdf.set_font("Arial", size=10)
 		pdf.multi_cell(195, 10, txt=insn["insn_text"], align="L")
 
-	pdf.output(name="Instructions.pdf", dest="D")
+	pdf.output(name="Instructions.pdf", dest="F")
 
 
 
