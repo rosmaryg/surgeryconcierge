@@ -77,12 +77,27 @@ def surgery(patient_id):
 	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgerydb")
 	cur = db.cursor()
 	#SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id=0;
-	cur.execute("SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id = " + patient_id+ ";")
+	cur.execute("SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id = " + patient_id + ";")
 	result = cur.fetchall()
 	db.close()
 	json_result = populate.test_surgeries_to_json(result)
 	print "type is " + str(type(json.loads(json_result)))
 	return Response(json_result, mimetype='application/json')
+
+@crossdomain(origin="*")
+@app.route('/pdf/<surgery_id>', methods=['GET'])
+def pdf(surgery_id):	
+	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgerydb")
+	cur = db.cursor()
+	#SELECT id, surgery_name, month, day, year FROM test_surgeries WHERE patient_id=0;
+	cur.execute("SELECT surgery_name, month, day, year FROM test_surgeries WHERE id = " + surgery_id + ";")
+	surg_info = cur.fetchall()
+	cur.execute("SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE surgery_id = " + surgery_id+ ";")
+	insns = populate.insns_to_json(cur.fetchall());
+	db.close()
+	json_result = populate.get_pdf(surg_info[0], insns)
+	return Response(json_result, mimetype='application/json')
+
 
 @app.route('/insns', methods=['GET'])
 def insns(surgery_id):	
@@ -90,11 +105,13 @@ def insns(surgery_id):
 	db = MySQLdb.connect(host="surgeryconcierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgerydb")
 	cur = db.cursor()
 	#SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE patient_id = patient_id
-	cur.execute("SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE patient_id = " + surgery_id+ ";")
+	cur.execute("SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE surgery_id = " + surgery_id+ ";")
 	result = cur.fetchall()
 	db.close()
 	json_result = populate.insns_to_json(result)
 	return Response(json_result, mimetype='application/json')
+
+
 
 
 if __name__ == '__main__':

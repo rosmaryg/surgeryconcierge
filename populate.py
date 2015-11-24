@@ -28,7 +28,11 @@ def insns_to_json(results):
 	return json.dumps(json_prep)
 
 # generate a pdf from the json template that provides instructions
-def gen_pdf(surgery_name, month, day, year, insns):
+def gen_pdf(surg_info, insns_json):
+	surgery_name = surg_info[0]
+	month = surg_info[1]
+	day = surg_info[2]
+	year = surg_info[3]
 	pdf = fpdf.FPDF(format='letter')
 	pdf.set_auto_page_break(True,margin=0)
 	pdf.add_page()
@@ -45,7 +49,7 @@ def gen_pdf(surgery_name, month, day, year, insns):
  	pdf.line(pdf.get_x(), pdf.get_y(), pdf.get_x() + 195, pdf.get_y())
 	pdf.ln(h='')
 
- 	insns = insns
+ 	insns = json.loads(insns_json)
  	for num in range(len(insns)):
  		insn = insns[num]
 		pdf.set_font("Arial", style="B", size=10)
