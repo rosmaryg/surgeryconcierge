@@ -7,10 +7,14 @@ $(document).ready(function() {
 			success: function(result) {
 				console.log("hello world");
 				console.log(result);
-				/*var table = $("#table").dataTable();
-				for(var i = 0; i < result.length; i++) {
-					table.fnAddData([ s[i][0], s[i][1], s[i][2], s[i][3], s[i][4] ]);
-				} */
+				var table = $("#table tbody");
+				$.each(result, function(idx, elem) {
+					table.append("<tr><td>"
+					+elem.surgery_name+"</td><td>"
+					+elem.month+"</td><td>"
+					+elem.day+"</td><td>"
+					+elem.year+"</td></tr>");
+				});
 			}
 		});
 });

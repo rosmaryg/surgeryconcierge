@@ -81,7 +81,6 @@ def surgery(patient_id):
 	result = cur.fetchall()
 	db.close()
 	json_result = populate.test_surgeries_to_json(result)
-	print "type is " + str(type(json.loads(json_result)))
 	return Response(json_result, mimetype='application/json')
 
 @crossdomain(origin="*")
