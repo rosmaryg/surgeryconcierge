@@ -97,7 +97,7 @@ def pdf(surgery_id):
 	json_result = populate.gen_pdf(surg_info[0], insns)
 	return Response(json_result, mimetype='application/json')
 
-
+@crossdomain(origin="*")
 @app.route('/insns', methods=['GET'])
 def insns(surgery_id):	
 
@@ -110,6 +110,18 @@ def insns(surgery_id):
 	json_result = populate.insns_to_json(result)
 	return Response(json_result, mimetype='application/json')
 
+@crossdomain(origin="*")
+@app.route('/patient/<patient_id>', methods=['GET'])
+def surgeryconcierge(patient_id):	
+
+	db = MySQLdb.connect(host="surgery-concierge.c8wqhnln04ea.us-east-1.rds.amazonaws.com", port=3306,  user="surgery", passwd="concierge",db="surgeryconcierge")
+	cur = db.cursor()
+	#SELECT date,conditions, ask_doctor, insn_text FROM test_texttl WHERE patient_id = patient_id
+	cur.execute("SELECT pdf_link, cal_link FROM surgeries WHERE patient_id = " + patient_id+ ";")
+	result = cur.fetchall()
+	db.close()
+	json_result = populate.patient_data_to_json(result)
+	return Response(json_result, mimetype='application/json')
 
 
 
