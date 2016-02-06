@@ -92,10 +92,10 @@ def timeline_to_json(month, day, year, results, surgery_name):
 def patient_data_to_json(results):
 	json_prep = []
 	result = results[0]
-		patient_data = {}
-		patient_data["pdf_link"] = result[0]
-		patient_data["cal_link"] = result[1]
-		json_prep.append(patient_data)
+	patient_data = {}
+	patient_data["pdf_link"] = result[0]
+	patient_data["cal_link"] = result[1]
+	json_prep.append(patient_data)
 	return json.dumps(json_prep)
 
 
