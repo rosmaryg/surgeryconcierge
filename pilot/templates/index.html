@@ -132,10 +132,10 @@ diuretic {
 		 name="insn8"
 		 value="8"
 		 id="insn8"	
-		 onclick="var insns = document.getElementById('sub8'); for(insn in insns.children) {insn.checked= false}"
+		 onclick="var insns = document.getElementsByClassName('sub8'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }"
 		 >
 	  Take herbal products or nutritional supplements:<br> 
-	  <supplements id="sub8" onclick="document.getElementById('insn8').checked = true"> 
+	  <supplements class="sub8" onclick="document.getElementById('insn8').checked = true"> 
 	  	<input type="checkbox"
 			name="insn8a"
 			value="8a">
@@ -188,9 +188,10 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn9"
 		 value="9"
-		 id="insn9">
+		 id="insn9"		 
+		 onclick="var insns = document.getElementsByClassName('sub9'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
 	  Take medicines containing aspirin, including:<br>
-	  <aspirin onclick="return document.getElementById('insn9').checked">	
+	  <aspirin class="sub9" onclick="document.getElementById('insn9').checked = true"> 
 	  	<input type="checkbox"
 			name="insn9a"
 			value="9a"> 
@@ -231,9 +232,10 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn10"
 		 value="10"
-		 id="insn10">
+		 id="insn10"
+		 onclick="var insns = document.getElementsByClassName('sub10'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
   	  Take Non-Steroidal Anti-inflammatory Drugs (NSAIDs): 
-	  <nsaid onclick="return document.getElementById('insn10').checked">	
+	  <nsaid class="sub10" onclick="document.getElementById('insn10').checked = true"> 
 	  	<input type="checkbox"
 			name="insn10a"
 			value="10a"> 
@@ -286,9 +288,10 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn15"
 		 value="15"
-		 id="insn15">
+		 id="insn15"
+	 	 onclick="var insns = document.getElementsByClassName('sub15'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
 	  Take the following blood thinning medicines:<br> 
-	  <thinner onclick="return document.getElementById('insn15').checked">
+	  <thinner class="sub15" onclick="document.getElementById('insn15').checked = true"> 
 	  	<input type="checkbox"
 			name="insn15a"
 			value="15a"> 
@@ -325,9 +328,11 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn17"
 		 value="17"
-		 id=insn17>
+		 id=insn17
+	 	 onclick="var insns = document.getElementsByClassName('sub17'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
 	  Take water pills (diuretics) including:<br> 
-	  <diuretic onclick="return document.getElementById('insn17').checked">
+	  <diuretic class="sub17" onclick="document.getElementById('insn17').checked = true"> 
+
 	  	<input type="checkbox"
 			name="insn17a"
 			value="17a"> 
