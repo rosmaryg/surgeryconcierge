@@ -132,16 +132,17 @@ diuretic {
 		 name="insn8"
 		 value="8"
 		 id="insn8"	
+		 onclick="var insns = document.getElementById('sub8'); for(insn in insns.children) {insn.checked= false}"
 		 >
 	  Take herbal products or nutritional supplements:<br> 
-	  <supplements onclick="return document.getElementById('insn8').checked"> 
+	  <supplements id="sub8" onclick="document.getElementById('insn8').checked = true"> 
 	  	<input type="checkbox"
 			name="insn8a"
 			value="8a">
 	  	Echinacea<br>
 	  	<input type="checkbox"
 			name="insn8b"
-			value="8b"> 
+			value="8b">
 		Ephedra<br>
 		<input type="checkbox"
 			name="insn8c"
