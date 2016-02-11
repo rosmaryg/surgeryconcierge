@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <style>
+h2 {
+    font-family: Verdana, Arial, sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#header {
+	width: 100%;
+	height: 70px;
+	position: relative;
+	background-color: #7FC7AF;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+p {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1em;
+}
+
+form {
+      width: 50%;
+      background-color: #F0F0FF;
+      font-size: 0.8em;
+      position: absolute;
+      left:25%;
+}
+
+input {
+      margin-top: 10px;
+      margin-left:10px;
+      margin-right:10px;
+}
+
+
+    </style>
+    <title>Surgery Concierge</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+  </head>
+  <body>
+    <div id="header">
+      <h2><br/>Patient Home</h2>
+    </div>
+    <div id="instruction-form" style="display: inline">
+      <form id="the-form" action="generate-calendar" target="_blank">
+	<p><b>Surgery Date:</b>
+	  <input type="number" name="month" min="1" max="12" placeholder="M " required="true">
+	  <input type="number" name="day" min="1" max="31" placeholder="D " required="true">
+	  <input type="number" name="year" min="2016" max="2018" value="2016" required="true">
+	</p>
+	<p>If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?<br>
+	  <input type="radio" name="pickup" value="yes" checked> Yes<br>
+	  <input type="radio" name="pickup" value="no"> No<br>
+	</p>
+	<p> Phone number for text reminders (optional):<br>
+	  <i>Please note that by providing a number, you are opting into the text system.</i><br>
+	  <input type="tel" name="phone-number"><br>
+	</p>
+	<!-- value= <days before>: <instruction> -->
+	<p><b>Pre-Surgery Questionnaire:</b><br>
+	  <i>Check the following items if they apply to you:</i><br><br>
+	  <input type="checkbox"
+		 name="insn0"
+		 value="0">
+	  Would like to receive default remainders on the morning of the surgery<br>
+	  <input type="checkbox"
+		 name="insn1"
+		 value="1">
+	  Wear jewelry, wedding band, body piercings, makeup, nail polish, or artificial nails<br>
+	  <input type="checkbox"
+		 name="insn2"
+		 value="2">
+	  Wear contact lenses<br>
+	  <input type="checkbox"
+		 name="insn3"
+		 value="3">
+	  Eat or drink anything in the morning<br>
+	  <input type="checkbox"
+		 name="insn4"
+		 value="4">
+	  Ever eat or drink anything after midnight<br>
+	  <input type="checkbox"
+		 name="insn5"
+		 value="5">
+	  Take medications in the morning<br>
+	  <input type="checkbox"
+		 name="insn6"
+		 value="6">
+	  Use an inhaler, CPAP mask, eye drops<br>
+	  <input type="checkbox"
+		 name="insn7"
+		 value="7">
+	  Drink alcohol<br>
+	  <input type="checkbox"
+		 name="insn8"
+		 value="8">
+	  Take the following herbal products or nutritional supplements: Echinacea, Ephedra, Feverfew, Garlic, Ginger, Ginkgo biloba, Ginseng, Kava Kava, Saw palmetto, St. John''s West, Fish oil, Vitamin B<br>
+	  <input type="checkbox"
+		 name="insn9"
+		 value="9">
+	  Take medicines containing aspirin, including Aspirin, Anacin, Ascriptin, Pepto-Bismol, Bufferin, Alka-Seltzer, Excedrin, Florinal, Lortab ASA<br>
+	  <input type="checkbox"
+		 name="insn10"
+		 value="10">
+	  Take Non-Steroidal Anti-inflammatory Drugs (NSAIDs): Ibuprofen (Advil Motrin, Nuprin, Medipren), Naproxen (Aleve, Anaprox, Naprosyn), Diclofenac (Cataflam, Voltaren, Arthrotec), Celebrex, Toradol (ketorolac), Lodine (etodolac), Feldene (piroxicam), Relefeo (nuburnetce)<br>
+	  <input type="checkbox"
+		 name="insn11"
+		 value="11">
+	  Take Accutane (isotretinoin)<br>
+	  <input type="checkbox"
+		 name="insn12"
+		 value="12">
+	  Take Suboxone<br>
+	  <input type="checkbox"
+		 name="insn13"
+		 value="13">
+	  Take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)<br>
+	  <input type="checkbox"
+		 name="insn14"
+		 value="14">
+	  Take the blood thinner warfarin (Coumadin)<br> <!-- checkbox for Lovenox? -->
+	  <input type="checkbox"
+		 name="insn15"
+		 value="15">
+	  Take the following blood thinning medicines: Plavix (Clopidogrel), Xarelto (Rivaroxaban), Ticlid (Ticlopidine), Pletal (Cilostazol), Brilinta (Ticagrelor), Effient (prasugrel), Aggrenox (Aspirin-Dipridarrola)<br>
+	  <input type="checkbox"
+		 name="insn16"
+		 value="16">
+	  Take medications for diabetes including insulin<br> <!-- text field for custom instructions? -->
+	  <input type="checkbox"
+		 name="insn17"
+		 value="17">
+	  Take water pills (diuretics); including furosemide (Lasix), hydrochlorothiazide (HCTZ), and medicines combined with hydrochlorothiazide (HCT)<br>
+	  <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
