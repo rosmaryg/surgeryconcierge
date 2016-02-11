@@ -31,18 +31,57 @@ insn_table = {
 '3' : "0: Do not eat or drink anything",
 '4' : "1: Do not eat or drink anything after midnight (no water, coffee, gum, lifesavers, ice, food, etc.)",
 '5' : "0: Take all meds with a sip of water at your usual times (except diabetes meds)",
-'6' : "0: Bring the following to the hospital: inhalers, CPAP mask, eye drops",
+'6' : "0: Bring the following to the hospital - inhalers, CPAP mask, eye drops",
 '7' : "1: Do not drink any alcoholic beverages or smoke 24 hours prior to surgery",
-'8' : "14: Stop taking these herbal products, nutritional supplements: Echinacea, Ephedra, Feverfew, Garlic, Ginger, Ginkgo biloba, Ginseng, Kava Kava, Saw palmetto, St. John''s West, Fish oil, Vitamin B",
-'9' : "7: Stop taking all medicines containing aspirin: Aspirin, Anacin, Ascriptin, Pepto-Bismol, Bufferin, Alka-Seltzer, Excedrin, Florinal, Lortab ASA",
-'10': "7: Stop taking Non-Steroidal Anti-inflammatory Drugs (NSAIDs): Ibuprofen (Advil Motrin, Nuprin, Medipren), Naproxen (Aleve, Anaprox, Naprosyn), Diclofenac (Cataflam, Voltaren, Arthrotec), Celebrex, Toradol (ketorolac), Lodine (etodolac), Feldene (piroxicam), Relefeo (nuburnetce)",
+'8' : "14: Stop taking these herbal products, nutritional supplements - ",
+'8a' : "Echinacea", 
+'8b' : "Ephedra", 
+'8c' : "Feverfew", 
+'8d' : "Garlic", 
+'8e' : "Ginger", 
+'8f' : "Ginkgo biloba", 
+'8g' : "Ginseng", 
+'8h' : "Kava Kava", 
+'8i' : "Saw palmetto", 
+'8j' : "St. John''s West", 
+'8k' : "Fish oil", 
+'8l' : "Vitamin B",
+'9' : "7: Stop taking all medicines containing aspirin - ", 
+'9a' : "Aspirin", 
+'9b' : "Anacin", 
+'9c' : "Ascriptin", 
+'9d' : "Pepto-Bismol", 
+'9e' : "Bufferin", 
+'9f' : "Alka-Seltzer", 
+'9g' : "Excedrin", 
+'9h' : "Florinal", 
+'9i' : "Lortab ASA",
+'10': "7: Stop taking Non-Steroidal Anti-inflammatory Drugs (NSAIDs) - ",
+'10a' : "Ibuprofen (Advil Motrin, Nuprin, Medipren)", 
+'10b' : "Naproxen (Aleve, Anaprox, Naprosyn)", 
+'10c' : "Diclofenac (Cataflam, Voltaren, Arthrotec)", 
+'10d' : "Celebrex", 
+'10e' : "Toradol (ketorolac)", 
+'10f' : "Lodine (etodolac)", 
+'10g' : "Feldene (piroxicam)", 
+'10h' : "Relefeo (nuburnetce)",
 '11': "7: Stop taking Accutane",
 '12': "3: Stop taking Suboxone",
 '13': "3: Cialis, Viagra, and Levitra",
 '14': "5:Stop blood thinner warfarin (Coumadin); switch to Lovenox (enoxaparin) temporarily if advised by doctor",
-'15': "7: Stop the following blood thinning medicines: Plavix (Clopidogrel), Xarelto (Rivaroxaban), Ticlid (Ticlopidine), Pletal (Cilostazol), Brilinta (Ticagrelor), Effient (prasugrel), Aggrenox (Aspirin-Dipridarrola)",
+'15': "7: Stop the following blood thinning medicines - ",
+'15a' : "Plavix (Clopidogrel)", 
+'15b' : "Xarelto (Rivaroxaban)", 
+'15c' : "Ticlid (Ticlopidine)", 
+'15d' : "Pletal (Cilostazol)", 
+'15e' : "Brilinta (Ticagrelor)", 
+'15f' : "Effient (prasugrel)", 
+'15g' : "Aggrenox (Aspirin-Dipridarrola)",
 '16': "1: Follow instructions from doctor for diabetes",
-'17': "0: Do not take any medicine that is a water pill (diuretic); includes furosemide (Lasix), hydrochlorothiazide (HCTZ), and medicines combined with hydrochlorothiazide (HCT)"
+'17': "0: Do not take any medicine that is a water pill (diuretic) including - ",
+'17a' : "furosemide (Lasix)", 
+'17b' : "hydrochlorothiazide (HCTZ)", 
+'17c' : "medicines combined with hydrochlorothiazide (HCT)"
 }
 
 def get_credentials():
@@ -86,7 +125,6 @@ def generate_calendar():
  
     
     input = get_user_input(flags.data)
-
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
 
     page_token = None
@@ -136,16 +174,29 @@ def generate_calendar():
             default="DD")
     else:
         day = input['day']
-
+    cat_insns = {}
+    #Create a dict for the beginning of multi-part insns
     for insn in input:
-        if 'insn' not in insn:
+	if 'insn' in insn and not insn[-1].isalpha():
+		cat_insns[insn] = insn_table[input[insn]]
+    for insn in input:
+	if 'insn' in insn and insn[-1].isalpha(): 
+		base_insn = insn[:-1]
+		current_str = cat_insns[base_insn]
+		if current_str[-1] != ' ':
+	    		cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]]	
+		else:
+	    		cat_insns[base_insn] = current_str + insn_table[input[insn]]
+	
+    for insn in input:
+        if 'insn' not in insn or insn[-1].isalpha():
             continue
         i = insn_table[input[insn]]
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         event = {
           'summary': 'Surgery Concierge',
-          'description': i.split(':')[1],
+          'description': cat_insns[insn].split(':')[1],
           'start': {
             'date': str(date),
             'timeZone': 'America/New_York'

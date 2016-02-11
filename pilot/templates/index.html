@@ -34,8 +34,26 @@ input {
       margin-left:10px;
       margin-right:10px;
 }
-
-
+supplements {
+      display: block;
+      padding-left: 40px;
+}
+aspirin {
+      display: block;
+      padding-left: 40px;
+}
+nsaid {
+      display: block;
+      padding-left: 40px;
+}
+thinner {
+      display: block;
+      padding-left: 40px;
+}
+diuretic {
+      display: block;
+      padding-left: 40px;
+}
     </style>
     <title>Surgery Concierge</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -97,16 +115,142 @@ input {
 	  Drink alcohol<br>
 	  <input type="checkbox"
 		 name="insn8"
-		 value="8">
-	  Take the following herbal products or nutritional supplements: Echinacea, Ephedra, Feverfew, Garlic, Ginger, Ginkgo biloba, Ginseng, Kava Kava, Saw palmetto, St. John''s West, Fish oil, Vitamin B<br>
+		 value="8"
+		 id="insn8"	
+		 >
+	  Take herbal products or nutritional supplements:<br> 
+	  <supplements onclick="return document.getElementById('insn8').checked"> 
+	  	<input type="checkbox"
+			name="insn8a"
+			value="8a">
+	  	Echinacea<br>
+	  	<input type="checkbox"
+			name="insn8b"
+			value="8b"> 
+		Ephedra<br>
+		<input type="checkbox"
+			name="insn8c"
+			value="8c"> 
+	       	Feverfew<br>
+		<input type="checkbox"
+		 	name="insn8d"
+			value="8d"> 
+	     	Garlic<br>
+	  	<input type="checkbox"
+		 	name="insn8e"
+		 	value="8e"> 
+		Ginger<br>
+	  	<input type="checkbox"
+			name="insn8f"
+			value="8f"> 
+          	Ginkgo biloba<br>
+	  	<input type="checkbox"
+			name="insn8g"
+			value="8g"> 
+	  	Ginseng<br>
+	  	<input type="checkbox"
+			name="insn8h"
+		 	value="8h"> 
+	 	Kava Kava<br>
+	  	<input type="checkbox"
+			name="insn8i"
+		 	value="8i"> 
+	  	Saw palmetto<br>
+	  	<input type="checkbox"
+			name="insn8j"
+			value="8j"> 
+	 	St. John''s West<br>
+	  	<input type="checkbox"
+			name="insn8k"
+			value="8k"> 
+	  	Fish oil<br>
+	  	<input type="checkbox"
+			name="insn8l"
+			value="8l"> 
+	  	Vitamin B<br>
+	  </supplements>
 	  <input type="checkbox"
 		 name="insn9"
-		 value="9">
-	  Take medicines containing aspirin, including Aspirin, Anacin, Ascriptin, Pepto-Bismol, Bufferin, Alka-Seltzer, Excedrin, Florinal, Lortab ASA<br>
+		 value="9"
+		 id="insn9">
+	  Take medicines containing aspirin, including:<br>
+	  <aspirin onclick="return document.getElementById('insn9').checked">	
+	  	<input type="checkbox"
+			name="insn9a"
+			value="9a"> 
+	  	Aspirin<br>
+	  	<input type="checkbox"
+			name="insn9b"
+			value="9b"> 
+	  	Anacin<br>
+	  	<input type="checkbox"
+			name="insn9c"
+			value="9c"> 
+	  	Ascriptin<br>
+	  	<input type="checkbox"
+			name="insn9d"
+			value="9d"> 
+	  	Pepto-Bismol<br>
+	  	<input type="checkbox"
+			name="insn9e"
+			value="9e"> 
+		Bufferin<br>
+	  	<input type="checkbox"
+			name="insn9f"
+			value="9f"> 
+		Alka-Seltzer<br>
+	  	<input type="checkbox"
+			name="insn9g"
+			value="9g"> 
+		Excedrin<br>
+	  	<input type="checkbox"
+			name="insn9h"
+			value="9h"> 
+		Florinal<br>
+	  	<input type="checkbox"
+			name="insn9i"
+			value="9i"> 
+		Lortab ASA<br>
+	  </aspirin>
 	  <input type="checkbox"
 		 name="insn10"
-		 value="10">
-	  Take Non-Steroidal Anti-inflammatory Drugs (NSAIDs): Ibuprofen (Advil Motrin, Nuprin, Medipren), Naproxen (Aleve, Anaprox, Naprosyn), Diclofenac (Cataflam, Voltaren, Arthrotec), Celebrex, Toradol (ketorolac), Lodine (etodolac), Feldene (piroxicam), Relefeo (nuburnetce)<br>
+		 value="10"
+		 id="insn10">
+  	  Take Non-Steroidal Anti-inflammatory Drugs (NSAIDs): 
+	  <nsaid onclick="return document.getElementById('insn10').checked">	
+	  	<input type="checkbox"
+			name="insn10a"
+			value="10a"> 
+		 Ibuprofen (Advil Motrin, Nuprin, Medipren)<br>
+	  	<input type="checkbox"
+			name="insn10b"
+			value="10b"> 
+		 Naproxen (Aleve, Anaprox, Naprosyn)<br> 
+	  	<input type="checkbox"
+			name="insn10c"
+			value="10c"> 
+		 Diclofenac (Cataflam, Voltaren, Arthrotec)<br> 
+	  	<input type="checkbox"
+			name="insn10d"
+			value="10d"> 
+		 Celebrex<br> 
+	  	<input type="checkbox"
+			name="insn10e"
+			value="10e"> 
+		 Toradol (ketorolac)<br> 
+	  	<input type="checkbox"
+			name="insn10f"
+			value="10f"> 
+		 Lodine (etodolac)<br> 
+	  	<input type="checkbox"
+			name="insn10g"
+			value="10g"> 
+		 Feldene (piroxicam)<br> 
+	  	<input type="checkbox"
+			name="insn10h"
+			value="10h"> 
+		 Relefeo (nuburnetce)<br>
+	  </nsaid>
 	  <input type="checkbox"
 		 name="insn11"
 		 value="11">
@@ -125,16 +269,62 @@ input {
 	  Take the blood thinner warfarin (Coumadin)<br> <!-- checkbox for Lovenox? -->
 	  <input type="checkbox"
 		 name="insn15"
-		 value="15">
-	  Take the following blood thinning medicines: Plavix (Clopidogrel), Xarelto (Rivaroxaban), Ticlid (Ticlopidine), Pletal (Cilostazol), Brilinta (Ticagrelor), Effient (prasugrel), Aggrenox (Aspirin-Dipridarrola)<br>
+		 value="15"
+		 id="insn15">
+	  Take the following blood thinning medicines:<br> 
+	  <thinner onclick="return document.getElementById('insn15').checked">
+	  	<input type="checkbox"
+			name="insn15a"
+			value="15a"> 
+	  	Plavix (Clopidogrel)<br>
+	  	<input type="checkbox"
+			name="insn15b"
+			value="15b"> 
+	  	Xarelto (Rivaroxaban)<br>
+	  	<input type="checkbox"
+			name="insn15c"
+			value="15c"> 
+	  	Ticlid (Ticlopidine)<br>
+	  	<input type="checkbox"
+			name="insn15d"
+			value="15d"> 
+	  	Pletal (Cilostazol)<br>
+	  	<input type="checkbox"
+			name="insn15e"
+			value="15e"> 
+	  	Brilinta (Ticagrelor)<br>
+	  	<input type="checkbox"
+			name="insn15f"
+			value="15f"> 
+	 	Effient (prasugrel)<br> 
+	  	<input type="checkbox"
+			name="insn15g"
+			value="15g"> 
+	  	Aggrenox (Aspirin-Dipridarrola)<br>
+	  </thinner>
 	  <input type="checkbox"
 		 name="insn16"
 		 value="16">
 	  Take medications for diabetes including insulin<br> <!-- text field for custom instructions? -->
 	  <input type="checkbox"
 		 name="insn17"
-		 value="17">
-	  Take water pills (diuretics); including furosemide (Lasix), hydrochlorothiazide (HCTZ), and medicines combined with hydrochlorothiazide (HCT)<br>
+		 value="17"
+		 id=insn17>
+	  Take water pills (diuretics) including:<br> 
+	  <diuretic onclick="return document.getElementById('insn17').checked">
+	  	<input type="checkbox"
+			name="insn17a"
+			value="17a"> 
+	  	furosemide (Lasix)<br>
+	  	<input type="checkbox"
+			name="insn17b"
+			value="17b"> 
+		hydrochlorothiazide (HCTZ)<br>
+	  	<input type="checkbox"
+			name="insn17c"
+			value="17c"> 
+ 		medicines combined with hydrochlorothiazide (HCT)<br>
+	  </diuretic>
 	  <input type="submit" value="Submit">
       </form>
     </div>
