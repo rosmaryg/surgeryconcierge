@@ -167,12 +167,15 @@ def generate_pdf():
 
         insn_for_pdf = {}
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        insn_for_pdf["num_days"] = int(i.split(':')[0])
         insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
         insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
         insns_for_pdf.append(insn_for_pdf)
 
+    sorted_insns_for_pdf = sorted(insns_for_pdf, key=lambda insn_for_pdf: insn_for_pdf["num_days"], reverse=True)
+    print(sorted_insns_for_pdf)
     surg_info = [int(month), int(day), int(year)]
-    pdf =  gen_pdf(surg_info, json.dumps(insns_for_pdf))
+    pdf =  gen_pdf(surg_info, json.dumps(sorted_insns_for_pdf))
     print (pdf)
     return pdf
 
