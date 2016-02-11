@@ -119,6 +119,7 @@ def gen_pdf(surg_info, insns_json):
         pdf.multi_cell(195, 5, txt="\n", align="L")
 
     # pdf.close()
+    pdf.output(name="Instructions.pdf", dest="F")
     pdf_string = pdf.output(name="Instructions.pdf", dest="S")
     return pdf_string
 
@@ -173,7 +174,6 @@ def generate_pdf():
         insns_for_pdf.append(insn_for_pdf)
 
     sorted_insns_for_pdf = sorted(insns_for_pdf, key=lambda insn_for_pdf: insn_for_pdf["num_days"], reverse=True)
-    print(sorted_insns_for_pdf)
     surg_info = [int(month), int(day), int(year)]
     pdf =  gen_pdf(surg_info, json.dumps(sorted_insns_for_pdf))
     print (pdf)
