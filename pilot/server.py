@@ -14,8 +14,11 @@ def calendar():
 
 @app.route('/generate-calendar')
 def genCalendar():
-  subprocess.call(["python", "new_calendar.py", "--data", "\"" + str(request.args) + "\""])
-  return 'Calendar succesfully created! You may now close this window.'
+  ret_val = subprocess.call(["python", "new_calendar.py", "--data", "\"" + str(request.args) + "\""])
+  if ret_val == 0:
+    return 'Calendar succesfully created! You may now close this window. <br> <a href="http://google.com/calendar">View my calendar<a>'
+  else:
+    return 'Calendar not created.'
 
 if __name__ == '__main__':
   app.run(debug=True)
