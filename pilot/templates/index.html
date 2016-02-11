@@ -64,7 +64,22 @@ diuretic {
       <h2><br/>Patient Home</h2>
     </div>
     <div id="instruction-form" style="display: inline">
-      <form id="the-form" action="generate-calendar" target="_blank">
+    	<script type="text/javascript">
+			function OnSubmitForm()
+			{
+			  if(document.pressed == 'Get PDF')
+			  {
+			   document.myform.action ="generate-pdf";
+			  }
+			  else
+			  if(document.pressed == 'Get Calendar')
+			  {
+			    document.myform.action ="generate-calendar";
+			  }
+			  return true;
+			}
+		</script>
+      <form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
 	<p><b>Surgery Date:</b>
 	  <input type="number" name="month" min="1" max="12" placeholder="M " required="true">
 	  <input type="number" name="day" min="1" max="31" placeholder="D " required="true">
@@ -325,7 +340,8 @@ diuretic {
 			value="17c"> 
  		medicines combined with hydrochlorothiazide (HCT)<br>
 	  </diuretic>
-	  <input type="submit" value="Submit">
+	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar">
+	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
       </form>
     </div>
   </body>
