@@ -125,12 +125,17 @@ def generate_calendar():
             title="Surgery Concierge",
             strip=True,
             default="MM")
+    else:
+        month = input['month']
+
     if input['day'] == "":
         day = easygui.enterbox(
             msg="Day of procedure",
             title="Surgery Concierge",
             strip=True,
             default="DD")
+    else:
+        day = input['day']
 
     for insn in input:
         if 'insn' not in insn:
