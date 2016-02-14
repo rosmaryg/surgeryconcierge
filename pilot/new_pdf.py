@@ -10,7 +10,7 @@ from oauth2client import tools
 
 import datetime
 import json
-import easygui
+#import easygui
 import fpdf
 
 try:
@@ -129,6 +129,7 @@ def generate_pdf():
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
 
     year = input['year']
+    '''
     if input['month'] == "":
         month = easygui.enterbox(
             msg="Month of procedure:",
@@ -146,6 +147,10 @@ def generate_pdf():
             default="DD")
     else:
         day = input['day']
+    '''
+    month = input['month']
+    day = input['day']
+    
     cat_insns = {}
     insns_for_pdf = []
     #Create a dict for the beginning of multi-part insns
