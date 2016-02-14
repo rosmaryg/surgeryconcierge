@@ -2,17 +2,17 @@ import subprocess
 from flask import request
 from flask import Flask, render_template, make_response
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def index():
   return render_template('index.html')
 
-@app.route('/dashboard.html')
+@application.route('/dashboard.html')
 def calendar():
   return render_template('dashboard.html')
 
-@app.route('/generate-calendar')
+@application.route('/generate-calendar')
 def genCalendar():
   ret_val = subprocess.call(["python", "new_calendar.py", "--data", "\"" + str(request.args) + "\""])
   if ret_val == 0:
@@ -20,7 +20,7 @@ def genCalendar():
   else:
     return 'Calendar not created.'
 
-@app.route('/generate-pdf')
+@application.route('/generate-pdf')
 def genPdf():
   pdf = subprocess.check_output(["python", "new_pdf.py", "--data", "\"" + str(request.args) + "\""])
   print "before pdf"
@@ -37,4 +37,5 @@ def genPdf():
   #   return 'Calendar not created.'
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  application.debug = True
+  application.run()

@@ -1,0 +1,12 @@
+apiclient/__init__.py,sha256=SOJ1tzoSN-KDr48vYSoX6sBxOhv-iSXL2i0_1GrGya0,89
+apiclient/base.py,sha256=cfVvysJ1uEDsBQIQEQPk1S4smPtPZO3kbRWcgoS0vfs,1445
+apiclient/ratelimiter.py,sha256=gTP48SnZ8aKmwxQAf3lc3fGNEvl1MB-2PUgB2QjKHqc,1242
+apiclient-1.0.2.dist-info/DESCRIPTION.rst,sha256=elubSqp5C0NucgSwit4lhmkWFrzZny_Golhcq6QKBNg,3453
+apiclient-1.0.2.dist-info/METADATA,sha256=_ykbnwpWs_RY7I0s8nlT5jn4PKaTpgUjYk1Mjm0z0fI,4120
+apiclient-1.0.2.dist-info/metadata.json,sha256=1Zuck_Mi0AmSO8D9ibT-PTibdbDj7gcghZgz4FvZwl8,891
+apiclient-1.0.2.dist-info/RECORD,,
+apiclient-1.0.2.dist-info/top_level.txt,sha256=CNL4yr8OrNw2YMoKsuFme2txKhQ3YQC61464soKjmNk,10
+apiclient-1.0.2.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+apiclient/base.pyc,,
+apiclient/__init__.pyc,,
+apiclient/ratelimiter.pyc,,
