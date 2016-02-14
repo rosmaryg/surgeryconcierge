@@ -10,7 +10,7 @@ from oauth2client import tools
 
 import datetime
 import json
-import easygui
+#import easygui
 
 try:
     import argparse
@@ -157,6 +157,7 @@ def generate_calendar():
 #         data = json.load(data_file)
 
     year = input['year']
+    '''
     if input['month'] == "":
         month = easygui.enterbox(
             msg="Month of procedure:",
@@ -174,6 +175,11 @@ def generate_calendar():
             default="DD")
     else:
         day = input['day']
+    '''
+    month = input['month']
+    day = input['day']
+
+
     cat_insns = {}
     #Create a dict for the beginning of multi-part insns
     for insn in input:
