@@ -72,6 +72,11 @@ diuretic {
 			   document.myform.action ="generate-pdf";
 			  }
 			  else
+			  if(document.pressed == 'Get ICS')
+			  {
+			   document.myform.action ="generate-ics";
+			  }
+			  else
 			  if(document.pressed == 'Get Calendar')
 			  {
 			    document.myform.action ="generate-calendar";
@@ -347,6 +352,7 @@ diuretic {
  		medicines combined with hydrochlorothiazide (HCT)<br>
 	  </diuretic>
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar">
+	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
       </form>
     </div>

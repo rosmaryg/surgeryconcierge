@@ -8,10 +8,6 @@ application = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@application.route('/dashboard.html')
-def calendar():
-  return render_template('dashboard.html')
-
 @application.route('/generate-calendar')
 def genCalendar():
   ret_val = subprocess.call(["python", "new_calendar.py", "--data", "\"" + str(request.args) + "\""])
@@ -20,21 +16,21 @@ def genCalendar():
   else:
     return 'Calendar not created.'
 
+@application.route('/generate-ics')
+def genICS():
+  ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
+  response = make_response(ics)
+  response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
+  response.mimetype = 'application/ics'
+  return response
+
 @application.route('/generate-pdf')
 def genPdf():
   pdf = subprocess.check_output(["python", "new_pdf.py", "--data", "\"" + str(request.args) + "\""])
-  print "before pdf"
-  print "pdf " + pdf
-  print "after pdf"
   response = make_response(pdf)
-  response.headers['Content-Disposition'] = "inline; filename='Instructions.pdf"
+  response.headers['Content-Disposition'] = "inline; filename=Instructions.pdf"
   response.mimetype = 'application/pdf'
   return response
-  # ret_val = subprocess.call(["python", "new_calendar.py", "--data", "\"" + str(request.args) + "\""])
-  # if ret_val == 0:
-  #   return 'Calendar succesfully created! You may now close this window. <br> <a href="http://google.com/calendar">View my calendar<a>'
-  # else:
-  #   return 'Calendar not created.'
 
 if __name__ == '__main__':
   application.debug = True
