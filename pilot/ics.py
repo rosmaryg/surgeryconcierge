@@ -99,11 +99,8 @@ def generate_ics():
     cal['dtstart'] = now.strftime("%Y%m%dT080000")
     cal['summary'] = 'Surgery Concierge'
 
-    print (str(input))
-
     cat_insns = {}
     for insn in input:
-        print (insn)
 	if 'insn' in insn and not insn[-1].isalpha():
 		cat_insns[insn] = insn_table[input[insn]]
     for insn in input:
@@ -130,27 +127,6 @@ def generate_ics():
     
     print (cal.to_ical())
     return display(cal)
-'''
-        event = {
-          'summary': 'Surgery Concierge',
-          'description': cat_insns[insn].split(':')[1],
-          'start': {
-            'date': str(date),
-            'timeZone': 'America/New_York'
-          },
-          'end': {
-            'date': str(end),
-            'timeZone': 'America/New_York'
-          },
-          'reminders': {
-            'useDefault': False,
-            'overrides': [ # reminders sent at 8pm the day before
-              {'method': 'email', 'minutes': 4 * 60},
-              {'method': 'popup', 'minutes': 4 * 60},
-            ],
-          },
-        }
-'''
 
 if __name__ == '__main__':
     generate_ics()
