@@ -82,8 +82,10 @@ insn_table = {
 }
 
 def get_user_input(data):
-    entries = data.split('[')[1].split(']')[0].split('),')
     d = defaultdict(str)
+    if(not data):
+	return d
+    entries = data.split('[')[1].split(']')[0].split('),')
     for entry in entries:
         key = entry.split(',')[0].split('\'')[1]
         val = entry.split(',')[1].split('\'')[1]
