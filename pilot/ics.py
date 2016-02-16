@@ -83,6 +83,7 @@ def get_user_input(data):
         key = entry.split(',')[0].split('\'')[1]
         val = entry.split(',')[1].split('\'')[1]
         d[key] = val
+    print (str(d))
     return d
 
 def display(cal):
@@ -98,7 +99,7 @@ def generate_ics():
     month = input['month']
     day = input['day']
     
-    cal['dtstart'] = now.strftime("%Y%m%dT080000")
+    cal['dtstart'] = now.strftime("%Y%m%dT000000")
     cal['summary'] = 'Surgery Concierge'
 
     cat_insns = {}
@@ -122,8 +123,8 @@ def generate_ics():
         end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
 
         event = icalendar.Event()
-        event.add('dtstart', date.strftime("%Y%m%dT000000"))
-        event.add('dtend', end.strftime("%Y%m%dT000000"))
+        event.add('dtstart', date)
+        event.add('dtend', end)
         event.add('summary', cat_insns[insn].split(':')[1])
         cal.add_component(event)
     
