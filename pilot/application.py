@@ -32,6 +32,15 @@ def genPdf():
   response.mimetype = 'application/pdf'
   return response
 
+@application.route('/generate-text')
+def genText():
+  ret_val = subprocess.call(["python", "new_text.py", "--data", "\"" + str(request.args) + "\""])
+  if ret_val == 0:
+	return 'Texts now being sent. <button onClick=\"window.close()\"">Close window</button>'
+  else:
+        return 'Texts not being sent.'
+
+
 if __name__ == '__main__':
   application.debug = True
   application.run()
