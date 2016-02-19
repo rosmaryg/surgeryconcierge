@@ -81,6 +81,11 @@ diuretic {
 			  {
 			    document.myform.action ="generate-calendar";
 			  }
+			  else
+			  if(document.pressed == 'Get Texts')
+			  {
+			    document.myform.action ="generate-text";
+			  }
 			  return true;
 			}
 		</script>
@@ -95,7 +100,7 @@ diuretic {
 	  <input type="radio" name="pickup" value="no"> No<br>
 	</p>
 	<p> Phone number for text reminders (optional):<br>
-	  <i>Please note that by providing a number, you are opting into the text system.</i><br>
+	  <i>Please note that by providing a number and clicking 'Get Texts' below, you are opting into the text system.</i><br>
 	  <input type="tel" name="phone-number"><br>
 	</p>
 	<!-- value= <days before>: <instruction> -->
@@ -354,6 +359,7 @@ diuretic {
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
+	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Texts">
       </form>
     </div>
   </body>
