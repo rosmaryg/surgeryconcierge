@@ -54,8 +54,11 @@ def generate_calendar():
     2. Creates a new Google Calendar.
     3. Adds surgery events to the calendar.
     """
+    print "generate calendar!"
     credentials = get_credentials()
+    print "got credentials"
     http = credentials.authorize(httplib2.Http())
+    print "http through"
     service = discovery.build('calendar', 'v3', http=http)
  
     
