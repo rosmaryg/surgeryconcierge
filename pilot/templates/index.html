@@ -19,6 +19,8 @@ h2 {
 p {
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
+    position: relative;
+    left: 10px;
 }
 
 form {
@@ -106,257 +108,210 @@ diuretic {
 	<!-- value= <days before>: <instruction> -->
 	<p><b>Pre-Surgery Questionnaire:</b><br>
 	  <i>Check the following items if they apply to you:</i><br><br>
-	  <input type="hidden"
+	  <input type="checkbox"
 		 name="insn0"
-		 value="0" checked>
-	  <!-- Would like to receive default reminders on the morning of the surgery<br> -->
-	  <input type="hidden"
+		 value="0">
+	  Do you wear contact lenses?<br>
+	  <input type="checkbox"
 		 name="insn1"
-		 value="1" checked>
-<!--	  Do you wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails?<br> -->
+		 value="1">
+	  Do you take medications in the morning?<br>
 	  <input type="checkbox"
 		 name="insn2"
 		 value="2">
-	  Do you wear contact lenses?<br>
-	  <input type="hidden"
-		 name="insn3"
-		 value="3" checked>
-	  <!-- Eat or drink anything in the morning<br> -->
-	  <input type="hidden"
-		 name="insn4"
-		 value="4" checked>
-	  <!-- Ever eat or drink anything after midnight<br> -->
-	  <input type="checkbox"
-		 name="insn5"
-		 value="5">
-	  Do you take medications in the morning?<br>
-	  <input type="checkbox"
-		 name="insn6"
-		 value="6">
-	  Do use an inhaler, CPAP mask, or eye drops?<br>
-	  <input type="hidden"
-		 name="insn7"
-		 value="7" checked>
-	  <!-- Drink alcohol<br> -->
-	  <input type="checkbox"
-		 name="insn8"
-		 value="8"
-		 id="insn8"	
-		 onclick="var insns = document.getElementsByClassName('sub8'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }"
-		 >
-	  Do you take herbal products or nutritional supplements?<br> <!-- @chris should the UI somehow? -->
-	  <supplements class="sub8" onclick="document.getElementById('insn8').checked = true"> 
+	  Do use an inhaler, CPAP mask, or eye drops?</p>
+	  <p> Do you take herbal products or nutritional supplements?</p> 
+	  <supplements> 
 	  	<input type="checkbox"
-			name="insn8a"
-			value="8a">
+			name="insn3a"
+			value="3a">
 	  	Echinacea<br>
 	  	<input type="checkbox"
-			name="insn8b"
-			value="8b">
+			name="insn3b"
+			value="3b">
 		Ephedra<br>
 		<input type="checkbox"
-			name="insn8c"
-			value="8c"> 
+			name="insn3c"
+			value="3c"> 
 	       	Feverfew<br>
 		<input type="checkbox"
-		 	name="insn8d"
-			value="8d"> 
+		 	name="insn3d"
+			value="3d"> 
 	     	Garlic<br>
 	  	<input type="checkbox"
-		 	name="insn8e"
-		 	value="8e"> 
+		 	name="insn3e"
+		 	value="3e"> 
 		Ginger<br>
 	  	<input type="checkbox"
-			name="insn8f"
-			value="8f"> 
+			name="insn3f"
+			value="3f"> 
           	Ginkgo biloba<br>
 	  	<input type="checkbox"
-			name="insn8g"
-			value="8g"> 
+			name="insn3g"
+			value="3g"> 
 	  	Ginseng<br>
 	  	<input type="checkbox"
-			name="insn8h"
-		 	value="8h"> 
+			name="insn3h"
+		 	value="3h"> 
 	 	Kava Kava<br>
 	  	<input type="checkbox"
-			name="insn8i"
-		 	value="8i"> 
+			name="insn3i"
+		 	value="3i"> 
 	  	Saw palmetto<br>
 	  	<input type="checkbox"
-			name="insn8j"
-			value="8j"> 
+			name="insn3j"
+			value="3j"> 
 	 	St. John''s West<br>
 	  	<input type="checkbox"
-			name="insn8k"
-			value="8k"> 
+			name="insn3k"
+			value="3k"> 
 	  	Fish oil<br>
 	  	<input type="checkbox"
-			name="insn8l"
-			value="8l"> 
-	  	Vitamin B<br>
+			name="insn3l"
+			value="3l"> 
+	  	Vitamin B
 	  </supplements>
-	  <input type="checkbox"
-		 name="insn9"
-		 value="9"
-		 id="insn9"		 
-		 onclick="var insns = document.getElementsByClassName('sub9'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Do you take any medications that include aspirin?<br> <!-- @chris same question -->
-	  <aspirin class="sub9" onclick="document.getElementById('insn9').checked = true"> 
+	  <p>Do you take any medications that include aspirin?</p> 
+	  <aspirin>
 	  	<input type="checkbox"
-			name="insn9a"
-			value="9a"> 
+			name="insn4a"
+			value="4a"> 
 	  	Aspirin<br>
 	  	<input type="checkbox"
-			name="insn9b"
-			value="9b"> 
+			name="insn4b"
+			value="4b"> 
 	  	Anacin<br>
 	  	<input type="checkbox"
-			name="insn9c"
-			value="9c"> 
+			name="insn4c"
+			value="4c"> 
 	  	Ascriptin<br>
 	  	<input type="checkbox"
-			name="insn9d"
-			value="9d"> 
+			name="insn4d"
+			value="4d"> 
 	  	Pepto-Bismol<br>
 	  	<input type="checkbox"
-			name="insn9e"
-			value="9e"> 
+			name="insn4e"
+			value="4e"> 
 		Bufferin<br>
 	  	<input type="checkbox"
-			name="insn9f"
-			value="9f"> 
+			name="insn4f"
+			value="4f"> 
 		Alka-Seltzer<br>
 	  	<input type="checkbox"
-			name="insn9g"
-			value="9g"> 
+			name="insn4g"
+			value="4g"> 
 		Excedrin<br>
 	  	<input type="checkbox"
-			name="insn9h"
-			value="9h"> 
+			name="insn4h"
+			value="4h"> 
 		Florinal<br>
 	  	<input type="checkbox"
-			name="insn9i"
-			value="9i"> 
-		Lortab ASA<br>
+			name="insn4i"
+			value="4i"> 
+		Lortab ASA
 	  </aspirin>
-	  <input type="checkbox"
-		 name="insn10"
-		 value="10"
-		 id="insn10"
-		 onclick="var insns = document.getElementsByClassName('sub10'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-  	  Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)? <!-- @chris ditto -->
-	  <nsaid class="sub10" onclick="document.getElementById('insn10').checked = true"> 
+  	  <p>Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)?</p>
+	  <nsaid> 
 	  	<input type="checkbox"
-			name="insn10a"
-			value="10a"> 
+			name="insn5a"
+			value="5a"> 
 		 Ibuprofen (Advil Motrin, Nuprin, Medipren)<br>
 	  	<input type="checkbox"
-			name="insn10b"
-			value="10b"> 
+			name="insn5b"
+			value="5b"> 
 		 Naproxen (Aleve, Anaprox, Naprosyn)<br> 
 	  	<input type="checkbox"
-			name="insn10c"
-			value="10c"> 
+			name="insn5c"
+			value="5c"> 
 		 Diclofenac (Cataflam, Voltaren, Arthrotec)<br> 
 	  	<input type="checkbox"
-			name="insn10d"
-			value="10d"> 
+			name="insn5d"
+			value="5d"> 
 		 Celebrex<br> 
 	  	<input type="checkbox"
-			name="insn10e"
-			value="10e"> 
+			name="insn5e"
+			value="5e"> 
 		 Toradol (ketorolac)<br> 
 	  	<input type="checkbox"
-			name="insn10f"
-			value="10f"> 
+			name="insn5f"
+			value="5f"> 
 		 Lodine (etodolac)<br> 
 	  	<input type="checkbox"
-			name="insn10g"
-			value="10g"> 
+			name="insn5g"
+			value="5g"> 
 		 Feldene (piroxicam)<br> 
 	  	<input type="checkbox"
-			name="insn10h"
-			value="10h"> 
+			name="insn5h"
+			value="5h"> 
 		 Relefeo (nuburnetce)<br>
 	  </nsaid>
 	  <input type="checkbox"
-		 name="insn11"
-		 value="11">
+		 name="insn6"
+		 value="6">
 	  Do you take Accutane (isotretinoin)?<br>
 	  <input type="checkbox"
-		 name="insn12"
-		 value="12">
+		 name="insn7"
+		 value="7">
 	  Do you take Suboxone?<br>
 	  <input type="checkbox"
-		 name="insn13"
-		 value="13">
-	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?<br>
-	  <input type="checkbox"
-		 name="insn14"
-		 value="14">
-	  Do you take the blood thinner warfarin (Coumadin)?<br> <!-- checkbox for Lovenox? -->
-	  <input type="checkbox"
-		 name="insn15"
-		 value="15"
-		 id="insn15"
-	 	 onclick="var insns = document.getElementsByClassName('sub15'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Do you take the any blood thinning medicines?<br>  <!-- @chris why is warfarin separate? -->
-	  <thinner class="sub15" onclick="document.getElementById('insn15').checked = true"> 
+		 name="insn8"
+		 value="8">
+	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?
+	  <p>Do you take the any blood thinning medicines?</p> 
+	  <thinner> 
 	  	<input type="checkbox"
-			name="insn15a"
-			value="15a"> 
+			name="insn9a"
+			value="9a"> 
 	  	Plavix (Clopidogrel)<br>
 	  	<input type="checkbox"
-			name="insn15b"
-			value="15b"> 
+			name="insn9b"
+			value="9b"> 
 	  	Xarelto (Rivaroxaban)<br>
 	  	<input type="checkbox"
-			name="insn15c"
-			value="15c"> 
+			name="insn9c"
+			value="9c"> 
 	  	Ticlid (Ticlopidine)<br>
 	  	<input type="checkbox"
-			name="insn15d"
-			value="15d"> 
+			name="insn9d"
+			value="9d"> 
 	  	Pletal (Cilostazol)<br>
 	  	<input type="checkbox"
-			name="insn15e"
-			value="15e"> 
+			name="insn9e"
+			value="9e"> 
 	  	Brilinta (Ticagrelor)<br>
 	  	<input type="checkbox"
 			name="insn15f"
-			value="15f"> 
+			value="9f"> 
 	 	Effient (prasugrel)<br> 
 	  	<input type="checkbox"
-			name="insn15g"
-			value="15g"> 
+			name="insn9g"
+			value="9g"> 
 	  	Aggrenox (Aspirin-Dipridarrola)<br>
+		<input type="checkbox"
+			name"insn12"
+			value="12"> <!-- hacky fix to give a specific medication switch if you r taking warfarin -->
+		Warfarin (Coumadin)
 	  </thinner>
-	  <input type="checkbox"
-		 name="insn16"
-		 value="16">
-	  Do you take medications for diabetes, including insulin?<br> <!-- text field for custom instructions? -->
-	  <input type="checkbox"
-		 name="insn17"
-		 value="17"
-		 id=insn17
-	 	 onclick="var insns = document.getElementsByClassName('sub17'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Do you take water pills (diuretics)?<br>  <!-- @chris ^^ -->
-	  <diuretic class="sub17" onclick="document.getElementById('insn17').checked = true"> 
+	  <p>Do you take medications for diabetes, including insulin? Please list doctor instructions below.</p>
+	  <input type="text"
+		 name="insn10">
+	  <p>Do you take water pills (diuretics)?</p>
+	  <diuretic> 
 
 	  	<input type="checkbox"
-			name="insn17a"
-			value="17a"> 
-	  	furosemide (Lasix)<br>
+			name="insn11a"
+			value="11a"> 
+	  	Furosemide (Lasix)<br>
 	  	<input type="checkbox"
-			name="insn17b"
-			value="17b"> 
-		hydrochlorothiazide (HCTZ)<br>
+			name="insn11b"
+			value="11b"> 
+		Hydrochlorothiazide (HCTZ)<br>
 	  	<input type="checkbox"
-			name="insn17c"
-			value="17c"> 
- 		medicines combined with hydrochlorothiazide (HCT)<br>
+			name="insn11c"
+			value="11c"> 
+ 		Medicines combined with hydrochlorothiazide (HCT)<br><br>
 	  </diuretic>
-	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar">
+	<!--  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar"> -->
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Texts">

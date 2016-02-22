@@ -21,8 +21,8 @@ def get_user_input(data):
 	return d	
     entries = data.split('[')[1].split(']')[0].split('),')
     for entry in entries:
-        key = entry.split(',')[0].split('\'')[1]
-        val = entry.split(',')[1].split('\'')[1]
+        key = entry.split(',')[0].split('\'')[1].split('\\')[0]
+        val = entry.split(',')[1].split('\'')[1].split('\\')[0]
         d[key] = val
     return d
 
@@ -43,29 +43,36 @@ def generate_ics():
     cal['summary'] = 'Surgery Concierge'
 
     cat_insns = {}
+    print(input)
     for insn in input:
-	if 'insn' in insn and not insn[-1].isalpha():
-		cat_insns[insn] = insn_table[input[insn]]
+        if 'insn' in insn and not insn[-1].isalpha():
+		
+            cat_insns[insn] = insn_table[insn[4:]]
     for insn in input:
 	if 'insn' in insn and insn[-1].isalpha(): 
 		base_insn = insn[:-1]
+		if not base_insn in cat_insns:
+			cat_insns[base_insn] = insn_table[base_insn[4:]]	
 		current_str = cat_insns[base_insn]
 		if current_str[-1] != ' ':
 	    		cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]]	
 		else:
 	    		cat_insns[base_insn] = current_str + insn_table[input[insn]]
-
-    for insn in input:
-        if 'insn' not in insn or insn[-1].isalpha():
-            continue
-        i = insn_table[input[insn]]
+    for base_insn in cat_insns:
+	if base_insn == 'insn10' and not input['insn10']:
+		continue
+	insn = base_insn[4:]	
+        i = insn_table[insn]
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
 
         event = icalendar.Event()
         event.add('dtstart', date)
         event.add('dtend', end)
-        event.add('summary', cat_insns[insn].split(':')[1])
+	if base_insn != 'insn10':
+        	event.add('summary', cat_insns[base_insn].split(':')[1])
+	else:
+		event.add('summary', input['insn10'])
         cal.add_component(event)
     
     print (cal.to_ical())
