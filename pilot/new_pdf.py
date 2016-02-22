@@ -26,8 +26,8 @@ def get_user_input(data):
 	return d
     entries = data.split('[')[1].split(']')[0].split('),')
     for entry in entries:
-        key = entry.split(',')[0].split('\'')[1]
-        val = entry.split(',')[1].split('\'')[1]
+        key = entry.split(',')[0].split('\'')[1].split('\\')[0]
+        val = entry.split(',')[1].split('\'')[1].split('\\')[0]
         d[key] = val
     return d
 
@@ -131,20 +131,24 @@ def generate_pdf():
     #Create a dict for the beginning of multi-part insns
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
-            cat_insns[insn] = insn_table[input[insn]]
+        
+            cat_insns[insn] = insn_table[insn[4:]]
     for insn in input:
         if 'insn' in insn and insn[-1].isalpha(): 
             base_insn = insn[:-1]
+            if not base_insn in cat_insns:
+                cat_insns[base_insn] = insn_table[base_insn[4:]] 
             current_str = cat_insns[base_insn]
             if current_str[-1] != ' ':
                     cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]] 
             else:
                     cat_insns[base_insn] = current_str + insn_table[input[insn]]
     
-    for insn in input:
-        if 'insn' not in insn or insn[-1].isalpha():
+    for base_insn in cat_insns:
+        if base_insn == 'insn10' and not input['insn10']:
             continue
-        i = insn_table[input[insn]]
+        insn = base_insn[4:]    
+        i = insn_table[insn]
 
         # insn_for_pdf = {}
         # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
@@ -156,10 +160,16 @@ def generate_pdf():
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         num_days = i.split(':')[0]
         if (num_days in insns_for_pdf):
-            insns_for_pdf[num_days].append(cat_insns[insn].split(':')[1])
+            if base_insn != 'insn10':
+                insns_for_pdf[num_days].append(cat_insns[base_insn].split(':')[1])
+            else:
+                insns_for_pdf[num_days].append(input['insn10'])          
         else:
             insn_for_pdf = []
-            insn_for_pdf.append(cat_insns[insn].split(':')[1])
+            if base_insn != 'insn10':
+                insn_for_pdf.append(cat_insns[base_insn].split(':')[1])
+            else:
+                insn_for_pdf.append(input['insn10'])
             insns_for_pdf[num_days] = insn_for_pdf
 
 
