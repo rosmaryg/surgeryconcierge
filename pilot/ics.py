@@ -43,7 +43,6 @@ def generate_ics():
     cal['summary'] = 'Surgery Concierge'
 
     cat_insns = {}
-    print(input)
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
 		
