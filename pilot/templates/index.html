@@ -106,45 +106,45 @@ diuretic {
 	<!-- value= <days before>: <instruction> -->
 	<p><b>Pre-Surgery Questionnaire:</b><br>
 	  <i>Check the following items if they apply to you:</i><br><br>
-	  <input type="checkbox"
+	  <input type="hidden"
 		 name="insn0"
-		 value="0">
-	  Would like to receive default reminders on the morning of the surgery<br>
-	  <input type="checkbox"
+		 value="0" checked>
+	  <!-- Would like to receive default reminders on the morning of the surgery<br> -->
+	  <input type="hidden"
 		 name="insn1"
-		 value="1">
-	  Wear jewelry, wedding band, body piercings, makeup, nail polish, or artificial nails<br>
+		 value="1" checked>
+<!--	  Do you wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails?<br> -->
 	  <input type="checkbox"
 		 name="insn2"
 		 value="2">
-	  Wear contact lenses<br>
-	  <input type="checkbox"
+	  Do you wear contact lenses?<br>
+	  <input type="hidden"
 		 name="insn3"
-		 value="3">
-	  Eat or drink anything in the morning<br>
-	  <input type="checkbox"
+		 value="3" checked>
+	  <!-- Eat or drink anything in the morning<br> -->
+	  <input type="hidden"
 		 name="insn4"
-		 value="4">
-	  Ever eat or drink anything after midnight<br>
+		 value="4" checked>
+	  <!-- Ever eat or drink anything after midnight<br> -->
 	  <input type="checkbox"
 		 name="insn5"
 		 value="5">
-	  Take medications in the morning<br>
+	  Do you take medications in the morning?<br>
 	  <input type="checkbox"
 		 name="insn6"
 		 value="6">
-	  Use an inhaler, CPAP mask, eye drops<br>
-	  <input type="checkbox"
+	  Do use an inhaler, CPAP mask, or eye drops?<br>
+	  <input type="hidden"
 		 name="insn7"
-		 value="7">
-	  Drink alcohol<br>
+		 value="7" checked>
+	  <!-- Drink alcohol<br> -->
 	  <input type="checkbox"
 		 name="insn8"
 		 value="8"
 		 id="insn8"	
 		 onclick="var insns = document.getElementsByClassName('sub8'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }"
 		 >
-	  Take herbal products or nutritional supplements:<br> 
+	  Do you take herbal products or nutritional supplements?<br> <!-- @chris should the UI somehow? -->
 	  <supplements class="sub8" onclick="document.getElementById('insn8').checked = true"> 
 	  	<input type="checkbox"
 			name="insn8a"
@@ -200,7 +200,7 @@ diuretic {
 		 value="9"
 		 id="insn9"		 
 		 onclick="var insns = document.getElementsByClassName('sub9'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Take medicines containing aspirin, including:<br>
+	  Do you take any medications that include aspirin?<br> <!-- @chris same question -->
 	  <aspirin class="sub9" onclick="document.getElementById('insn9').checked = true"> 
 	  	<input type="checkbox"
 			name="insn9a"
@@ -244,7 +244,7 @@ diuretic {
 		 value="10"
 		 id="insn10"
 		 onclick="var insns = document.getElementsByClassName('sub10'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-  	  Take Non-Steroidal Anti-inflammatory Drugs (NSAIDs): 
+  	  Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)? <!-- @chris ditto -->
 	  <nsaid class="sub10" onclick="document.getElementById('insn10').checked = true"> 
 	  	<input type="checkbox"
 			name="insn10a"
@@ -282,25 +282,25 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn11"
 		 value="11">
-	  Take Accutane (isotretinoin)<br>
+	  Do you take Accutane (isotretinoin)?<br>
 	  <input type="checkbox"
 		 name="insn12"
 		 value="12">
-	  Take Suboxone<br>
+	  Do you take Suboxone?<br>
 	  <input type="checkbox"
 		 name="insn13"
 		 value="13">
-	  Take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)<br>
+	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?<br>
 	  <input type="checkbox"
 		 name="insn14"
 		 value="14">
-	  Take the blood thinner warfarin (Coumadin)<br> <!-- checkbox for Lovenox? -->
+	  Do you take the blood thinner warfarin (Coumadin)?<br> <!-- checkbox for Lovenox? -->
 	  <input type="checkbox"
 		 name="insn15"
 		 value="15"
 		 id="insn15"
 	 	 onclick="var insns = document.getElementsByClassName('sub15'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Take the following blood thinning medicines:<br> 
+	  Do you take the any blood thinning medicines?<br>  <!-- @chris why is warfarin separate? -->
 	  <thinner class="sub15" onclick="document.getElementById('insn15').checked = true"> 
 	  	<input type="checkbox"
 			name="insn15a"
@@ -334,13 +334,13 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn16"
 		 value="16">
-	  Take medications for diabetes including insulin<br> <!-- text field for custom instructions? -->
+	  Do you take medications for diabetes, including insulin?<br> <!-- text field for custom instructions? -->
 	  <input type="checkbox"
 		 name="insn17"
 		 value="17"
 		 id=insn17
 	 	 onclick="var insns = document.getElementsByClassName('sub17'); for(insn in $(insns)[0].children) { var item = document.getElementsByName(insn)[0]; if(item) { item.checked=false; } }">
-	  Take water pills (diuretics) including:<br> 
+	  Do you take water pills (diuretics)?<br>  <!-- @chris ^^ -->
 	  <diuretic class="sub17" onclick="document.getElementById('insn17').checked = true"> 
 
 	  	<input type="checkbox"

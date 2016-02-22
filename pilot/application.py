@@ -18,6 +18,7 @@ def genCalendar():
 
 @application.route('/generate-ics')
 def genICS():
+  print str(request.args)
   ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
   response = make_response(ics)
   response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
