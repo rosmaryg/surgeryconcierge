@@ -31,6 +31,14 @@ def get_user_input(data):
         d[key] = val
     return d
 
+def split_len(s,block_size):
+    w=[]
+    n=len(s)
+    for i in range(0,n,block_size):
+        w.append(s[i:i+block_size])
+    return w
+
+
 # generate a pdf from the json template that provides instructions
 def gen_pdf(surg_info, insns):
     month = surg_info[0]
@@ -68,7 +76,12 @@ def gen_pdf(surg_info, insns):
         pdf.multi_cell(195, 10, txt=insn_date, align="L")
         for indiv_insn in insns_for_day:
             pdf.set_font("Arial", size=10)
-            pdf.multi_cell(195, 7, txt=indiv_insn, align="L")
+            pdf.rect(pdf.get_x() + 1, pdf.get_y(), 3, 3)
+            # pdf.multi_cell(195, 7, txt=indiv_insn, align="L")
+            split_insn = split_len(indiv_insn, 118)
+            for text in split_insn:
+                pdf.text(pdf.get_x() + 4, pdf.get_y() + 3, txt=text)
+                pdf.multi_cell(195, 5, txt="\n", align="L")
             pdf.set_font("Arial", size=2)
             pdf.multi_cell(195, 5, txt="\n", align="L")
         pdf.multi_cell(195, 5, txt="\n", align="L")
