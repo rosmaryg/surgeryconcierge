@@ -50,5 +50,5 @@ insn_table = {
 '11a' : "furosemide (Lasix)", 
 '11b' : "hydrochlorothiazide (HCTZ)", 
 '11c' : "medicines combined with hydrochlorothiazide (HCT)",
-'12': "5: Stop blood thinner warfarin (Coumadin); switch to Lovenox (enoxaparin) temporarily if advised by doctor"
+'12' : "5: Stop blood thinner warfarin (Coumadin) - switch to Lovenox (enoxaparin) temporarily if advised by doctor",
 }
