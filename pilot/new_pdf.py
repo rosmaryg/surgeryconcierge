@@ -169,7 +169,7 @@ def generate_pdf():
             if base_insn != 'insn10':
                 insn_for_pdf.append(cat_insns[base_insn].split(':')[1])
             else:
-                insn_for_pdf.append(input['insn10'])
+                insn_for_pdf.append(" " + input['insn10'])
             insns_for_pdf[num_days] = insn_for_pdf
 
 
