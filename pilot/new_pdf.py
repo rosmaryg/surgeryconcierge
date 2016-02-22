@@ -38,6 +38,11 @@ def split_len(s,block_size):
         w.append(s[i:i+block_size])
     return w
 
+def first_text(indiv_insn):
+    if len(indiv_insn) < 110:
+        return indiv_insn
+    else:
+        return indiv_insn[0:118]
 
 # generate a pdf from the json template that provides instructions
 def gen_pdf(surg_info, insns):
@@ -78,9 +83,11 @@ def gen_pdf(surg_info, insns):
             pdf.set_font("Arial", size=10)
             pdf.rect(pdf.get_x() + 1, pdf.get_y(), 3, 3)
             # pdf.multi_cell(195, 7, txt=indiv_insn, align="L")
-            split_insn = split_len(indiv_insn, 118)
+            split_insn = split_len(indiv_insn[118:], 113)
+            pdf.text(pdf.get_x() + 4, pdf.get_y() + 3, txt=first_text(indiv_insn))
+            pdf.multi_cell(195, 5, txt="\n", align="L")
             for text in split_insn:
-                pdf.text(pdf.get_x() + 4, pdf.get_y() + 3, txt=text)
+                pdf.text(pdf.get_x() + 9, pdf.get_y() + 3, txt=text)
                 pdf.multi_cell(195, 5, txt="\n", align="L")
             pdf.set_font("Arial", size=2)
             pdf.multi_cell(195, 5, txt="\n", align="L")
