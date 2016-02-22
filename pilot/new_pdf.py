@@ -26,10 +26,23 @@ def get_user_input(data):
 	return d
     entries = data.split('[')[1].split(']')[0].split('),')
     for entry in entries:
-        key = entry.split(',')[0].split('\'')[1]
-        val = entry.split(',')[1].split('\'')[1]
+        key = entry.split(',')[0].split('\'')[1].split('\\')[0]
+        val = entry.split(',')[1].split('\'')[1].split('\\')[0]
         d[key] = val
     return d
+
+def split_len(s,block_size):
+    w=[]
+    n=len(s)
+    for i in range(0,n,block_size):
+        w.append(s[i:i+block_size])
+    return w
+
+def first_text(indiv_insn):
+    if len(indiv_insn) < 110:
+        return indiv_insn
+    else:
+        return indiv_insn[0:118]
 
 # generate a pdf from the json template that provides instructions
 def gen_pdf(surg_info, insns):
@@ -68,7 +81,14 @@ def gen_pdf(surg_info, insns):
         pdf.multi_cell(195, 10, txt=insn_date, align="L")
         for indiv_insn in insns_for_day:
             pdf.set_font("Arial", size=10)
-            pdf.multi_cell(195, 7, txt=indiv_insn, align="L")
+            pdf.rect(pdf.get_x() + 1, pdf.get_y(), 3, 3)
+            # pdf.multi_cell(195, 7, txt=indiv_insn, align="L")
+            split_insn = split_len(indiv_insn[118:], 113)
+            pdf.text(pdf.get_x() + 4, pdf.get_y() + 3, txt=first_text(indiv_insn))
+            pdf.multi_cell(195, 5, txt="\n", align="L")
+            for text in split_insn:
+                pdf.text(pdf.get_x() + 9, pdf.get_y() + 3, txt=text)
+                pdf.multi_cell(195, 5, txt="\n", align="L")
             pdf.set_font("Arial", size=2)
             pdf.multi_cell(195, 5, txt="\n", align="L")
         pdf.multi_cell(195, 5, txt="\n", align="L")
@@ -111,20 +131,24 @@ def generate_pdf():
     #Create a dict for the beginning of multi-part insns
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
-            cat_insns[insn] = insn_table[input[insn]]
+        
+            cat_insns[insn] = insn_table[insn[4:]]
     for insn in input:
         if 'insn' in insn and insn[-1].isalpha(): 
             base_insn = insn[:-1]
+            if not base_insn in cat_insns:
+                cat_insns[base_insn] = insn_table[base_insn[4:]] 
             current_str = cat_insns[base_insn]
             if current_str[-1] != ' ':
                     cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]] 
             else:
                     cat_insns[base_insn] = current_str + insn_table[input[insn]]
     
-    for insn in input:
-        if 'insn' not in insn or insn[-1].isalpha():
+    for base_insn in cat_insns:
+        if base_insn == 'insn10' and not input['insn10']:
             continue
-        i = insn_table[input[insn]]
+        insn = base_insn[4:]    
+        i = insn_table[insn]
 
         # insn_for_pdf = {}
         # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
@@ -136,10 +160,16 @@ def generate_pdf():
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         num_days = i.split(':')[0]
         if (num_days in insns_for_pdf):
-            insns_for_pdf[num_days].append(cat_insns[insn].split(':')[1])
+            if base_insn != 'insn10':
+                insns_for_pdf[num_days].append(cat_insns[base_insn].split(':')[1])
+            else:
+                insns_for_pdf[num_days].append(input['insn10'])          
         else:
             insn_for_pdf = []
-            insn_for_pdf.append(cat_insns[insn].split(':')[1])
+            if base_insn != 'insn10':
+                insn_for_pdf.append(cat_insns[base_insn].split(':')[1])
+            else:
+                insn_for_pdf.append(" " + input['insn10'])
             insns_for_pdf[num_days] = insn_for_pdf
 
 
