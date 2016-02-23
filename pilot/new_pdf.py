@@ -57,7 +57,7 @@ def gen_pdf(surg_info, insns):
     pdf.ln(h='')
     pdf.set_font("Arial", size=10)
     surg_date = datetime.date(year, month, day).strftime("%A, %B %d, %Y")
-    intro = "Your surgery is scheduled on " + surg_date + ". You will receive a phone call to tell you what time to arrive at the hospital. If you do not receive a call by noon the day before your surgery, please call the office. If you can't keep your surgery appointment, call your surgeon's office."
+    intro = "Your surgery is scheduled on " + surg_date + ". You will receive a phone call to tell you what time to arrive at the hospital. If you do not receive a call by 3pm the day before your surgery, please call the office before 5pm. If you can't keep your surgery appointment, call your surgeon's office as soon as possible."
     pdf.multi_cell(195, 10, txt=intro, align="L")
     pdf.line(pdf.get_x(), pdf.get_y(), pdf.get_x() + 195, pdf.get_y())
     pdf.ln(h='')
