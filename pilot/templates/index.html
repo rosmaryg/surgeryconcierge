@@ -37,22 +37,27 @@ input {
       margin-right:10px;
 }
 supplements {
+      font-family: Verdana, Arial, sans-serif;
       display: block;
       padding-left: 40px;
 }
 aspirin {
+      font-family: Verdana, Arial, sans-serif;
       display: block;
       padding-left: 40px;
 }
 nsaid {
+      font-family: Verdana, Arial, sans-serif;
       display: block;
       padding-left: 40px;
 }
 thinner {
+      font-family: Verdana, Arial, sans-serif;
       display: block;
       padding-left: 40px;
 }
 diuretic {
+      font-family: Verdana, Arial, sans-serif;
       display: block;
       padding-left: 40px;
 }
@@ -93,8 +98,56 @@ diuretic {
 		</script>
       <form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
 	<p><b>Surgery Date:</b>
-	  <input type="number" name="month" min="1" max="12" placeholder="M " required="true">
-	  <input type="number" name="day" min="1" max="31" placeholder="D " required="true">
+<!-- Month dropdown -->
+<select name="month" id="month" onchange="" size="1">
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+</select>
+
+<!-- Day dropdown -->
+<select name="day" id="day" onchange="" size="1">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+</select>
 	  <input type="number" name="year" min="2016" max="2018" value="2016" required="true">
 	</p>
 	<p>If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?<br>
@@ -119,7 +172,11 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn2"
 		 value="2">
-	  Do use an inhaler, CPAP mask, or eye drops?</p>
+	  Do you use an inhaler, CPAP mask, eye drops, or dentures?<br>
+	  <input type="checkbox"
+		 name="insnS"
+		 value="S">
+	  Do you smoke?</p> <!-- TODO: hook this up -->
 	  <p> Do you take herbal products or nutritional supplements?</p> 
 	  <supplements> 
 	  	<input type="checkbox"
@@ -161,7 +218,7 @@ diuretic {
 	  	<input type="checkbox"
 			name="insn3j"
 			value="3j"> 
-	 	St. John''s West<br>
+	 	St. John's Wart<br>
 	  	<input type="checkbox"
 			name="insn3k"
 			value="3k"> 
@@ -171,16 +228,17 @@ diuretic {
 			value="3l"> 
 	  	Vitamin B
 	  </supplements>
-	  <p>Do you take any medications that include aspirin?</p> 
+	  <p>Do you take any medications that contain aspirin?</p> 
 	  <aspirin>
 	  	<input type="checkbox"
 			name="insn4a"
 			value="4a"> 
-	  	Aspirin<br>
+	  	Aspirin (325 mg)<br>
 	  	<input type="checkbox"
 			name="insn4b"
-			value="4b"> 
-	  	Anacin<br>
+			value="4b">
+		Baby Aspirin (81 mg)<br> <!-- TODO: fix where this plugs into -->
+	  	<!-- Anacin<br>
 	  	<input type="checkbox"
 			name="insn4c"
 			value="4c"> 
@@ -208,14 +266,14 @@ diuretic {
 	  	<input type="checkbox"
 			name="insn4i"
 			value="4i"> 
-		Lortab ASA
+		Lortab ASA -->
 	  </aspirin>
   	  <p>Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)?</p>
 	  <nsaid> 
 	  	<input type="checkbox"
 			name="insn5a"
 			value="5a"> 
-		 Ibuprofen (Advil Motrin, Nuprin, Medipren)<br>
+		 Ibuprofen (Advil, Motrin, Nuprin, Medipren)<br>
 	  	<input type="checkbox"
 			name="insn5b"
 			value="5b"> 
@@ -245,10 +303,10 @@ diuretic {
 			value="5h"> 
 		 Relefeo (nuburnetce)<br>
 	  </nsaid>
-	  <input type="checkbox"
+	  <p><!-- <input type="checkbox"
 		 name="insn6"
 		 value="6">
-	  Do you take Accutane (isotretinoin)?<br>
+	  Do you take Accutane (isotretinoin)?<br> -->
 	  <input type="checkbox"
 		 name="insn7"
 		 value="7">
@@ -256,8 +314,8 @@ diuretic {
 	  <input type="checkbox"
 		 name="insn8"
 		 value="8">
-	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?
-	  <p>Do you take the any blood thinning medicines?</p> 
+	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?</p>
+	  <p>Do you take the any blood thinning medications?</p> 
 	  <thinner> 
 	  	<input type="checkbox"
 			name="insn9a"
@@ -285,8 +343,12 @@ diuretic {
 	 	Effient (prasugrel)<br> 
 	  	<input type="checkbox"
 			name="insn9g"
-			value="9g"> 
+			value="9g">
 	  	Aggrenox (Aspirin-Dipridarrola)<br>
+		<input type="checkbox"
+		       name="insn9h"
+		       vluae="9h">
+		Lovenox (Enoxaparin)<br>
 		<input type="checkbox"
 			name"insn12"
 			value="12"> <!-- hacky fix to give a specific medication switch if you r taking warfarin -->
@@ -309,7 +371,7 @@ diuretic {
 	  	<input type="checkbox"
 			name="insn11c"
 			value="11c"> 
- 		Medicines combined with hydrochlorothiazide (HCT)<br><br>
+ 		Medications containing hydrochlorothiazide (HCTZ)<br><br>
 	  </diuretic>
 	<!--  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar"> -->
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">

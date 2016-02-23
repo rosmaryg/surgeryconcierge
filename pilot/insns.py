@@ -1,7 +1,8 @@
 insn_table = {
 '0' : "0: Do not wear contact lenses",
-'1' : "0: Take all meds with a sip of water at your usual times (except diabetes meds)",
+'1' : "0: Take all medicationss with a sip of water at your usual times (except diabetes medicationss)",
 '2' : "0: Bring the following to the hospital - inhalers, CPAP mask, eye drops",
+'S' : "7: Cut back on smoking if possible - it is not necessary to stop entirely", # this needs to be actually hooked up
 '3' : "14: Stop taking these herbal products, nutritional supplements - ",
 '3a' : "Echinacea", 
 '3b' : "Ephedra", 
@@ -12,19 +13,19 @@ insn_table = {
 '3g' : "Ginseng", 
 '3h' : "Kava Kava", 
 '3i' : "Saw palmetto", 
-'3j' : "St. John''s West", 
+'3j' : "St. John''s Wart", 
 '3k' : "Fish oil", 
 '3l' : "Vitamin B",
-'4' : "7: Stop taking all medicines containing aspirin - ", 
+'4' : "7: Stop taking all medications containing aspirin - ", # this needs to be fixed
 '4a' : "Aspirin", 
-'4b' : "Anacin", 
-'4c' : "Ascriptin", 
-'4d' : "Pepto-Bismol", 
-'4e' : "Bufferin", 
-'4f' : "Alka-Seltzer", 
-'4g' : "Excedrin", 
-'4h' : "Florinal", 
-'4i' : "Lortab ASA",
+'4b' : "Anacin", # this needs to be fixed to 3: Baby Aspirin
+# '4c' : "Ascriptin", 
+# '4d' : "Pepto-Bismol", 
+# '4e' : "Bufferin", 
+# '4f' : "Alka-Seltzer",  THESE ARE ALL REMOVED
+# '4g' : "Excedrin", 
+# '4h' : "Florinal", 
+# '4i' : "Lortab ASA",
 '5': "7: Stop taking Non-Steroidal Anti-inflammatory Drugs (NSAIDs) - ",
 '5a' : "Ibuprofen (Advil Motrin, Nuprin, Medipren)", 
 '5b' : "Naproxen (Aleve, Anaprox, Naprosyn)", 
@@ -36,8 +37,8 @@ insn_table = {
 '5h' : "Relefeo (nuburnetce)",
 '6': "7: Stop taking Accutane",
 '7': "3: Stop taking Suboxone",
-'8': "3: Cialis, Viagra, and Levitra",
-'9': "7: Stop the following blood thinning medicines - ",
+'8': "3: Stop taking Cialis, Viagra, and Levitra",
+'9': "7: Stop the following blood thinning medications - ",
 '9a' : "Plavix (Clopidogrel)", 
 '9b' : "Xarelto (Rivaroxaban)", 
 '9c' : "Ticlid (Ticlopidine)", 
@@ -45,6 +46,7 @@ insn_table = {
 '9e' : "Brilinta (Ticagrelor)", 
 '9f' : "Effient (prasugrel)", 
 '9g' : "Aggrenox (Aspirin-Dipridarrola)",
+'9h' : "Lovenox (Enoxaparin)", # fis this
 '10': "1: Follow instructions from doctor for diabetes",
 '11': "0: Do not take any medicine that is a water pill (diuretic) including - ",
 '11a' : "furosemide (Lasix)", 
@@ -52,10 +54,11 @@ insn_table = {
 '11c' : "medicines combined with hydrochlorothiazide (HCT)",
 '12' : "5: Stop blood thinner warfarin (Coumadin) - switch to Lovenox (enoxaparin) temporarily if advised by doctor",
 }
+
 default_insns = {
 '0' : "0: Be prepared to spend a full day at the hospital. Wear loose, comfortable clothing and do not bring valuables. Bring a list of all medications you take.",
-'1' : "0: Do not wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails",
-'2' : "0: Do not eat or drink anything",
+'1' : "0: Do not wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails.",
+'2' : "0: Do not eat or drink anything the morning of the surgery.",
 '3' : "1: Do not eat or drink anything after midnight (no water, coffee, gum, lifesavers, ice, food, etc.)",
 '4' : "1: Do not drink any alcoholic beverages or smoke 24 hours prior to surgery",
 }
