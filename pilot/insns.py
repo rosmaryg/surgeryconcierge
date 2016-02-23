@@ -1,8 +1,8 @@
 insn_table = {
 '0' : "0: Do not wear contact lenses",
-'1' : "0: Take all medicationss with a sip of water at your usual times (except diabetes medicationss)",
+'1' : "0: Take all medications with a sip of water at your usual times (except diabetes medicationss)",
 '2' : "0: Bring the following to the hospital - inhalers, CPAP mask, eye drops",
-'S' : "7: Cut back on smoking if possible - it is not necessary to stop entirely", # this needs to be actually hooked up
+'13' : "7: Cut back on smoking if possible - it is not necessary to stop entirely",
 '3' : "14: Stop taking these herbal products, nutritional supplements - ",
 '3a' : "Echinacea", 
 '3b' : "Ephedra", 
@@ -16,9 +16,11 @@ insn_table = {
 '3j' : "St. John''s Wart", 
 '3k' : "Fish oil", 
 '3l' : "Vitamin B",
-'4' : "7: Stop taking all medications containing aspirin - ", # this needs to be fixed
-'4a' : "Aspirin", 
-'4b' : "Anacin", # this needs to be fixed to 3: Baby Aspirin
+'4' : "7: Stop taking apririn (this does not include baby aspirin)", 
+'14' : "3: Stop taking baby apririn",
+# '4' : "7: Stop taking all medications containing aspirin",
+# '4a' : "Aspirin", 
+# '4b' : "Anacin",
 # '4c' : "Ascriptin", 
 # '4d' : "Pepto-Bismol", 
 # '4e' : "Bufferin", 
@@ -46,7 +48,7 @@ insn_table = {
 '9e' : "Brilinta (Ticagrelor)", 
 '9f' : "Effient (prasugrel)", 
 '9g' : "Aggrenox (Aspirin-Dipridarrola)",
-'9h' : "Lovenox (Enoxaparin)", # fis this
+'9h' : "Lovenox (Enoxaparin)",
 '10': "1: Follow instructions from doctor for diabetes",
 '11': "0: Do not take any medicine that is a water pill (diuretic) including - ",
 '11a' : "furosemide (Lasix)", 
