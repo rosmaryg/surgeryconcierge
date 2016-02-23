@@ -5,7 +5,7 @@ from collections import defaultdict
 import icalendar
 import datetime
 import json
-from insns import insn_table
+from insns import insn_table, default_insns
 
 try:
     import argparse
@@ -73,7 +73,17 @@ def generate_ics():
 	else:
 		event.add('summary', input['insn10'])
         cal.add_component(event)
-    
+    for insn in default_insns:
+        i = default_insns[insn]
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+
+        event = icalendar.Event()
+        event.add('dtstart', date)
+        event.add('dtend', end)
+        event.add('summary', i.split(':')[1])
+        cal.add_component(event)
+   
     print (cal.to_ical())
     return display(cal)
 

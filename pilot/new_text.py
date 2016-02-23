@@ -1,7 +1,7 @@
 from collections import defaultdict
 import datetime
 from twilio.rest import TwilioRestClient
-from insns import insn_table
+from insns import insn_table, default_insns
 try:
     import argparse
     parser = argparse.ArgumentParser()
@@ -70,6 +70,20 @@ def generate_text():
         event.add('dtend', end)
         event.add('summary', cat_insns[insn].split(':')[1])
 ''' 
+    for insn in default_insns:
+        i = default_insns[insn]
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+	#Where we should send a text reminder during x date and time
+ #       event.add('summary', i.split(':')[1])
+    #message = client.messages.create(body="testing button hit", 
+#	to="+18082379659",
+#	from_="+12245889141")
+'''        event.add('dtstart', date)
+        event.add('dtend', end)
+        event.add('summary', cat_insns[insn].split(':')[1])
+''' 
+
 
 if __name__ == '__main__':
     generate_text()

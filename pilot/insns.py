@@ -52,3 +52,10 @@ insn_table = {
 '11c' : "medicines combined with hydrochlorothiazide (HCT)",
 '12' : "5: Stop blood thinner warfarin (Coumadin) - switch to Lovenox (enoxaparin) temporarily if advised by doctor",
 }
+default_insns = {
+'0' : "0: Be prepared to spend a full day at the hospital. Wear loose, comfortable clothing and do not bring valuables. Bring a list of all medications you take.",
+'1' : "0: Do not wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails",
+'2' : "0: Do not eat or drink anything",
+'3' : "1: Do not eat or drink anything after midnight (no water, coffee, gum, lifesavers, ice, food, etc.)",
+'4' : "1: Do not drink any alcoholic beverages or smoke 24 hours prior to surgery",
+}
