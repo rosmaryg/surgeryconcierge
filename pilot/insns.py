@@ -56,6 +56,7 @@ insn_table = {
 }
 
 default_insns = {
+'-1' : "1: Make sure a family member or friend is able to pick you up from the hospital.",
 '0' : "0: Be prepared to spend a full day at the hospital. Wear loose, comfortable clothing and do not bring valuables. Bring a list of all medications you take.",
 '1' : "0: Do not wear jewelry, wedding bands, body piercings, makeup, nail polish, or artificial nails.",
 '2' : "0: Do not eat or drink anything the morning of the surgery.",

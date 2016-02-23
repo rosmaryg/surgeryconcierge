@@ -129,6 +129,27 @@ def generate_pdf():
     cat_insns = {}
     insns_for_pdf = {}
     #Create a dict for the beginning of multi-part insns
+    
+#ADDING IN FOR DEFAULT INSNS
+    for insn in default_insns:
+        i = default_insns[insn]
+
+        # insn_for_pdf = {}
+        # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        # insn_for_pdf["num_days"] = int(i.split(':')[0])
+        # insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
+        # insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
+        # insns_for_pdf.append(insn_for_pdf)
+
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        num_days = i.split(':')[0]
+        if (num_days in insns_for_pdf):
+            insns_for_pdf[num_days].append(i.split(':')[1])
+        else:
+            insn_for_pdf = []
+            insn_for_pdf.append(i.split(':')[1])
+            insns_for_pdf[num_days] = insn_for_pdf
+
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
         
@@ -170,25 +191,6 @@ def generate_pdf():
                 insn_for_pdf.append(cat_insns[base_insn].split(':')[1])
             else:
                 insn_for_pdf.append(" " + input['insn10'])
-            insns_for_pdf[num_days] = insn_for_pdf
-#ADDING IN FOR DEFAULT INSNS
-    for insn in default_insns:
-        i = default_insns[insn]
-
-        # insn_for_pdf = {}
-        # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        # insn_for_pdf["num_days"] = int(i.split(':')[0])
-        # insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
-        # insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
-        # insns_for_pdf.append(insn_for_pdf)
-
-        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        num_days = i.split(':')[0]
-        if (num_days in insns_for_pdf):
-            insns_for_pdf[num_days].append(i.split(':')[1])
-        else:
-            insn_for_pdf = []
-            insn_for_pdf.append(i.split(':')[1])
             insns_for_pdf[num_days] = insn_for_pdf
     # sorted_insns_for_pdf = sorted(insns_for_pdf, key=lambda insn_for_pdf: insn_for_pdf["num_days"], reverse=True)
     surg_info = [int(month), int(day), int(year)]
