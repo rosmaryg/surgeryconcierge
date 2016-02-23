@@ -7,7 +7,7 @@ from apiclient import discovery
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
-from insns import insn_table
+from insns import insn_table, default_insns
 import datetime
 import json
 
@@ -156,6 +156,33 @@ def generate_calendar():
 
         event = service.events().insert(calendarId=calendar_id, body=event).execute()
         print ('Event created: %s' % (event.get('htmlLink')))
+    for insn in default_insns:
+        i = default_insns[insn]
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        event = {
+          'summary': 'Surgery Concierge',
+          'description': i.split(':')[1],
+          'start': {
+            'date': str(date),
+            'timeZone': 'America/New_York'
+          },
+          'end': {
+            'date': str(end),
+            'timeZone': 'America/New_York'
+          },
+          'reminders': {
+            'useDefault': False,
+            'overrides': [ # reminders sent at 8pm the day before
+              {'method': 'email', 'minutes': 4 * 60},
+              {'method': 'popup', 'minutes': 4 * 60},
+            ],
+          },
+        }
+
+        event = service.events().insert(calendarId=calendar_id, body=event).execute()
+        print ('Event created: %s' % (event.get('htmlLink')))
+
 
 if __name__ == '__main__':
     generate_calendar()
