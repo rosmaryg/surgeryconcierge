@@ -14,13 +14,13 @@ try:
 except ImportError:
     flags = None
 
-account_sid = "AC993d85892ae868d46074d1629efa2dc2"
-auth_token = "7ebc350c70162239eaf85bd2a4a56b70"
+account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
+auth_token = "kRdEtj8xQg1wA4JOc80ZPPN0ddetB743"
 client = TwilioRestClient(account_sid, auth_token)
 
 def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
-    message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
+    message = client.messages.create(body=text, to="+" + number, from_="+12155157414")
 
 def get_user_input(data):
     d = defaultdict(str)
