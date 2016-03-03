@@ -1,7 +1,11 @@
 from collections import defaultdict
 import datetime
+from apscheduler.schedulers.blocking import BlockingScheduler as Scheduler
+from threading import Timer
 from twilio.rest import TwilioRestClient
-from insns import insn_table
+from insns import insn_table, default_insns
+import logging
+logging.basicConfig()
 try:
     import argparse
     parser = argparse.ArgumentParser()
@@ -10,10 +14,13 @@ try:
 except ImportError:
     flags = None
 
-account_sid = "AC993d85892ae868d46074d1629efa2dc2"
-auth_token = "7ebc350c70162239eaf85bd2a4a56b70"
+account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
+auth_token = "kRdEtj8xQg1wA4JOc80ZPPN0ddetB743"
 client = TwilioRestClient(account_sid, auth_token)
 
+def send_reminder(text, number):
+    print "sending message: " + text + " to " + str(number)
+    message = client.messages.create(body=text, to="+" + number, from_="+12155157414")
 
 def get_user_input(data):
     d = defaultdict(str)
@@ -28,9 +35,11 @@ def get_user_input(data):
 
 
 def generate_text():
-    
     input = get_user_input(flags.data)
-    now = datetime.datetime.utcnow()
+    if not 'phone-number' in input:
+	return 1
+    number = input['phone-number']
+    sched = Scheduler()
     
     year = input['year']
     month = input['month']
@@ -39,7 +48,6 @@ def generate_text():
     cat_insns = {}
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
-		
             cat_insns[insn] = insn_table[insn[4:]]
     for insn in input:
 	if 'insn' in insn and insn[-1].isalpha(): 
@@ -51,25 +59,30 @@ def generate_text():
 	    		cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]]	
 		else:
 	    		cat_insns[base_insn] = current_str + insn_table[input[insn]]
+
     for base_insn in cat_insns:
 	if base_insn == 'insn10' and not input['insn10']:
 		continue
 	insn = base_insn[4:]	
         i = insn_table[insn]
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        end = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-	#Where we should send a text reminder during x date and time
-#	if base_insn != 'insn10':
- #       	event.add('summary', cat_insns[base_insn].split(':')[1])
-#	else:
-#		event.add('summary', input['insn10']) 
-    message = client.messages.create(body="testing button hit", 
-	to="+18082379659",
-	from_="+12245889141")
-'''        event.add('dtstart', date)
-        event.add('dtend', end)
-        event.add('summary', cat_insns[insn].split(':')[1])
-''' 
+	reminder_text = ""
+	if base_insn != 'insn10':
+        	reminder_text = i.split(':')[1]
+	else:
+		reminder_text = input['insn10']
+	sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
+ 
+    for insn in default_insns:
+        i = default_insns[insn]
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        reminder_text = i.split(':')[1]
+	sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
+ 
+    sched.start()
+
+
+
 
 if __name__ == '__main__':
     generate_text()

@@ -7,7 +7,7 @@ from apiclient import discovery
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
-from insns import insn_table
+from insns import insn_table, default_insns
 import datetime
 import json
 import fpdf
@@ -57,7 +57,7 @@ def gen_pdf(surg_info, insns):
     pdf.ln(h='')
     pdf.set_font("Arial", size=10)
     surg_date = datetime.date(year, month, day).strftime("%A, %B %d, %Y")
-    intro = "Your surgery is scheduled on " + surg_date + ". You will receive a phone call to tell you what time to arrive at the hospital. If you do not receive a call by noon the day before your surgery, please call the office. If you can't keep your surgery appointment, call your surgeon's office."
+    intro = "Your surgery is scheduled on " + surg_date + ". You will receive a phone call to tell you what time to arrive at the hospital. If you do not receive a call by 3pm the day before your surgery, please call the office before 5pm. If you can't keep your surgery appointment, call your surgeon's office as soon as possible."
     pdf.multi_cell(195, 10, txt=intro, align="L")
     pdf.line(pdf.get_x(), pdf.get_y(), pdf.get_x() + 195, pdf.get_y())
     pdf.ln(h='')
@@ -129,6 +129,27 @@ def generate_pdf():
     cat_insns = {}
     insns_for_pdf = {}
     #Create a dict for the beginning of multi-part insns
+    
+#ADDING IN FOR DEFAULT INSNS
+    for insn in default_insns:
+        i = default_insns[insn]
+
+        # insn_for_pdf = {}
+        # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        # insn_for_pdf["num_days"] = int(i.split(':')[0])
+        # insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
+        # insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
+        # insns_for_pdf.append(insn_for_pdf)
+
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
+        num_days = i.split(':')[0]
+        if (num_days in insns_for_pdf):
+            insns_for_pdf[num_days].append(i.split(':')[1])
+        else:
+            insn_for_pdf = []
+            insn_for_pdf.append(i.split(':')[1])
+            insns_for_pdf[num_days] = insn_for_pdf
+
     for insn in input:
         if 'insn' in insn and not insn[-1].isalpha():
         
@@ -171,8 +192,6 @@ def generate_pdf():
             else:
                 insn_for_pdf.append(" " + input['insn10'])
             insns_for_pdf[num_days] = insn_for_pdf
-
-
     # sorted_insns_for_pdf = sorted(insns_for_pdf, key=lambda insn_for_pdf: insn_for_pdf["num_days"], reverse=True)
     surg_info = [int(month), int(day), int(year)]
     # pdf =  gen_pdf(surg_info, json.dumps(sorted_insns_for_pdf))
