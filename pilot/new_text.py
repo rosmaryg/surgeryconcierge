@@ -22,7 +22,6 @@ auth_token = "7ebc350c70162239eaf85bd2a4a56b70"
 client = TwilioRestClient(account_sid, auth_token)
 
 def send_reminder(text, number):
-    print "sending message: " + text + " to " + str(number)
     message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
 
 def get_user_input(data):
@@ -81,8 +80,8 @@ def generate_text():
 	date = datetime.datetime(int(year), int(month), int(day), 20) - datetime.timedelta(int(i.split(':')[0]))
         reminder_text = i.split(':')[1]
 	nodes.append({'number':number, 'message':reminder_text,'date':(date.year, date.month, date.day, date.hour)}) 
-#    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
-    print {'messages':nodes}
+    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", "18082379659")
+    print nodes
 
 
 if __name__ == '__main__':

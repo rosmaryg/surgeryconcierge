@@ -44,6 +44,7 @@ def genText():
 	url = "http://node.p9s9sjcatq.us-east-1.elasticbeanstalk.com/schedule_texts" 
   	headers = {'content-type': 'application/json'}
   	r = requests.post(url,data=json.dumps(ret_val),headers=headers)
+	print r.content
 	return "Texts now being sent."
   else:
 	return "Error in sending texts. Double check your entered number."
