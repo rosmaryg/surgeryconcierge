@@ -5,8 +5,6 @@ from twilio.rest import TwilioRestClient
 from datetime import datetime
 from datetime import timedelta
 import json
-import logging
-logging.basicConfig()
 
 application = Flask(__name__)
 scheduler = BackgroundScheduler()
@@ -50,7 +48,7 @@ def schedule_texts():
         date = message["date"]
         date_to_send = datetime(*date)
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
-    return "Scheduled all texts!"
+    return "Scheduled all texts! " + str(datetime.now())
 
 def send_reminder(text, number):
     #print "sending message: " + text + " to " + str(number)
