@@ -5,6 +5,7 @@ from threading import Timer
 from twilio.rest import TwilioRestClient
 from insns import insn_table, default_insns
 import logging
+import json
 logging.basicConfig()
 try:
     import argparse
@@ -41,8 +42,6 @@ def generate_text():
     if not 'phone-number' in input:
 	return 1
     number = input['phone-number']
-    #sched = Scheduler()
-    
     year = input['year']
     month = input['month']
     day = input['day']
@@ -61,7 +60,7 @@ def generate_text():
 	    		cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]]	
 		else:
 	    		cat_insns[base_insn] = current_str + insn_table[input[insn]]
-
+    nodes = []
     for base_insn in cat_insns:
 	if base_insn == 'insn10' and not input['insn10']:
 		continue
@@ -73,17 +72,14 @@ def generate_text():
         	reminder_text = i.split(':')[1]
 	else:
 		reminder_text = input['insn10']
-	#sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
- 
+	nodes.append({'number':number, 'message':reminder_text,'date':date}) 
     for insn in default_insns:
         i = default_insns[insn]
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         reminder_text = i.split(':')[1]
-	#sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
- 
-#    sched.start()
+	nodes.append({'number':number, 'message':reminder_text,'date':date}) 
     send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
-
+    return {'messages':node}
 
 
 if __name__ == '__main__':
