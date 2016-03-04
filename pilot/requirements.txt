@@ -17,6 +17,7 @@ requests==2.9.1
 rsa==3.3
 simplejson==3.8.1
 six==1.10.0
+twilio==5.4.0
 uritemplate==0.6
 urllib3==1.14
 Werkzeug==0.11.4
