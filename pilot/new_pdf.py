@@ -103,28 +103,11 @@ def generate_pdf():
     input = get_user_input(flags.data)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
 
-    year = input['year']
-    '''
-    if input['month'] == "":
-        month = easygui.enterbox(
-            msg="Month of procedure:",
-            title="Surgery Concierge",
-            strip=True,
-            default="MM")
-    else:
-        month = input['month']
-
-    if input['day'] == "":
-        day = easygui.enterbox(
-            msg="Day of procedure",
-            title="Surgery Concierge",
-            strip=True,
-            default="DD")
-    else:
-        day = input['day']
-    '''
-    month = input['month']
-    day = input['day']
+    given_date = input['date']
+    given_date_split = given_date.split("/")
+    year = given_date_split[2]
+    month = given_date_split[0]
+    day = given_date_split[1]
     
     cat_insns = {}
     insns_for_pdf = {}
