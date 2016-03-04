@@ -3,6 +3,7 @@ from flask import request
 from apscheduler.schedulers.background import BackgroundScheduler
 from twilio.rest import TwilioRestClient
 from datetime import datetime
+from datetime import timedelta
 
 
 application = Flask(__name__)
@@ -17,6 +18,14 @@ client = TwilioRestClient(account_sid, auth_token)
 @application.route('/')
 def homepage():
     return "Notifications Node Homepage."
+
+@application.route('/view_jobs', methods=['GET'])
+def view_jobs():
+    jobs = scheduler.get_jobs()
+    st = ''
+    for job in jobs:
+        st = st + ' | ' + job.name + ', ' + str(job.func) + ', ' + str(job.args)
+    return st
 
 @application.route('/schedule_text', methods=['POST', 'GET'])
 def schedule_text():
@@ -45,7 +54,7 @@ if __name__ == "__main__":
     # removed before deploying a production app.
     application.debug = True
     scheduler.add_job(send_reminder, 'date', run_date=datetime.now(), args=['TEST MSG2', '14842229088'])
+    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(seconds=5), args=['TEST MSG3', '14842229088'])
     scheduler.start()
-    print 'about to run app'
     application.run()
    
