@@ -7,7 +7,7 @@ from datetime import timedelta
 import json
 
 application = Flask(__name__)
-scheduler = BackgroundScheduler()
+scheduler = BackgroundScheduler(timezone='EST')
 templist = []
 
 #account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
