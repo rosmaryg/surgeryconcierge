@@ -22,6 +22,7 @@ def homepage():
 
 @application.route('/view_jobs', methods=['GET'])
 def view_jobs():
+    
     jobs = scheduler.get_jobs()
     st = ''
     for job in jobs:
@@ -49,14 +50,18 @@ def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
     #message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
 
+
+@application.before_first_request
+def setup_code():
+    scheduler.add_job(send_reminder, 'date', run_date=datetime.now(), args=['TEST MSG4', '14842229088'])
+    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG5', '14842229088'])
+    scheduler.start()
+    templist.append("job?")
+
 # run the app.
 if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now(), args=['TEST MSG2', '14842229088'])
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG3', '14842229088'])
-    scheduler.start()
-    templist.append("job?")
     application.run()
    
