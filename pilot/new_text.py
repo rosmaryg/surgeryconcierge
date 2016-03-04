@@ -42,9 +42,12 @@ def generate_text():
     if not 'phone-number' in input:
 	return 1
     number = input['phone-number']
-    year = input['year']
-    month = input['month']
-    day = input['day']
+    given_date = input['date']
+    given_date_split = given_date.split("/")
+    year = given_date_split[2]
+    month = given_date_split[0]
+    day = given_date_split[1]
+    
 
     cat_insns = {}
     for insn in input:

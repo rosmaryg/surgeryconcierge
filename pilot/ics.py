@@ -35,10 +35,12 @@ def generate_ics():
     now = datetime.datetime.utcnow()
 
     cal = icalendar.Calendar()
-    year = input['year']
-    month = input['month']
-    day = input['day']
-    
+    given_date = input['date']
+    given_date_split = given_date.split("/")
+    year = given_date_split[2]
+    month = given_date_split[0]
+    day = given_date_split[1]
+        
     cal['dtstart'] = now.strftime("%Y%m%dT000000")
     cal['summary'] = 'Surgery Concierge'
 
