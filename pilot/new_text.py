@@ -1,6 +1,6 @@
 from collections import defaultdict
 import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler as Scheduler
+#from apscheduler.schedulers.blocking import BlockingScheduler as Scheduler
 from threading import Timer
 from twilio.rest import TwilioRestClient
 from insns import insn_table, default_insns
@@ -14,13 +14,15 @@ try:
 except ImportError:
     flags = None
 
-account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
-auth_token = "kRdEtj8xQg1wA4JOc80ZPPN0ddetB743"
+#account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
+#auth_token = "kRdEtj8xQg1wA4JOc80ZPPN0ddetB743"
+account_sid = "AC993d85892ae868d46074d1629efa2dc2"
+auth_token = "7ebc350c70162239eaf85bd2a4a56b70"
 client = TwilioRestClient(account_sid, auth_token)
 
 def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
-    message = client.messages.create(body=text, to="+" + number, from_="+12155157414")
+    message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
 
 def get_user_input(data):
     d = defaultdict(str)
@@ -39,7 +41,7 @@ def generate_text():
     if not 'phone-number' in input:
 	return 1
     number = input['phone-number']
-    sched = Scheduler()
+    #sched = Scheduler()
     
     year = input['year']
     month = input['month']
@@ -71,16 +73,16 @@ def generate_text():
         	reminder_text = i.split(':')[1]
 	else:
 		reminder_text = input['insn10']
-	sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
+	#sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
  
     for insn in default_insns:
         i = default_insns[insn]
         date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
         reminder_text = i.split(':')[1]
-	sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
+	#sched.add_job(send_reminder, next_run_time = date, args = [reminder_text, number])
  
-    sched.start()
-
+#    sched.start()
+    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
 
 
 
