@@ -29,23 +29,26 @@ def view_jobs():
         st = st + ' | ' + job.name + ', ' + str(job.func) + ', ' + str(job.args)
     return st + "<br><br>" + str(templist)
 
-@application.route('/schedule_text', methods=['POST', 'GET'])
+@application.route('/schedule_text', methods=['POST'])
 def schedule_text():
-    if request.method == 'GET':
-        phone_number = request.args.get("number")
-        msg = request.args.get("message")
-        time = request.args.get("time")
-    elif request.method == 'POST':
-        phone_number = request.form["number"]
-        msg = request.form["message"]
-        time = request.form["time"]
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG7', '14842229088'])
+    params = json.loads(request.data)
+    phone_number = params["number"]
+    msg = params["message"]
+    date = params["date"]
+    date_to_send = datetime(*date)
+    scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
     return "Scheduled Text!"
 
-@application.route('/schedule_texts', methods=['POST', 'GET'])
+@application.route('/schedule_texts', methods=['POST'])
 def schedule_texts():
-    params = json.loads(request.data)
-    return "PARAMS (JSON) RECEIVED: " + str(params)
+    messages = json.loads(request.data)
+    for message in messages:
+        phone_number = params["number"]
+        msg = params["message"]
+        date = params["date"]
+        date_to_send = datetime(*date)
+        scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
+    return "Scheduled all texts!"
 
 def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
