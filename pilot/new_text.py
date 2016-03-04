@@ -80,7 +80,7 @@ def generate_text():
 	date = datetime.datetime(int(year), int(month), int(day), 20) - datetime.timedelta(int(i.split(':')[0]))
         reminder_text = i.split(':')[1]
 	nodes.append({'number':number, 'message':reminder_text,'date':(date.year, date.month, date.day, date.hour)}) 
-    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", "18082379659")
+    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
     print nodes
 
 
