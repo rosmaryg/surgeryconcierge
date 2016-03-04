@@ -22,7 +22,6 @@ def homepage():
 
 @application.route('/view_jobs', methods=['GET'])
 def view_jobs():
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG7', '14842229088'])
     jobs = scheduler.get_jobs()
     st = ''
     for job in jobs:
@@ -44,7 +43,7 @@ def schedule_text():
 @application.route('/schedule_texts', methods=['POST', 'GET'])
 def schedule_texts():
     params = request.form
-    return "PARAMS (JSON) RECEIVED: " + params
+    return "PARAMS (JSON) RECEIVED: " + str(params)
 
 def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
@@ -53,7 +52,6 @@ def send_reminder(text, number):
 
 @application.before_first_request
 def setup_code():
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now(), args=['TEST MSG4', '14842229088'])
     scheduler.start()
 
 # run the app.
