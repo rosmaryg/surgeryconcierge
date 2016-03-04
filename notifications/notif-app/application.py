@@ -43,9 +43,9 @@ def schedule_text():
 def schedule_texts():
     messages = json.loads(request.data)
     for message in messages:
-        phone_number = params["number"]
-        msg = params["message"]
-        date = params["date"]
+        phone_number = message["number"]
+        msg = message["message"]
+        date = message["date"]
         date_to_send = datetime(*date)
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
     return "Scheduled all texts!"
