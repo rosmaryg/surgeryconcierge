@@ -4,6 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from twilio.rest import TwilioRestClient
 from datetime import datetime
 from datetime import timedelta
+import json
 
 
 application = Flask(__name__)
@@ -38,11 +39,12 @@ def schedule_text():
         phone_number = request.form["number"]
         msg = request.form["message"]
         time = request.form["time"]
+    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG7', '14842229088'])
     return "Scheduled Text!"
 
 @application.route('/schedule_texts', methods=['POST', 'GET'])
 def schedule_texts():
-    params = request.form
+    params = json.loads(request.data)
     return "PARAMS (JSON) RECEIVED: " + str(params)
 
 def send_reminder(text, number):
