@@ -5,6 +5,8 @@ from twilio.rest import TwilioRestClient
 from datetime import datetime
 from datetime import timedelta
 import json
+import logging
+logging.basicConfig()
 
 application = Flask(__name__)
 scheduler = BackgroundScheduler(timezone='EST')
@@ -23,10 +25,11 @@ def homepage():
 @application.route('/view_jobs', methods=['GET'])
 def view_jobs():
     jobs = scheduler.get_jobs()
-    st = ''
+    st = 'TEXTS SCHEDULED...<br><br><br>'
     for job in jobs:
-        st = st + ' | ' + job.name + ', ' + str(job.func) + ', ' + str(job.args)
-    return st + "<br><br>" + str(templist)
+        job_s = 'Text: ' + job.args[0] + '<br>Number: ' + job.args[1] + '<br>Datetime: ' + str(job.next_run_time) + '<br>'
+        st = st + job_s + "<br><br>"
+    return st
 
 @application.route('/schedule_text', methods=['POST'])
 def schedule_text():
