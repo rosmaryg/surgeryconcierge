@@ -8,6 +8,7 @@ from datetime import timedelta
 
 application = Flask(__name__)
 scheduler = BackgroundScheduler()
+templist = []
 
 #account_sid = "SK2a72b2e69a384838e82640aa07c2fa3a"
 #auth_token = "kRdEtj8xQg1wA4JOc80ZPPN0ddetB743"
@@ -25,7 +26,7 @@ def view_jobs():
     st = ''
     for job in jobs:
         st = st + ' | ' + job.name + ', ' + str(job.func) + ', ' + str(job.args)
-    return st
+    return st + "<br><br>" + str(templist)
 
 @application.route('/schedule_text', methods=['POST', 'GET'])
 def schedule_text():
@@ -46,7 +47,7 @@ def schedule_texts():
 
 def send_reminder(text, number):
     print "sending message: " + text + " to " + str(number)
-    message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
+    #message = client.messages.create(body=text, to="+" + number, from_="+12245889141")
 
 # run the app.
 if __name__ == "__main__":
@@ -54,7 +55,8 @@ if __name__ == "__main__":
     # removed before deploying a production app.
     application.debug = True
     scheduler.add_job(send_reminder, 'date', run_date=datetime.now(), args=['TEST MSG2', '14842229088'])
-    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(seconds=5), args=['TEST MSG3', '14842229088'])
+    scheduler.add_job(send_reminder, 'date', run_date=datetime.now() + timedelta(minutes=1), args=['TEST MSG3', '14842229088'])
     scheduler.start()
+    templist.append("job?")
     application.run()
    
