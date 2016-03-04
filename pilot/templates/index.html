@@ -1,26 +1,57 @@
 <html>
   <head>
     <style>
-h2 {
+#header-text {
     font-family: Verdana, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
     text-align: center;
     color: #FFFFFF;
 }
 
+#get {
+	float: center;
+}
+
 #header {
 	width: 100%;
-	height: 70px;
+	height: 80px;
+	margin: auto;
 	position: relative;
 	background-color: #7FC7AF;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
-p {
+section {
+    margin-top: 10px;
+    margin-left:10px;
+    margin-right:10px;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.rand_text {
+    margin-left:10px;
+    margin-right:10px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.rand_text_small {
+    margin-left:10px;
+    margin-right:10px;
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
     position: relative;
-    left: 10px;
+}
+
+.radio_button_set {
+    margin-left:20px;
+    margin-right:20px;	
 }
 
 form {
@@ -29,6 +60,26 @@ form {
       font-size: 0.8em;
       position: absolute;
       left:25%;
+}
+
+.bfh-phone {
+	margin-left:20px;
+    margin-right:10px
+}
+
+.diab_text {
+	margin-left:20px;
+    margin-right:10px
+}
+
+.bfh-datepicker{
+    margin-top: 10px;
+    margin-left:20px;
+    margin-right:10px;
+}
+
+.buttons {
+	text-align:center;
 }
 
 input {
@@ -63,27 +114,23 @@ diuretic {
 }
     </style>
     <title>Surgery Concierge</title>
+	<!-- JS and CSS -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
-
-	    <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
     <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
   </head>
+
   <body>
     <div id="header">
-      <h2><br/>Patient Home</h2>
+      <div id="header-text"><br/>Surgery Concierge</div>
     </div>
+
     <div id="instruction-form" style="display: inline">
     	<script type="text/javascript">
 			function OnSubmitForm()
@@ -110,41 +157,32 @@ diuretic {
 			  return true;
 			}
 		</script>
-      <form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
-	<p><b>Surgery Date:</b>
+    <form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
+    <br>
 
-	<script type="text/javascript">
-		// function updateDate(changed) {
-		// 	console.log("here");
-		// 	console.log(changed.value);
-		// 	date_vals = changed.value.split("/");
-		//     document.getElementById("month").value = date_vals[0];
-		//     document.getElementById("day").value = date_vals[1];
-		//     document.getElementById("year").value = date_vals[2];
-		// }
-	</script>
-
-	<div class="bfh-datepicker" data-min="today" data-align="right" data-name="date">
-		<!-- <input id="datepickers" type="text" class="datepicker" onChange="updateDate(this)"> -->
-	</div>
-
-	<input type="hidden" name="month" id="month" value="01"   required="true">
-	<input type="hidden" name="day"   id="day"   value="01"   required="true">
-	<input type="hidden" name="year"  id="year"  value="2016" required="true">
-
+	<p>
+		<section>Surgery Date:</section>
+		<div class="bfh-datepicker" data-min="today" data-align="right" data-name="date"></div>
 	</p>
-	<p>If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?<br>
-	  <input type="radio" name="pickup" value="yes" checked> Yes<br>
-	  <input type="radio" name="pickup" value="no"> No<br>
-	</p>
-	<p> Phone number for text reminders (optional):<br>
-	  <i>Please note that by providing a number and clicking 'Get Texts' below, you are opting into the text system.</i><br>
-	  <input type="text" name="phone-number" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd">
+	<br>
 
+	<section>Text Reminders:</section>	
+	<div class="rand_text"><p>If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?</div><br>
+	<div class="radio_button_set">
+ 		<input type="radio" name="pickup" value="yes" checked> Yes<br>
+ 		<input type="radio" name="pickup" value="no"> No<br>
+ 	</div>
+
+ 	<br>
+	<div class="rand_text">Phone number for text reminders (optional):<br></div>
+	<div class="rand_text_small"><i>Please note that by providing a number and clicking 'Get Texts' below, you are opting into the text system.</i></div>
+	<br>
+	<input type="text" name="phone-number" class="bfh-phone" data-format="+1 (ddd) ddd-dddd">
 	</p>
-	<!-- value= <days before>: <instruction> -->
-	<p><b>Pre-Surgery Questionnaire:</b><br>
-	  <i>Check the following items if they apply to you:</i><br><br>
+	<br>
+
+	<p><section>Pre-Surgery Questionnaire:</section>
+	  <div class="rand_text"><i>Check the following items if they apply to you:</i><br><br>
 	  <input type="checkbox"
 		 name="insn0"
 		 value="0">
@@ -339,7 +377,7 @@ diuretic {
 		Warfarin (Coumadin)
 	  </thinner>
 	  <p>Do you take medications for diabetes, including insulin? Please insert your doctor's instructions in the text field below.</p>
-	  <input type="text"
+	  <input class="diab_text" type="text"
 		 name="insn10">
 	  <p>Do you take water pills (diuretics)?</p>
 	  <diuretic> 
@@ -357,10 +395,13 @@ diuretic {
 			value="11c"> 
  		Medications containing hydrochlorothiazide (HCTZ)<br><br>
 	  </diuretic>
+	  </div>
 	<!--  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar"> -->
+	<div class="buttons">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
 	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Texts">
+	</div>
       </form>
     </div>
   </body>
