@@ -66,19 +66,19 @@ def generate_text():
 		continue
 	insn = base_insn[4:]	
         i = insn_table[insn]
-        date = (int(year), int(month), int(day), int(i.split(':')[0]))
+	date = datetime.datetime(int(year), int(month), int(day), 20) - datetime.timedelta(int(i.split(':')[0]))
 	reminder_text = ""
 	if base_insn != 'insn10':
         	reminder_text = i.split(':')[1]
 	else:
 		reminder_text = input['insn10']
-	nodes.append({'number':number, 'message':reminder_text,'date':date}) 
+	nodes.append({'number':number, 'message':reminder_text,'date':(date.year, date.month, date.day, date.hour)}) 
     for insn in default_insns:
         i = default_insns[insn]
-        date = (int(year), int(month), int(day), int(i.split(':')[0]))
+	date = datetime.datetime(int(year), int(month), int(day), 20) - datetime.timedelta(int(i.split(':')[0]))
         reminder_text = i.split(':')[1]
-	nodes.append({'number':number, 'message':reminder_text,'date':date}) 
-    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
+	nodes.append({'number':number, 'message':reminder_text,'date':(date.year, date.month, date.day, date.hour)}) 
+#    send_reminder("You are now signed up to receive surgery reminders! Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", number)
     print {'messages':nodes}
 
 
