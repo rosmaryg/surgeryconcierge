@@ -1,408 +1,120 @@
 <html>
-  <head>
-    <style>
-#header-text {
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-    display: block;
-    text-align: center;
-    color: #FFFFFF;
-}
+	<head>
+		<title>Surgery Concierge</title>
+		<!-- JS and CSS -->
+	    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
+	    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
 
-#get {
-	float: center;
-}
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	
+	<body>
+		<div id="header">
+			<br><div id="header-text">Surgery Concierge</div>
+    	</div>
 
-#header {
-	width: 100%;
-	height: 80px;
-	margin: auto;
-	position: relative;
-	background-color: #7FC7AF;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
+    	<div id="instruction-form" style="display: inline">
+	   		<form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
+	   			<div class=".col-xs-6 .col-md-4">
+	    			<section>Surgery Date:</section>
+	    			<div class="bfh-datepicker" data-min="today" data-align="left" data-name="date"></div><br><br>
 
-section {
-    margin-top: 10px;
-    margin-left:10px;
-    margin-right:10px;
-    font-weight: bold;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 1.5em;
-}
+	    			<section>Pre-Surgery Questionnaire:</section>
+	    			<div class="rand_text"><i>Check the following items if they apply to you:</i><br><br>
+	    				<input type="checkbox" name="insn0" value="0"> Do you wear contact lenses?<br><br>
+	    				<input type="checkbox" name="insn1" value="1"> Do you take medications in the morning?<br><br>
+	    				<input type="checkbox" name="insn2" value="2"> Do you use an inhaler, CPAP mask, eye drops, or dentures?<br><br>
+	    				<input type="checkbox" name="insn13" value="13"> Do you smoke?<br><br>
+	    				<input type="checkbox" name="insn7" value="7"> Do you take Suboxone?<br><br>
+	    				<input type="checkbox" name="insn8" value="8"> Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?<br><br>
+	    				Do you take any medications that contain aspirin? 
+	    				<druglist>
+	    					<input type="checkbox" name="insn4" value="4"> Aspirin (325 mg)<br>
+	    					<input type="checkbox" name="insn14" value="14"> Baby Aspirin (81 mg)<br>
+	    					<!-- Anacin<br>
+	    					<input type="checkbox" name="insn4c" value="4c"> Ascriptin<br>
+	    					<input type="checkbox" name="insn4d" value="4d"> Pepto-Bismol<br>
+	    					<input type="checkbox" name="insn4e" value="4e"> Bufferin<br>
+	    					<input type="checkbox" name="insn4f" value="4f"> Alka-Seltzer<br>
+	    					<input type="checkbox" name="insn4g" value="4g"> Excedrin<br>
+	    					<input type="checkbox" name="insn4h" value="4h"> Florinal<br>
+	    					<input type="checkbox" name="insn4i" value="4i"> Lortab ASA -->
+	    				</druglist><br>
+	    				Do you take water pills (diuretics)?
+	    				<druglist>
+	    					<input type="checkbox" name="insn11a" value="11a"> Furosemide (Lasix)<br>
+	    					<input type="checkbox" name="insn11b" value="11b"> Hydrochlorothiazide (HCTZ)<br>
+	    					<input type="checkbox" name="insn11c" value="11c"> Medications containing hydrochlorothiazide (HCTZ)<br>
+	    				</druglist><br>
+	    				Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)?
+	    				<druglist> 
+	    					<input type="checkbox" name="insn5a" value="5a"> Ibuprofen (Advil, Motrin, Nuprin, Medipren)<br>
+	    					<input type="checkbox" name="insn5b" value="5b"> Naproxen (Aleve, Anaprox, Naprosyn)<br>
+	    					<input type="checkbox" name="insn5c" value="5c"> Diclofenac (Cataflam, Voltaren, Arthrotec)<br>
+	    					<input type="checkbox" name="insn5d" value="5d"> Celebrex<br> 
+	    					<input type="checkbox" name="insn5e" value="5e"> Toradol (ketorolac)<br> 
+	    					<input type="checkbox" name="insn5f" value="5f"> Lodine (etodolac)<br>
+	    					<input type="checkbox" name="insn5g" value="5g"> Feldene (piroxicam)<br> 
+	    					<input type="checkbox" name="insn5h" value="5h"> Relefeo (nuburnetce)<br>
+	    				</druglist><br>
+	    				<!--<input type="checkbox" name="insn6" value="6"> Do you take Accutane (isotretinoin)?<br>  -->
+	    				Do you take the any blood thinning medications?
+	    				<druglist> 
+	    					<input type="checkbox" name="insn9a" value="9a"> Plavix (Clopidogrel)<br>
+	    					<input type="checkbox" name="insn9b" value="9b"> Xarelto (Rivaroxaban)<br>
+	    					<input type="checkbox" name="insn9c" value="9c"> Ticlid (Ticlopidine)<br>
+	    					<input type="checkbox" name="insn9d" value="9d"> Pletal (Cilostazol)<br>
+	    					<input type="checkbox" name="insn9e" value="9e"> Brilinta (Ticagrelor)<br>
+	    					<input type="checkbox" name="insn9f" value="9f"> Effient (prasugrel)<br> 
+	    					<input type="checkbox" name="insn9g" value="9g"> Aggrenox (Aspirin-Dipridarrola)<br>
+	    					<input type="checkbox" name="insn9h" value="9h"> Lovenox (Enoxaparin)<br>
+	    					<input type="checkbox" name"insn12" value="12"> Warfarin (Coumadin)
+	    				</druglist><br>
+	    				Do you take herbal products or nutritional supplements?
+	    				<druglist>
+	    					<input type="checkbox" name="insn3a" value="3a"> Echinacea<br>
+	    					<input type="checkbox" name="insn3b" value="3b"> Ephedra<br>
+	    					<input type="checkbox" name="insn3c" value="3c"> Feverfew<br>
+	    					<input type="checkbox" name="insn3d" value="3d"> Garlic<br>
+	    					<input type="checkbox" name="insn3e" value="3e"> Ginger<br>
+	    					<input type="checkbox" name="insn3f" value="3f"> Ginkgo biloba<br>
+	    					<input type="checkbox" name="insn3g" value="3g"> Ginseng<br>
+	    					<input type="checkbox" name="insn3h" value="3h"> Kava Kava<br>
+	    					<input type="checkbox" name="insn3i" value="3i"> Saw palmetto<br>
+	    					<input type="checkbox" name="insn3j" value="3j"> St. John's Wart<br>
+	    					<input type="checkbox" name="insn3k" value="3k"> Fish oil<br>
+	    					<input type="checkbox" name="insn3l" value="3l"> Vitamin B
+	    				</druglist><br>
+	    				Do you take medications for diabetes, including insulin? Please insert your doctor's instructions in the text field below.<br>
+	    				<input class="diab_text" type="text" name="insn10"><br>
+	    			</div><br><br>
 
-.rand_text {
-    margin-left:10px;
-    margin-right:10px;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 1.2em;
-    position: relative;
-}
+					<section>Text Reminders:</section>
+	    			<div class="rand_text">If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?</div>
+	    			<div class="radio_button_set">
+	    				<input type="radio" name="pickup" value="yes" checked> Yes<br>
+	    				<input type="radio" name="pickup" value="no"> No<br>
+	    			</div><br>
+	    			<div class="rand_text">Phone number (required if you want text reminders):<br></div>
+	    			<div class="rand_text_small"><i>By providing a number and clicking 'Get Texts' below, you are opting into the text system.</i></div>
+	    			<input type="text" name="phone-number" class="bfh-phone" data-format="+1 (ddd) ddd-dddd"><br><br>
 
-.rand_text_small {
-    margin-left:10px;
-    margin-right:10px;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 1em;
-    position: relative;
-}
-
-.radio_button_set {
-    margin-left:20px;
-    margin-right:20px;	
-}
-
-form {
-      width: 50%;
-      background-color: #F0F0FF;
-      font-size: 0.8em;
-      position: absolute;
-      left:25%;
-}
-
-.bfh-phone {
-	margin-left:20px;
-    margin-right:10px
-}
-
-.diab_text {
-	margin-left:20px;
-    margin-right:10px
-}
-
-.bfh-datepicker{
-    margin-top: 10px;
-    margin-left:20px;
-    margin-right:10px;
-}
-
-.buttons {
-	text-align:center;
-}
-
-input {
-      margin-top: 10px;
-      margin-left:10px;
-      margin-right:10px;
-}
-supplements {
-      font-family: Verdana, Arial, sans-serif;
-      display: block;
-      padding-left: 40px;
-}
-aspirin {
-      font-family: Verdana, Arial, sans-serif;
-      display: block;
-      padding-left: 40px;
-}
-nsaid {
-      font-family: Verdana, Arial, sans-serif;
-      display: block;
-      padding-left: 40px;
-}
-thinner {
-      font-family: Verdana, Arial, sans-serif;
-      display: block;
-      padding-left: 40px;
-}
-diuretic {
-      font-family: Verdana, Arial, sans-serif;
-      display: block;
-      padding-left: 40px;
-}
-    </style>
-    <title>Surgery Concierge</title>
-	<!-- JS and CSS -->
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
-    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-  </head>
-
-  <body>
-    <div id="header">
-      <div id="header-text"><br/>Surgery Concierge</div>
-    </div>
-
-    <div id="instruction-form" style="display: inline">
-    	<script type="text/javascript">
-			function OnSubmitForm()
-			{
-			  if(document.pressed == 'Get PDF')
-			  {
-			   document.myform.action ="generate-pdf";
-			  }
-			  else
-			  if(document.pressed == 'Get ICS')
-			  {
-			   document.myform.action ="generate-ics";
-			  }
-			  else
-			  if(document.pressed == 'Get Calendar')
-			  {
-			    document.myform.action ="generate-calendar";
-			  }
-			  else
-			  if(document.pressed == 'Get Texts')
-			  {
-			    document.myform.action ="generate-text";
-			  }
-			  return true;
-			}
-		</script>
-    <form id="the-form" name="myform" onsubmit="return OnSubmitForm();" target="_blank">
-    <br>
-
-	<p>
-		<section>Surgery Date:</section>
-		<div class="bfh-datepicker" data-min="today" data-align="right" data-name="date"></div>
-	</p>
-	<br>
-
-	<section>Text Reminders:</section>	
-	<div class="rand_text"><p>If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?</div><br>
-	<div class="radio_button_set">
- 		<input type="radio" name="pickup" value="yes" checked> Yes<br>
- 		<input type="radio" name="pickup" value="no"> No<br>
- 	</div>
-
- 	<br>
-	<div class="rand_text">Phone number for text reminders (optional):<br></div>
-	<div class="rand_text_small"><i>Please note that by providing a number and clicking 'Get Texts' below, you are opting into the text system.</i></div>
-	<br>
-	<input type="text" name="phone-number" class="bfh-phone" data-format="+1 (ddd) ddd-dddd">
-	</p>
-	<br>
-
-	<p><section>Pre-Surgery Questionnaire:</section>
-	  <div class="rand_text"><i>Check the following items if they apply to you:</i><br><br>
-	  <input type="checkbox"
-		 name="insn0"
-		 value="0">
-	  Do you wear contact lenses?<br>
-	  <input type="checkbox"
-		 name="insn1"
-		 value="1">
-	  Do you take medications in the morning?<br>
-	  <input type="checkbox"
-		 name="insn2"
-		 value="2">
-	  Do you use an inhaler, CPAP mask, eye drops, or dentures?<br>
-	  <input type="checkbox"
-		 name="insn13"
-		 value="13">
-	  Do you smoke?</p>
-	  <p> Do you take herbal products or nutritional supplements?</p> 
-	  <supplements> 
-	  	<input type="checkbox"
-			name="insn3a"
-			value="3a">
-	  	Echinacea<br>
-	  	<input type="checkbox"
-			name="insn3b"
-			value="3b">
-		Ephedra<br>
-		<input type="checkbox"
-			name="insn3c"
-			value="3c"> 
-	       	Feverfew<br>
-		<input type="checkbox"
-		 	name="insn3d"
-			value="3d"> 
-	     	Garlic<br>
-	  	<input type="checkbox"
-		 	name="insn3e"
-		 	value="3e"> 
-		Ginger<br>
-	  	<input type="checkbox"
-			name="insn3f"
-			value="3f"> 
-          	Ginkgo biloba<br>
-	  	<input type="checkbox"
-			name="insn3g"
-			value="3g"> 
-	  	Ginseng<br>
-	  	<input type="checkbox"
-			name="insn3h"
-		 	value="3h"> 
-	 	Kava Kava<br>
-	  	<input type="checkbox"
-			name="insn3i"
-		 	value="3i"> 
-	  	Saw palmetto<br>
-	  	<input type="checkbox"
-			name="insn3j"
-			value="3j"> 
-	 	St. John's Wart<br>
-	  	<input type="checkbox"
-			name="insn3k"
-			value="3k"> 
-	  	Fish oil<br>
-	  	<input type="checkbox"
-			name="insn3l"
-			value="3l"> 
-	  	Vitamin B
-	  </supplements>
-	  <p>Do you take any medications that contain aspirin?</p> 
-	  <aspirin>
-	  	<input type="checkbox"
-			name="insn4"
-			value="4"> 
-	  	Aspirin (325 mg)<br>
-	  	<input type="checkbox"
-			name="insn14"
-			value="14">
-		Baby Aspirin (81 mg)<br> <!-- TODO: fix where this plugs into -->
-	  	<!-- Anacin<br>
-	  	<input type="checkbox"
-			name="insn4c"
-			value="4c"> 
-	  	Ascriptin<br>
-	  	<input type="checkbox"
-			name="insn4d"
-			value="4d"> 
-	  	Pepto-Bismol<br>
-	  	<input type="checkbox"
-			name="insn4e"
-			value="4e"> 
-		Bufferin<br>
-	  	<input type="checkbox"
-			name="insn4f"
-			value="4f"> 
-		Alka-Seltzer<br>
-	  	<input type="checkbox"
-			name="insn4g"
-			value="4g"> 
-		Excedrin<br>
-	  	<input type="checkbox"
-			name="insn4h"
-			value="4h"> 
-		Florinal<br>
-	  	<input type="checkbox"
-			name="insn4i"
-			value="4i"> 
-		Lortab ASA -->
-	  </aspirin>
-  	  <p>Do you take any Non-Steroidal Anti-inflammatory Drugs (NSAIDs)?</p>
-	  <nsaid> 
-	  	<input type="checkbox"
-			name="insn5a"
-			value="5a"> 
-		 Ibuprofen (Advil, Motrin, Nuprin, Medipren)<br>
-	  	<input type="checkbox"
-			name="insn5b"
-			value="5b"> 
-		 Naproxen (Aleve, Anaprox, Naprosyn)<br> 
-	  	<input type="checkbox"
-			name="insn5c"
-			value="5c"> 
-		 Diclofenac (Cataflam, Voltaren, Arthrotec)<br> 
-	  	<input type="checkbox"
-			name="insn5d"
-			value="5d"> 
-		 Celebrex<br> 
-	  	<input type="checkbox"
-			name="insn5e"
-			value="5e"> 
-		 Toradol (ketorolac)<br> 
-	  	<input type="checkbox"
-			name="insn5f"
-			value="5f"> 
-		 Lodine (etodolac)<br> 
-	  	<input type="checkbox"
-			name="insn5g"
-			value="5g"> 
-		 Feldene (piroxicam)<br> 
-	  	<input type="checkbox"
-			name="insn5h"
-			value="5h"> 
-		 Relefeo (nuburnetce)<br>
-	  </nsaid>
-	  <p><!-- <input type="checkbox"
-		 name="insn6"
-		 value="6">
-	  Do you take Accutane (isotretinoin)?<br> -->
-	  <input type="checkbox"
-		 name="insn7"
-		 value="7">
-	  Do you take Suboxone?<br>
-	  <input type="checkbox"
-		 name="insn8"
-		 value="8">
-	  Do you take Cialis (tadalafil), Viagra (sildenafil) or Levitra (Vardenafil)?</p>
-	  <p>Do you take the any blood thinning medications?</p> 
-	  <thinner> 
-	  	<input type="checkbox"
-			name="insn9a"
-			value="9a"> 
-	  	Plavix (Clopidogrel)<br>
-	  	<input type="checkbox"
-			name="insn9b"
-			value="9b"> 
-	  	Xarelto (Rivaroxaban)<br>
-	  	<input type="checkbox"
-			name="insn9c"
-			value="9c"> 
-	  	Ticlid (Ticlopidine)<br>
-	  	<input type="checkbox"
-			name="insn9d"
-			value="9d"> 
-	  	Pletal (Cilostazol)<br>
-	  	<input type="checkbox"
-			name="insn9e"
-			value="9e"> 
-	  	Brilinta (Ticagrelor)<br>
-	  	<input type="checkbox"
-			name="insn9f"
-			value="9f"> 
-	 	Effient (prasugrel)<br> 
-	  	<input type="checkbox"
-			name="insn9g"
-			value="9g">
-	  	Aggrenox (Aspirin-Dipridarrola)<br>
-		<input type="checkbox"
-		       name="insn9h"
-		       value="9h">
-		Lovenox (Enoxaparin)<br>
-		<input type="checkbox"
-			name"insn12"
-			value="12"> <!-- hacky fix to give a specific medication switch if you r taking warfarin -->
-		Warfarin (Coumadin)
-	  </thinner>
-	  <p>Do you take medications for diabetes, including insulin? Please insert your doctor's instructions in the text field below.</p>
-	  <input class="diab_text" type="text"
-		 name="insn10">
-	  <p>Do you take water pills (diuretics)?</p>
-	  <diuretic> 
-
-	  	<input type="checkbox"
-			name="insn11a"
-			value="11a"> 
-	  	Furosemide (Lasix)<br>
-	  	<input type="checkbox"
-			name="insn11b"
-			value="11b"> 
-		Hydrochlorothiazide (HCTZ)<br>
-	  	<input type="checkbox"
-			name="insn11c"
-			value="11c"> 
- 		Medications containing hydrochlorothiazide (HCTZ)<br><br>
-	  </diuretic>
-	  </div>
-	<!--  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Calendar"> -->
-	<div class="buttons">
-	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
-	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
-	  <input type="submit" name="get" onclick="document.pressed=this.value" value="Get Texts">
-	</div>
-      </form>
-    </div>
-  </body>
+	    			<div class="buttons">
+	    				<input type="submit" name="get" onclick="document.pressed=this.value" value="Get ICS">
+	    				<input type="submit" name="get" onclick="document.pressed=this.value" value="Get PDF">
+	    				<input type="submit" name="get" onclick="document.pressed=this.value" value="Get Texts">
+	    			</div>
+	    		</div>
+	    	</form>
+    	</div>
+	</body>
 </html>
