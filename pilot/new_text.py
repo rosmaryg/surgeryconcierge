@@ -22,7 +22,7 @@ auth_token = "a4998472c39156c3b300302bc9e1be38"
 client = TwilioRestClient(account_sid, auth_token)
 
 def send_reminder(text, number):
-    message = client.messages.create(body=text, to="+" + number, from_="+12155157414")
+    message = client.messages.create(body=text, to="" + number, from_="+12155157414")
 
 def get_user_input(data):
     d = defaultdict(str)
@@ -38,8 +38,6 @@ def get_user_input(data):
 
 def generate_text():
     input = get_user_input(flags.data)
-    if not 'phone-number' in input:
-	return 1
     number = input['phone-number']
     given_date = input['date']
     given_date_split = given_date.split("/")
