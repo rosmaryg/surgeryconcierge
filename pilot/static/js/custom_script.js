@@ -1,3 +1,7 @@
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 function OnSubmitForm() {
 	if (document.pressed == 'Get PDF') {
 		document.myform.action ="generate-pdf"; 
