@@ -99,14 +99,14 @@
 	    			</div><br><br>
 
 					<section>Text Reminders:</section>
-	    			<div class="rand_text">If this is an outpatient procedure, would you like reminders to make arrangements for someone to pick you up?</div>
-	    			<div class="radio_button_set">
-	    				<input type="radio" name="pickup" value="yes" checked> Yes<br>
-	    				<input type="radio" name="pickup" value="no"> No<br>
-	    			</div><br>
-	    			<div class="rand_text">Phone number (required if you want text reminders):<br></div>
+	    				    			<div class="rand_text">Your cell phone number (required if you want text reminders):<br></div>
 	    			<div class="rand_text_small"><i>By providing a number and clicking 'Get Texts' below, you are opting into the text system.</i></div>
 	    			<input type="text" name="phone-number" class="bfh-phone" data-format="+1 (ddd) ddd-dddd"><br><br>
+	    				    			<div class="rand_text">Driver cell phone number (optional, will remind your driver to pick you up):<br></div>
+	    			<div class="rand_text_small"><i>By providing a number and clicking 'Get Texts' below, you are opting your driver into the text system.</i></div>
+	    			<input type="text" name="phone-number2" class="bfh-phone" data-format="+1 (ddd) ddd-dddd"><br><br>
+
+
 
 	    			<div class="buttons">
 	                    <button type="submit" class="btn btn-default"name="get" onclick="document.pressed=this.value" value="Get ICS" data-toggle="tooltip" data-placement="top" title="This will generate a file that can be opened by the default calendar app on your computer.">Get ICS</button>
