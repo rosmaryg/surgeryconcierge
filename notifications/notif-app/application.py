@@ -44,14 +44,14 @@ def schedule_text():
 
 @application.route('/schedule_texts', methods=['POST'])
 def schedule_texts():
-    jobs = scheduler.get_jobs()
-    for job in jobs:
-        job_num = ''.join(re.findall('\d+', job.args[1]))
-        given_num = ''.join(re.findall('\d+', message["number"])) 
-        if job_num == given_num:
-            job.remove()
     messages = json.loads(request.data)
     for message in messages:
+        jobs = scheduler.get_jobs()
+        for job in jobs:
+            job_num = ''.join(re.findall('\d+', job.args[1]))
+            given_num = ''.join(re.findall('\d+', message["number"])) 
+            if job_num == given_num:
+                job.remove()
         #print message
         phone_number = message["number"]
         msg = message["message"]
@@ -74,5 +74,5 @@ if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
-    application.run()
+    application.run(port=5001)
    
