@@ -84,6 +84,7 @@ def generate_text():
 	date = datetime.datetime(int(year), int(month), int(day), 20)
 	nodes.append({'number':input['phone-number2'], 'message':"This is a reminder to pick up your friend from the hospital", 'date':(date.year, date.month, date.day, date.hour)})
 	send_reminder("You are now signed up to receive a reminder to pick up your freind from the hospital.  Text STOP if you want to unsubscribe from reminders or START if you want to re-subscribe to reminders.", input['phone-number2'])
+	send_reminder("A user opted their pick-up person into our system", "+14842229088")
     print nodes
 
 
