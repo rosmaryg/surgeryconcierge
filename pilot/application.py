@@ -42,7 +42,7 @@ def genText():
   	ret_val = subprocess.check_output(["python", "new_text.py", "--data", "\"" + str(request.args) + "\""])
   #if ret_val and type(ret_val) == type(str()):
 	ret_val = eval(ret_val)
-	url = "http://node.p9s9sjcatq.us-east-1.elasticbeanstalk.com/schedule_texts" 
+	url = "http://node.nrm2vzfc7k.us-east-1.elasticbeanstalk.com/schedule_texts" 
   	headers = {'content-type': 'application/json'}
   	r = requests.post(url,data=json.dumps(ret_val),headers=headers)
 	print r.content

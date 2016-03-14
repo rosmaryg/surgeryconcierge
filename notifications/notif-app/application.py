@@ -6,6 +6,7 @@ from datetime import datetime
 from datetime import timedelta
 import json
 import logging
+import re
 logging.basicConfig()
 
 application = Flask(__name__)
@@ -43,6 +44,12 @@ def schedule_text():
 
 @application.route('/schedule_texts', methods=['POST'])
 def schedule_texts():
+    jobs = scheduler.get_jobs()
+    for job in jobs:
+        job_num = ''.join(re.findall('\d+', job.args[1]))
+        given_num = ''.join(re.findall('\d+', message["number"])) 
+        if job_num == given_num:
+            job.remove()
     messages = json.loads(request.data)
     for message in messages:
         #print message
