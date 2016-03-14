@@ -52,7 +52,6 @@ def genPdf():
 @application.route('/generate-text')
 def genText():
   try:
-<<<<<<< HEAD
     ret_val = subprocess.check_output(["python", "new_text.py", "--data", "\"" + str(request.args) + "\""])
     #if ret_val and type(ret_val) == type(str()):
     ret_val = eval(ret_val)
@@ -61,23 +60,11 @@ def genText():
     headers = {'content-type': 'application/json'}
     r = requests.post(url,data=json.dumps(ret_val),headers=headers)
     print "content: " + r.content
+    send_data(datetime.datetime.now(), "Texts", "Succeeded")
     return "Texts now being sent."
   except subprocess.CalledProcessError:
+    send_data(datetime.datetime.now(), "Texts", "Failed")
 	  return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person."
-=======
-  	ret_val = subprocess.check_output(["python", "new_text.py", "--data", "\"" + str(request.args) + "\""])
-  #if ret_val and type(ret_val) == type(str()):
-	ret_val = eval(ret_val)
-	url = "http://node.nrm2vzfc7k.us-east-1.elasticbeanstalk.com/schedule_texts" 
-  	headers = {'content-type': 'application/json'}
-  	r = requests.post(url,data=json.dumps(ret_val),headers=headers)
-	print r.content
-    	send_data(datetime.datetime.now(), "Texts", "Succeeded")
-	return "Texts now being sent."
-  except subprocess.CalledProcessError:
-    	send_data(datetime.datetime.now(), "Texts", "Failed")
-	return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person."
->>>>>>> f0369bcd1277ee6bca563b7cec80beef657dd6f6
 
 
 if __name__ == '__main__':
