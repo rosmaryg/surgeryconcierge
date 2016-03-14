@@ -64,7 +64,7 @@ def genText():
     return "Texts now being sent."
   except subprocess.CalledProcessError:
     send_data(datetime.datetime.now(), "Texts", "Failed")
-	  return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person."
+    return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person."
 
 
 if __name__ == '__main__':
