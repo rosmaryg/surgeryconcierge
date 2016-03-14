@@ -44,14 +44,17 @@ def schedule_text():
 
 @application.route('/schedule_texts', methods=['POST'])
 def schedule_texts():
+    checked = False
     messages = json.loads(request.data)
     for message in messages:
-        jobs = scheduler.get_jobs()
-        for job in jobs:
-            job_num = ''.join(re.findall('\d+', job.args[1]))
-            given_num = ''.join(re.findall('\d+', message["number"])) 
-            if job_num == given_num:
-                job.remove()
+        if not checked:
+            jobs = scheduler.get_jobs()
+            for job in jobs:
+                job_num = ''.join(re.findall('\d+', job.args[1]))
+                given_num = ''.join(re.findall('\d+', message["number"])) 
+                if job_num == given_num:
+                    job.remove()
+            checked = True
         #print message
         phone_number = message["number"]
         msg = message["message"]
