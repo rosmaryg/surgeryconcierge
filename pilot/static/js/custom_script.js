@@ -3,6 +3,10 @@ $(function () {
 })
 
 function OnSubmitForm() {
+	if (document.getElementById("phone-number").value === "+1 ") {
+		window.alert("Please enter your phone number!");
+		return false;
+	}
 	if (document.pressed == 'Get PDF') {
 		document.myform.action ="generate-pdf"; 
 	} else if (document.pressed == 'Get ICS') {
