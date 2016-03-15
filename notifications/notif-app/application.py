@@ -19,6 +19,31 @@ account_sid = "AC993d85892ae868d46074d1629efa2dc2"
 auth_token = "7ebc350c70162239eaf85bd2a4a56b70"
 client = TwilioRestClient(account_sid, auth_token)
 
+
+import os, smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+from time import strftime
+my_email = "virtual.surgery.concierge@gmail.com"
+to_email = "tadas412@gmail.com"
+my_pass = "cis401concierge"
+
+def sendEmail(subject, message):
+    msg = MIMEMultipart()
+    msg['From'] = my_email
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    body = message
+    msg.attach(MIMEText(body, 'plain'))
+
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(my_email, my_pass)
+
+    text = msg.as_string()
+    server.sendmail(my_email, to_email, text)
+    server.quit()
+
 @application.route('/')
 def homepage():
     return "Notifications Node Homepage."
@@ -44,14 +69,18 @@ def schedule_text():
 
 @application.route('/schedule_texts', methods=['POST'])
 def schedule_texts():
+    email_body = "Text Notifications Scheduled at " + strftime("%Y-%m-%d %H:%M:%S") + "!\n\n"
     checked = False
     messages = json.loads(request.data)
     for message in messages:
         if not checked:
             jobs = scheduler.get_jobs()
+            email_body = email_body + "Number: " + str(message["number"]) + "\n\n"
             for job in jobs:
                 job_num = ''.join(re.findall('\d+', job.args[1]))
                 given_num = ''.join(re.findall('\d+', message["number"])) 
+                email_body = email_body + "Removed Job...\n"
+                email_body = email_body + "Message: " + job.args[0] + "\n" + "Date: " + str(job.next_run_time) + "\n\n"
                 if job_num == given_num:
                     job.remove()
             checked = True
@@ -60,7 +89,10 @@ def schedule_texts():
         msg = message["message"]
         date = message["date"]
         date_to_send = datetime(*date)
+        email_body = email_body + "Added Job...\n"
+        email_body = email_body + "Message: " + message["message"] + "\n" + "Date: " + message["date"] + "\n\n"
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
+    sendEmail("Surgery Concierge Log: Texts Scheduled")
     return "Scheduled all texts! " + str(datetime.now())
 
 def send_reminder(text, number):
@@ -77,5 +109,5 @@ if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
-    application.run(port=5001)
+    application.run()
    
