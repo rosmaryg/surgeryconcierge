@@ -7,6 +7,15 @@ function OnSubmitForm() {
 		window.alert("Please enter your phone number!");
 		return false;
 	}
+
+	var mystring = document.getElementById("insn10").value;
+	var newchar = '('
+	document.getElementById("insn10").value = mystring.split('[').join(newchar);
+
+	var mystring = document.getElementById("insn10").value;
+	var newchar = ')'
+	document.getElementById("insn10").value = mystring.split(']').join(newchar);
+
 	if (document.pressed == 'Get PDF') {
 		document.myform.action ="generate-pdf"; 
 	} else if (document.pressed == 'Get ICS') {
