@@ -35,11 +35,9 @@ def sendEmail(subject, message):
     msg['Subject'] = subject
     body = message
     msg.attach(MIMEText(body, 'plain'))
-
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(my_email, my_pass)
-
     text = msg.as_string()
     server.sendmail(my_email, to_email, text)
     server.quit()
@@ -92,7 +90,7 @@ def schedule_texts():
         email_body = email_body + "Added Job...\n"
         email_body = email_body + "Message: " + message["message"] + "\n" + "Date: " + message["date"] + "\n\n"
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
-    sendEmail("Surgery Concierge Log: Texts Scheduled")
+    sendEmail("Surgery Concierge Log: Texts Scheduled", email_body)
     return "Scheduled all texts! " + str(datetime.now())
 
 def send_reminder(text, number):
