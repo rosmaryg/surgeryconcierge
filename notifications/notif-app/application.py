@@ -88,7 +88,7 @@ def schedule_texts():
         date = message["date"]
         date_to_send = datetime(*date)
         email_body = email_body + "Added Job...\n"
-        email_body = email_body + "Message: " + str(msg) + "\n" + "Date: " + str(date) + "\n\n"
+        email_body = email_body + "Message: " + str(msg) + "\n" + "Date: " + str(date_to_send) + "\n\n"
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
     sendEmail("Surgery Concierge Log: Texts Scheduled", email_body)
     return "Scheduled all texts! " + str(datetime.now())
