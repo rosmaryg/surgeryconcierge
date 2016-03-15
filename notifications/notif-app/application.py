@@ -88,7 +88,7 @@ def schedule_texts():
         date = message["date"]
         date_to_send = datetime(*date)
         email_body = email_body + "Added Job...\n"
-        email_body = email_body + "Message: " + message["message"] + "\n" + "Date: " + message["date"] + "\n\n"
+        email_body = email_body + "Message: " + str(msg) + "\n" + "Date: " + str(date) + "\n\n"
         scheduler.add_job(send_reminder, 'date', run_date=date_to_send, args=[msg, phone_number])
     sendEmail("Surgery Concierge Log: Texts Scheduled", email_body)
     return "Scheduled all texts! " + str(datetime.now())
@@ -107,5 +107,6 @@ if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
     application.debug = True
+    #application.run(port=5001)
     application.run()
    
