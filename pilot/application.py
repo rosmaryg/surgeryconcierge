@@ -13,8 +13,8 @@ client = TwilioRestClient(account_sid, auth_token)
 
 counter = 0
 
-def send_data(timestamp, medium, success):
-  message = client.messages.create(body="ID: " + str(counter) + "\nRegistered at: " + str(timestamp) + "\nMedium: " + medium + "\nStatus: " + success, to="+14842229088", from_="+12155157414")
+def send_data(timestamp, medium, success, phone):
+  message = client.messages.create(body="ID: " + str(counter) + "\n + Phone #: " + phone + "\n + Registered at: " + str(timestamp) + "\nMedium: " + medium + "\nStatus: " + success, to="+14842229088", from_="+12155157414")
 
 @application.route('/')
 def index():
@@ -32,7 +32,7 @@ def genCalendar():
 
 @application.route('/generate-ics')
 def genICS():
-  send_data(datetime.datetime.now(), "ICS", "Succeeded")
+  send_data(datetime.datetime.now(), "ICS", "Succeeded", request.args.get("phone-number"))
   print str(request.args)
   ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
   response = make_response(ics)
@@ -42,7 +42,7 @@ def genICS():
 
 @application.route('/generate-pdf')
 def genPdf():
-  send_data(datetime.datetime.now(), "PDF", "Succeeded")
+  send_data(datetime.datetime.now(), "PDF", "Succeeded", request.args.get("phone-number"))
   pdf = subprocess.check_output(["python", "new_pdf.py", "--data", "\"" + str(request.args) + "\""])
   response = make_response(pdf)
   response.headers['Content-Disposition'] = "inline; filename=Instructions.pdf"
@@ -60,7 +60,7 @@ def genText():
     headers = {'content-type': 'application/json'}
     r = requests.post(url,data=json.dumps(ret_val),headers=headers)
     print "content: " + r.content
-    send_data(datetime.datetime.now(), "Texts", "Succeeded")
+    send_data(datetime.datetime.now(), "Texts", "Succeeded", request.args.get("phone-number"))
     return "Texts now being sent."
   except subprocess.CalledProcessError:
     send_data(datetime.datetime.now(), "Texts", "Failed")
