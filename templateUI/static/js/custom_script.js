@@ -5,15 +5,15 @@ var dynamoDB = new AWS.DynamoDB({endpoint: "https://dynamodb.us-east-1.amazonaws
 
 
 dynamoDB.listTables({}, function(err, data) {
-	if (err) console.log(err, err.stack); // an error occurred                                                                                                                                                                               
-	else     console.log(data);           // successful response                                                                                                                                                                             
+	if (err) console.log(err, err.stack);
+	else     console.log(data);
     });
 
 
 dynamoDB.scan({ TableName: 'surgery-concierge-templates' }, function(err, data) {
-	if (err) console.log(err, err.stack); // an error occurred                                                                                                                                                                               
+	if (err) console.log(err, err.stack);
 	else {
-	    console.log(data);           // successful response
+	    console.log(data);
 	    var putIn = "<a href='#'><i>No templates found</i></a>";
 	    var menu = document.getElementById("myDropdown");
 	    if (data.Items.length > 0) {
@@ -32,7 +32,6 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
 	var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -74,54 +73,39 @@ function onSubmitForm() {
 	    o[idx++] = toAdd;
 	}
     }
-    // popUp(JSON.stringify(o));
     var params = {
 	TableName: 'surgery-concierge-templates',
 	Item: {
 	    'template_name' : { "S": JSON.stringify(o) }
-	} //,
-	//	ConditionExpression: "template_names <> :t",
-	// ExpressionAttributeNames:{},
-	//ExpressionAttributeValues:{
-	//    ":t":n
-	//}
+	}
     }
+    
+    dynamoDB.scan({ TableName: 'surgery-concierge-templates' }, function(err, data) {
+	    if (err) console.log(err, err.stack);
+	    else {
+		for (var i = 0; i < data.Items.length; i++) {
+		    var info = JSON.parse(data.Items[i].template_name['S']);
+		    console.log(n);
+		    console.log(info['title']);
+		    if (info['title'] == n) {
+			console.log(n + " is an existing template; please retitle your new template.");
+			return;
+		    }
+		}
+	    }
+	});
 
-    // conditionally add params
     dynamoDB.putItem(params, function(err, data) {
         if (err) {
-	    console.error("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
-	    alert(n + " is an existing template; please retitle your new template.");
+	    console.log("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
+	    alert("Error adding template. Please try again.");
 	} else {
 	    console.log("PutItem succeeded:", JSON.stringify(data, null, 2));
 	    document.getElementByID("the-form").reset();
-	    alert(n +  " has been created.");
+	    alert(n +  " has been added.");
 	}
     });
 }
-
-// function popUp(n){
-
-//     var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1");
-//     var html = "<html><head></head><body>"+ n;
-//     html += "</body></html>";
-//     newWindow.document.open();
-//     newWindow.document.write(html);
-//     newWindow.document.close();
-// }
-
-// function readSingleFile(e) {
-//     var file = e.target.files[0];
-//     if (!file) {
-// 	return;
-//     }
-//     var reader = new FileReader();
-//     reader.onload = function(e) {
-// 	var contents = e.target.result;
-// 	displayContents(contents);
-//     };
-//     reader.readAsText(file);
-// }
 
 function displayContents(info) {
     var idx = 1;
@@ -140,8 +124,3 @@ function displayContents(info) {
 	console.log(info[k][0].cond);
     }
 }
-
-// function addListeners() {
-//     document.getElementById('file-input')
-// 	.addEventListener('change', readSingleFile, false);
-// }
