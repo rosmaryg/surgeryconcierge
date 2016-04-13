@@ -7,10 +7,6 @@
   color: #FFFFFF;
 }
 
-#get {
-	float: center;
-}
-
 #header {
 	width: 100%;
 	height: 80px;
@@ -30,28 +26,7 @@ section {
   font-size: 1.5em;
 }
 
-.rand_text {
-  margin-left:10px;
-  margin-right:10px;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1.2em;
-  position: relative;
-}
-
-.rand_text_small {
-  margin-left:10px;
-  margin-right:10px;
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 1em;
-  position: relative;
-}
-
-.radio_button_set {
-  margin-left:20px;
-  margin-right:20px;	
-}
-
-form {
+#page {
   width: 80%;
   background-color: #F0F0FF;
   font-size: 0.8em;
@@ -59,55 +34,6 @@ form {
   left:10%;
 }
 
-.bfh-phone {
-	margin-left:20px;
-  margin-right:10px
-}
-
-.diab_text {
-	margin-left:20px;
-  margin-right:10px
-}
-
-.bfh-datepicker{
-  margin-left:10px;
-  width:75%;
-}
-
-.buttons {
-	text-align:center;
-}
-
-.date_text {
-  width:25%;
-}
-
-bullet {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-druglist {
-  font-family: Verdana, Arial, sans-serif;
-  display: block;
-  padding-left: 40px;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 0px;
-}
-
-table .last, td:last-child { 
-    padding: 2px 24px 2px 0px; 
-}
+.form-control {
+  width: 50%;
 }
