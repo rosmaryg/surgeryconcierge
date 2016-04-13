@@ -15,15 +15,15 @@
 		<div id="header">
 			<br><div id="header-text">Surgery Concierge Patient UI</div>
     	</div>
-    	<div id="page" style="display: inline" class=".col-xs-6 .col-md-4">
+    	<div id="page" style="display: inline; text-align:center;" class=".col-xs-6 .col-md-4">
 			<section>Access Key&nbsp;
-				<input type="text" class="form-control" name="accessKey" id="accessKey">&nbsp;
-			</section>
+				<input type="text"  name="accessKey" id="accessKey" style="text-align:center;">
+			</section>&nbsp;
 			<div style="text-align:center;">
 				<button type="button" class="btn btn-success" onclick="getPatientInsns()">Get Notification Options</button>
 			</div><br>
 			
-			<div class="buttons" id="notifs-buttons" style="display:none; text-align:center;">
+			<div class="buttons" id="notifs-buttons" style="display:none;">
 				<br>
 				<div style="text-align:center;">
 	                <button type="submit" class="btn btn-default"name="get" onclick="document.pressed=this.value" value="Get ICS" data-toggle="tooltip" data-placement="top" title="This will generate a file that can be opened by the default calendar app on your computer.">Get ICS</button>
