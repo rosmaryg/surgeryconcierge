@@ -34,7 +34,7 @@ function getPatientInsns() {
 // var params = {
 //   TableName : 'surgery-concierge-surgeries',
 //   Item: {
-//     'access_key': { "S": "blah" },
+//     'access_key': { "S": "test" },
 //     'last_name': { "S": "blah2" }
 //   }
 // };
@@ -44,13 +44,17 @@ function getPatientInsns() {
 //   else     console.log(data);           // successful response
 // });
 
-// var params2 = {
-//   TableName : 'test-table',
+// var params = {
+//   TableName : 'surgery-concierge-surgeries',
 //   Key: {
-//     'username': { "S": "Tadas" },
-//     'last_name': { "S": "A" }
+//     'access_key': { "S": "test" }
 //   }
 // };
+
+// dynamoDB.deleteItem(params, function(err, data) {
+//   if (err) console.log(err, err.stack); // an error occurred
+//   else     console.log(data);           // successful response
+// });
 
 // dynamoDB.listTables({}, function(err, data) {
 //   if (err) console.log(err, err.stack); // an error occurred
@@ -65,10 +69,4 @@ function getPatientInsns() {
 // dynamoDB.scan(params_scan, function(err, data) {
 //   if (err) console.log(err, err.stack); // an error occurred
 //   else     console.log(data);           // successful response
-// });
-
-
-// dynamoDB.getItem(params2,function(err, data) {
-//   if (err) console.log(err);
-//   else console.log(data);
 // });
