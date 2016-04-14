@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>Surgery Concierge</title>
+                <!-- JS and CSS -->
+	    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
+            <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--
+		<script>
+		  function onSubmitForm() {
+		  var n = document.getElementById("template-name").value;
+		  var o = {};
+		  o["title"] = n;
+		  var idx = 0;
+		  var table = document.getElementById("myTable");
+		  for(var i = 1; i < table.rows.length; i++) {
+		  if (table.rows[i].cells[0].firstChild.checked) {
+	          var toAdd = [{"cond": table.rows[i].cells[1].firstChild.value},
+                               {"insn": table.rows[i].cells[2].firstChild.value},
+                               {"time": table.rows[i].cells[2].firstChild.value}];
+                  o[idx++] = toAdd;
+                  }
+		  }
+                  popUp(JSON.stringify(o));
+		  alert(n + " has been created.");
+		  }
+
+		  function popUp(n){
+
+                  var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1")
+                  var html = "<html><head></head><body>"+ n;
+                  html += "</body></html>";
+                  newWindow.document.open();
+                  newWindow.document.write(html);
+                  newWindow.document.close();
+                  }
+		  
+                  function readSingleFile(e) {
+var file = e.target.files[0];
+  if (!file) {
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var contents = e.target.result;
+    displayContents(contents);
+  };
+  reader.readAsText(file);
+}
+
+function displayContents(contents) {
+var info = JSON.parse(contents);
+var idx = 1;
+for (var k in info) {
+if (k == "title") continue;
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(idx++);
+		  var cell1 = row.insertCell(0);
+		  var cell2 = row.insertCell(1);
+		  var cell3 = row.insertCell(2);
+		  var cell4 = row.insertCell(3);
+		  cell1.innerHTML = "<input type='checkbox' checked/>";
+		  cell2.innerHTML = "<input type='text' value='" + info[k][0].cond + "'/>";
+		  cell3.innerHTML = "<input type='text' value='" + info[k][1].insn + "'/>";
+		  cell4.innerHTML = "<input type='text' value='" + info[k][2].time + "'/>";
+console.log(info[k][0].cond);
+}
+}
+
+function addListeners() {
+document.getElementById('file-input')
+  .addEventListener('change', readSingleFile, false);
+}
+		</script>
+<--!>
+	</head>
+	
+	<body onload="addListeners()">
+	  <div id="header">
+	    <br><div id="header-text">Surgery Concierge</div>
+    	  </div>
+
+	  <section style="text-align:center">Create a Patient Schedule</section>
+          <form id="template-name" name="selected-template" style="text-align:center" onsubmit="return selectTemplate();">
+	      	<select name="templates">
+	      		<option value="test1">Test 1</option>
+			<option value="test2">Test 2</option>
+			<option value="test3">Test 3</option>
+		</select>
+		<br>
+		<br>
+	       <input style="width:25%" type='submit' class="btn btn-default" value="Select Template"/>
+	  </form>
+	  <br><br><br><br>
+	  <div id="template-form" style="text-align:center">
+            <form id="the-form" name="myform" onsubmit="return onSubmitForm();">
+	      <br>
+	      <div style="float:left">Search Templates:</div><input type="file" id="file-input"/>
+	      <br><br>
+	      <table style="width:90%" id="myTable">
+		<tr>
+		  <th></th>
+		  <th>Patient Condition</th>
+		  <th>Instruction to Patient</th>
+		  <th>When</th>
+		</tr>
+		<tr>
+		  <td><input type='checkbox'/></td>
+		  <td><input type='text' value='e.g. takes Aspirin regularly'/></td>
+		  <td><input type='text' value='e.g. stop taking Aspirin'/></td>
+		  <td><input type='text' value='e.g. seven days before the surgery'/></td>
+		</tr>
+	      </table>
+	      <br>
+	      <br>
+	      <input style="width:50%" type='submit' class="btn btn-default" value="Create Template"/>
+	    </form>
+	  </div>
+
+	</body>
+</html>
