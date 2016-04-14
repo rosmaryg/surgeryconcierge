@@ -12,11 +12,16 @@ function getPatientInsns() {
 		if (err) console.log(err, err.stack);
 		else {
 			var key_found = false;
+			var patient_object;
 			var key_entered = document.getElementById("accessKey").value;
 			var returned_items = data.Items;
 			for (var key in returned_items) {
 				if (key_entered === returned_items[key].access_key.S) {
 					key_found = true;
+					patient_object = returned_items[key];
+					document.getElementById("pdf_text").value = patient_object.pdf.S;
+					document.getElementById("ics_text").value = patient_object.ics.S;
+					document.getElementById("texts_text").value = patient_object.texts.S;
 					break;
 				}
 			}
@@ -30,12 +35,26 @@ function getPatientInsns() {
 	});
 }
 
+function getIcs() {
+	console.log(document.getElementById("ics_text").value);
+}
+
+function getPdf() {
+	console.log(document.getElementById("pdf_text").value);
+}
+
+function getTexts() {
+	console.log(document.getElementById("texts_text").value);
+}
+
 
 // var params = {
 //   TableName : 'surgery-concierge-surgeries',
 //   Item: {
 //     'access_key': { "S": "test" },
-//     'last_name': { "S": "blah2" }
+//     'ics': { "S": "blah1" },
+//     'pdf' :{ "S": "blah2"},
+//     'texts' :{ "S": "blah3"}
 //   }
 // };
 
