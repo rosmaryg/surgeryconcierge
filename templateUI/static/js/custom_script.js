@@ -55,7 +55,7 @@ function createNewTemplate() {
     cell1.innerHTML = "<input type='checkbox'/>";
     cell2.innerHTML = "<input type='text'/>";
     cell3.innerHTML = "<input type='text'/>";
-    cell4.innerHTML = "<input type='text'/>";
+    cell4.innerHTML = "<input style='width:20%' type='number' min='0'/><select name='time_unit'><option value='days'>days</option><option value='weeks'>weeks</option></select>";
     return false;
 }
 
@@ -69,7 +69,8 @@ function onSubmitForm() {
 	if (table.rows[i].cells[0].firstChild.checked) {
 	    var toAdd = [{"cond": table.rows[i].cells[1].firstChild.value},
 			 {"insn": table.rows[i].cells[2].firstChild.value},
-			 {"time": table.rows[i].cells[2].firstChild.value}];
+			 {"time": table.rows[i].cells[3].children[0].value},
+			 {"time_unit": table.rows[i].cells[3].children[1].value}];
 	    o[idx++] = toAdd;
 	}
     }
