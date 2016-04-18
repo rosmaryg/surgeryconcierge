@@ -30,11 +30,11 @@ input {
 }
 
 #page {
-  width: 80%;
+  width: 90%;
   background-color: #F0F0FF;
   font-size: 0.8em;
   position: absolute;
-  left:10%;
+  left:5%;
 }
 
 .form-control {

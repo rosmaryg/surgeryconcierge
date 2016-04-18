@@ -28,26 +28,28 @@
 				<div class="row" style="text-align:center;">
 					<div class="col-xs-6 col-sm-4">
 						<form action="get-ics">
+							<input type="text" style="display:none;" id="insns_ics" name="insns_ics" value="">
 			                <button type="submit" id="ics" onclick="getIcs()" class="btn btn-default" value="Get ICS" data-toggle="tooltip" data-placement="top" title="This will generate a file that can be opened by the default calendar app on your computer.">Get ICS</button>
-			                <input type="text" style="display:none;" id="ics_text" name="ics_text" value="">
 			            </form>
 			        </div>
 					<div class="col-xs-6 col-sm-4">
 						<form action="get-pdf">
+							<input type="text" style="display:none;" id="insns_pdf" name="insns_pdf" value="">
 			                <button type="submit" id="pdf" onclick="getPdf()" class="btn btn-default" value="Get PDF" data-toggle="tooltip" data-placement="top" title="This will generate a PDF with your instructions. You can print it or download and email it to yourself.">Get PDF</button>
-			                <input type="text" style="display:none;" id="pdf_text" name="pdf_text" value="">
 			            </form>
 			        </div>
 					<div class="col-xs-6 col-sm-4">
 						<form action="get-text">
+							<input type="text" style="display:none;" id="insns_text" name="insns_text" value="">
 			                <button type="submit" id="text" onclick="getTexts()" class="btn btn-default" value="Get Texts" data-toggle="tooltip" data-placement="top" title="You are opting into a system that will send you reminders by text regarding your surgery.">Get Texts</button>
-			                <input type="text" style="display:none;" id="texts_text" name="texts_text" value="">
 			            </form>
 			        </div><br>
-	                <i>Hover over the buttons for more information on what it does. If you are on a mobile device long press on the button.</i>
 				</div>
+                <i>Hover over the buttons for more information on what it does. If you are on a mobile device long press on the button.</i>
 			</div>
-    		<div id="bottom-block"><br><br><br></div>
+    		<div id="bottom-block"><br>
+    			<div id="insn-block" style="display: inline; text-align:center;"><i>Enter the access key given to you by your doctor or the scheduler when you were scheduled for your surgery.</i></div>
+			<br><br></div>
 	    </div>
 	</body>
 </html>

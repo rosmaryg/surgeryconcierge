@@ -19,9 +19,10 @@ function getPatientInsns() {
 				if (key_entered === returned_items[key].access_key.S) {
 					key_found = true;
 					patient_object = returned_items[key];
-					document.getElementById("pdf_text").value = patient_object.pdf.S;
-					document.getElementById("ics_text").value = patient_object.ics.S;
-					document.getElementById("texts_text").value = patient_object.texts.S;
+					console.log(patient_object);
+					document.getElementById("insns_ics").value = patient_object.insns.S;
+					document.getElementById("insns_pdf").value = patient_object.insns.S;
+					document.getElementById("insns_text").value = patient_object.insns.S;
 					break;
 				}
 			}
@@ -30,21 +31,22 @@ function getPatientInsns() {
 				return;
 			} else {
 				document.getElementById("notifs-buttons").style.display = "inline";
+				document.getElementById("insn-block").style.display = "none";
 			}
 		}
 	});
 }
 
 function getIcs() {
-	console.log(document.getElementById("ics_text").value);
+	console.log(document.getElementById("insns_ics").value);
 }
 
 function getPdf() {
-	console.log(document.getElementById("pdf_text").value);
+	console.log(document.getElementById("insns_pdf").value);
 }
 
 function getTexts() {
-	console.log(document.getElementById("texts_text").value);
+	console.log(document.getElementById("insns_text").value);
 }
 
 

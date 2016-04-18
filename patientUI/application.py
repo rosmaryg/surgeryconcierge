@@ -25,10 +25,10 @@ def index():
 @application.route('/get-ics')
 def genICS():
   response = str(request.args.get("ics_text"))
-  # ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
-  # response = make_response(ics)
-  # response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
-  # response.mimetype = 'application/ics'
+  ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
+  response = make_response(ics)
+  response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
+  response.mimetype = 'application/ics'
   return response
 
 @application.route('/get-pdf')
