@@ -7,7 +7,6 @@ from apiclient import discovery
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
-from insns import insn_table, default_insns
 import datetime
 import json
 import fpdf
@@ -19,17 +18,6 @@ try:
     flags = parser.parse_args()
 except ImportError:
     flags = None
-
-def get_user_input(data):
-    d = defaultdict(str)
-    if(not data):
-	return d
-    entries = data.split('[')[1].split(']')[0].split('),')
-    for entry in entries:
-        key = entry.split(',')[0].split('\'')[1].split('\\')[0]
-        val = entry.split(',')[1].split('\'')[1].split('\\')[0]
-        d[key] = val
-    return d
 
 def split_len(s,block_size):
     w=[]
@@ -98,82 +86,41 @@ def gen_pdf(surg_info, insns):
     pdf_string = pdf.output(name="Instructions.pdf", dest="S")
     return pdf_string
 
+
+def get_user_input(data):
+    d = defaultdict(str)
+    if(not data):
+        return d
+    entries = data.split("u'")
+    d['insns'] = entries[1].split("')")[0]
+    d['date'] = entries[2].split("')")[0]
+    return d
+
 def generate_pdf():
     input = get_user_input(flags.data)
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
 
+    insns = json.loads(input['insns'])
     given_date = input['date']
     given_date_split = given_date.split("/")
-    year = given_date_split[2]
     month = given_date_split[0]
     day = given_date_split[1]
-    
-    cat_insns = {}
+    year = given_date_split[2]
     insns_for_pdf = {}
-    #Create a dict for the beginning of multi-part insns
-    
-#ADDING IN FOR DEFAULT INSNS
-    for insn in default_insns:
-        i = default_insns[insn]
-
-        # insn_for_pdf = {}
-        # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        # insn_for_pdf["num_days"] = int(i.split(':')[0])
-        # insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
-        # insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
-        # insns_for_pdf.append(insn_for_pdf)
-
-        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        num_days = i.split(':')[0]
-        if (num_days in insns_for_pdf):
-            insns_for_pdf[num_days].append(i.split(':')[1])
+    for key in insns:
+        insn = " " + insns[key][0]['insn']
+        time = insns[key][1]['time']
+        time_unit = insns[key][2]['time_unit']
+        if (time_unit == "weeks"):
+            time = str(int(time)*7)
+            time_unit = "days"
+        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(time))
+        if (time in insns_for_pdf):
+            insns_for_pdf[time].append(insn)
         else:
             insn_for_pdf = []
-            insn_for_pdf.append(i.split(':')[1])
-            insns_for_pdf[num_days] = insn_for_pdf
-
-    for insn in input:
-        if 'insn' in insn and not insn[-1].isalpha():
-        
-            cat_insns[insn] = insn_table[insn[4:]]
-    for insn in input:
-        if 'insn' in insn and insn[-1].isalpha(): 
-            base_insn = insn[:-1]
-            if not base_insn in cat_insns:
-                cat_insns[base_insn] = insn_table[base_insn[4:]] 
-            current_str = cat_insns[base_insn]
-            if current_str[-1] != ' ':
-                    cat_insns[base_insn] = current_str + ', ' + insn_table[input[insn]] 
-            else:
-                    cat_insns[base_insn] = current_str + insn_table[input[insn]]
-    
-    for base_insn in cat_insns:
-        if base_insn == 'insn10' and not input['insn10']:
-            continue
-        insn = base_insn[4:]    
-        i = insn_table[insn]
-
-        # insn_for_pdf = {}
-        # date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        # insn_for_pdf["num_days"] = int(i.split(':')[0])
-        # insn_for_pdf["date"] = date.strftime("%A, %B %d, %Y")
-        # insn_for_pdf["insn_text"] = cat_insns[insn].split(':')[1]
-        # insns_for_pdf.append(insn_for_pdf)
-
-        date = datetime.date(int(year), int(month), int(day)) - datetime.timedelta(int(i.split(':')[0]))
-        num_days = i.split(':')[0]
-        if (num_days in insns_for_pdf):
-            if base_insn != 'insn10':
-                insns_for_pdf[num_days].append(cat_insns[base_insn].split(':')[1])
-            else:
-                insns_for_pdf[num_days].append(input['insn10'])          
-        else:
-            insn_for_pdf = []
-            if base_insn != 'insn10':
-                insn_for_pdf.append(cat_insns[base_insn].split(':')[1])
-            else:
-                insn_for_pdf.append(" " + input['insn10'])
-            insns_for_pdf[num_days] = insn_for_pdf
+            insn_for_pdf.append(insn)
+            insns_for_pdf[time] = insn_for_pdf
     # sorted_insns_for_pdf = sorted(insns_for_pdf, key=lambda insn_for_pdf: insn_for_pdf["num_days"], reverse=True)
     surg_info = [int(month), int(day), int(year)]
     # pdf =  gen_pdf(surg_info, json.dumps(sorted_insns_for_pdf))

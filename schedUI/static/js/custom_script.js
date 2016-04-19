@@ -58,13 +58,13 @@ function onSubmitForm() {
     var o = {};
     var idx = 0;
     var tbody = document.getElementById("myTable").children[1];
-    for(var i = 1; i < tbody.rows.length; i++) {
-	if (tbody.rows[i].cells[0].firstChild.checked) {
-	    var toAdd = [{"insn": tbody.rows[i].cells[3].firstChild.value},
-			 {"time": tbody.rows[i].cells[4].firstChild.value},
-			 {"time_unit": tbody.rows[i].cells[5].firstChild.value}];
-	    o[idx++] = toAdd;
-	}
+    for(var i = 0; i < tbody.rows.length; i++) {
+		if (tbody.rows[i].cells[0].firstChild.checked) {
+		    var toAdd = [{'insn': tbody.rows[i].cells[3].firstChild.value},
+				 {'time': tbody.rows[i].cells[4].firstChild.value},
+				 {'time_unit': tbody.rows[i].cells[5].firstChild.value}];
+		    o[idx++] = toAdd;
+		}
     }
  //    var key = "";
  //    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -73,8 +73,9 @@ function onSubmitForm() {
 	var params = {
 	  TableName : 'surgery-concierge-surgeries',
 	  Item: {
-	    'access_key': { "S": "test" },
-	    'insns': { "S": JSON.stringify(o) }
+	    'access_key': { "S": "test2" },
+	    'insns': { "S": JSON.stringify(o) },
+	    'date': { "S": document.getElementsByName("date")[0].value }
 		}
 	};
     

@@ -21,8 +21,11 @@ function getPatientInsns() {
 					patient_object = returned_items[key];
 					console.log(patient_object);
 					document.getElementById("insns_ics").value = patient_object.insns.S;
-					document.getElementById("insns_pdf").value = patient_object.insns.S;
+					document.getElementById("insns_pdf").value = patient_object.insns.S.replace("\"", "'").replace("\\", "");
 					document.getElementById("insns_text").value = patient_object.insns.S;
+					document.getElementById("date_ics").value = patient_object.date.S;
+					document.getElementById("date_pdf").value = patient_object.date.S.replace("\"", "'").replace("\\", "");
+					document.getElementById("date_text").value = patient_object.date.S;
 					break;
 				}
 			}
@@ -43,10 +46,18 @@ function getIcs() {
 
 function getPdf() {
 	console.log(document.getElementById("insns_pdf").value);
+	console.log(document.getElementById("date_pdf").value);
 }
 
 function getTexts() {
+	document.getElementById("notifs-buttons").style.display = "inline";
+	document.getElementById("phone-number-input").style.display = "none";
 	console.log(document.getElementById("insns_text").value);
+}
+
+function enterNumber() {
+	document.getElementById("notifs-buttons").style.display = "none";
+	document.getElementById("phone-number-input").style.display = "inline";
 }
 
 

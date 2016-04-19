@@ -24,12 +24,11 @@ def index():
 
 @application.route('/get-ics')
 def genICS():
-  response = str(request.args.get("ics_text"))
-  ics = subprocess.check_output(["python", "ics.py", "--data", "\"" + str(request.args) + "\""])
-  response = make_response(ics)
-  response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
-  response.mimetype = 'application/ics'
-  return response
+  ics = subprocess.check_output(["python", "new_ics.py", "--data", "\"" + str(request.args) + "\""])
+  # response = make_response(ics)
+  # response.headers['Content-Disposition'] = "inline; filename=instructions.ics"
+  # response.mimetype = 'application/ics'
+  return ics
 
 @application.route('/get-pdf')
 def genPdf():
@@ -52,7 +51,7 @@ def genText():
     print "content: " + r.content
     return "Texts now being sent."
   except subprocess.CalledProcessError:
-    return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person."
+    return "Error in sending texts. Double check your entered cell phone number and/or the number you indicated for your pick up person. If you previously were signed up for texts through this service and stopped the reminders, text START to (215) 515-7414 and then trying signing up for texts again."
 
 
 if __name__ == '__main__':

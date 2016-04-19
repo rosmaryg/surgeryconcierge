@@ -4,12 +4,17 @@
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
 	    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	    <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='custom_style.css') }}" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
+	    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 	<body>
 		<div id="header">
@@ -29,24 +34,35 @@
 					<div class="col-xs-6 col-sm-4">
 						<form action="get-ics">
 							<input type="text" style="display:none;" id="insns_ics" name="insns_ics" value="">
+							<input type="text" style="display:none;" id="date_ics" name="date_ics" value="">
 			                <button type="submit" id="ics" onclick="getIcs()" class="btn btn-default" value="Get ICS" data-toggle="tooltip" data-placement="top" title="This will generate a file that can be opened by the default calendar app on your computer.">Get ICS</button>
 			            </form>
 			        </div>
 					<div class="col-xs-6 col-sm-4">
 						<form action="get-pdf">
 							<input type="text" style="display:none;" id="insns_pdf" name="insns_pdf" value="">
+							<input type="text" style="display:none;" id="date_pdf" name="date_pdf" value="">
 			                <button type="submit" id="pdf" onclick="getPdf()" class="btn btn-default" value="Get PDF" data-toggle="tooltip" data-placement="top" title="This will generate a PDF with your instructions. You can print it or download and email it to yourself.">Get PDF</button>
 			            </form>
 			        </div>
 					<div class="col-xs-6 col-sm-4">
-						<form action="get-text">
-							<input type="text" style="display:none;" id="insns_text" name="insns_text" value="">
-			                <button type="submit" id="text" onclick="getTexts()" class="btn btn-default" value="Get Texts" data-toggle="tooltip" data-placement="top" title="You are opting into a system that will send you reminders by text regarding your surgery.">Get Texts</button>
+						<form>
+			                <button type="button" id="text" onclick="enterNumber()" class="btn btn-default" value="Get Texts" data-toggle="tooltip" data-placement="top" title="You are opting into a system that will send you reminders by text regarding your surgery.">Get Texts</button>
 			            </form>
 			        </div><br>
 				</div>
                 <i>Hover over the buttons for more information on what it does. If you are on a mobile device long press on the button.</i>
 			</div>
+
+			<div id="phone-number-input" style="display:none">
+				<form action="get-text">
+					<input type="text" style="display:none;" id="insns_text" name="insns_text" value="">
+					<input type="text" style="display:none;" id="date_text" name="date_text" value="">
+    				<input type="text" name="phone-number" id="phone-number" class="bfh-phone" data-format="+1 (ddd) ddd-dddd"><br><br>
+	                <button type="submit" id="text" onclick="getTexts()" class="btn btn-default" value="Get Texts">Submit</button>
+	            </form>
+			</div>
+
     		<div id="bottom-block"><br>
     			<div id="insn-block" style="display: inline; text-align:center;"><i>Enter the access key given to you by your doctor or the scheduler when you were scheduled for your surgery.</i></div>
 			<br><br></div>

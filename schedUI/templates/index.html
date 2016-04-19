@@ -3,8 +3,15 @@
 		<title>Surgery Concierge</title>
 		<!-- JS and CSS -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	    <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
 		<script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
 		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
@@ -16,6 +23,7 @@
 			<form id="the-form" name="myform" onsubmit="return onSubmitForm();">
 				<section id="sect">Schedule a Patient's Surgery</section>
 				<br><br>
+				<div class="bfh-datepicker" data-min="today" data-align="left" data-name="date"></div><br><br>
 				<div class="dropdown">
 					<button type="button" onclick="myFunction()" class="dropbtn">View Templates</button>
 					<div id="myDropdown" class="dropdown-content">
