@@ -57,7 +57,6 @@ def generate_ics():
         event.add('dtstart', date)
         event.add('dtend', end)
     	event.add('summary', insn)
-        event = icalendar.Event()
         cal.add_component(event)
    
     print (cal.to_ical())
