@@ -2,12 +2,15 @@
 	<head>
 		<title>Surgery Concierge</title>
 		<!-- JS and CSS -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
-        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
-        <script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
+		<script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
 		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	</head>
+		</head>
 	
 	<body>
 		<div id="header">
@@ -22,10 +25,10 @@
 	    </div>
     	  </div>
 	  	<div id="template-form" style="text-align:center">
-    	    <form id="the-form" name="myform" onsubmit="return onSubmitForm();">
+    	    <form id="the-form" name="myform">
 	      		<section>Create a New Surgery Template</section>
 	      		<br>
-	      		<input id='template-name' type='text' style="width:60%;font-size:20px; text-align:center;" value='Title of Template'/>
+	      		<input id='template-name' type='text' style="width:60%;font-size:20px; text-align:center;" placeholder='Title of Template'/>
 	      		<br><br>
 	      		<table style="width:90%; text-align:center;" id="myTable">
 					<tr>
@@ -36,8 +39,8 @@
 					</tr>
 					<tr>
 		  				<td><input type='checkbox'/></td>
-		  				<td><input type='text' value='e.g. takes Aspirin regularly'/></td>
-		  				<td><input type='text' value='e.g. stop taking Aspirin'/></td>
+		  				<td><input type='text' placeholder='e.g. takes Aspirin regularly'/></td>
+		  				<td><input type='text' placeholder='e.g. stop taking Aspirin'/></td>
 		  				<td>
 		  					<input style="width:20%" type='number' min="0"/>
 		  					<select name="time_unit">
@@ -51,7 +54,8 @@
 		  		<button type="button" style="float:left" onclick="createNewTemplate()">Add Item</button>
 		  		<br>
 		  		<br>
-		  		<input style="width:50%" type='submit' class="btn btn-default" value="Create Template"/>
+		  		<button  onclick="onSubmitForm();" style="width:50%" type='button' class="btn btn-default">Create Template</button>
+		  		<br><br>
 		  	</form>
 		</div>
 	</body>

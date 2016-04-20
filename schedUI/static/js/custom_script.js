@@ -8,30 +8,48 @@ var dynamoDB = new AWS.DynamoDB({endpoint: "https://dynamodb.us-east-1.amazonaws
 // 	if (err) console.log(err, err.stack);
 // 	else     console.log(data);
 //     });
+// toDelete = ["piViunrKgL"]
+// for (var i = 0; i < toDelete.length; i++) {
+// 	var params = {
+// 	  TableName : 'surgery-concierge-surgeries',
+// 	  Key: {
+// 	    'access_key': { "S": toDelete[i] }
+// 	  }
+// 	};
+
+// 	dynamoDB.deleteItem(params, function(err, data) {
+// 	  if (err) console.log(err, err.stack); // an error occurred
+// 	  else     console.log(data);           // successful response
+// 	});
+// }
 
 
 dynamoDB.scan({ TableName: 'surgery-concierge-templates' }, function(err, data) {
 	if (err) console.log(err, err.stack);
 	else {
-	    // console.log(data);
+	    console.log(data);
 	    var putIn = "<a href='#'><i>No templates found</i></a>";
 	    var menu = document.getElementById("myDropdown");
 	    if (data.Items.length > 0) {
 	        putIn = "";
-		for (var i = 0; i < data.Items.length; i++) {
-		    var info = JSON.parse(data.Items[i].template_name['S']);
-		    putIn += "<a href='javascript:displayContents(" + data.Items[i].template_name['S'] + ")'>" + info['title'] + "</a>";
-		}
+			for (var i = 0; i < data.Items.length; i++) {
+			    var info = data.Items[i].template_name['S'];
+			    putIn += "<a href='javascript:displayContents(" + data.Items[i].insns['S'] + ")'>" + info + "</a>";
+			}
 	    }
 	    menu.innerHTML = putIn;
-		
-	}                                                                                                                                                                             
-    });
+	}                                                                   
+});
+
+var existing_access_keys = [];
 
 dynamoDB.scan({ TableName: 'surgery-concierge-surgeries' }, function(err, data) {
 	if (err) console.log(err, err.stack);
 	else {
-		console.log(data);
+		console.log(data)
+		for (var i = 0; i < data.Items.length; i++) {
+			existing_access_keys.push(data.Items[i].access_key['S'])
+		}
 	}
 });
 
@@ -66,43 +84,38 @@ function onSubmitForm() {
 		    o[idx++] = toAdd;
 		}
     }
- //    var key = "";
- //    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
- //    for ( var i=0; i < 7; i++ )
-	// key += possible.charAt(Math.floor(Math.random() * possible.length));
+    var key = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    while (key == "" | existing_access_keys.indexOf(key) != -1) {
+    	for ( var i=0; i < 10; i++ ) {
+    		key += possible.charAt(Math.floor(Math.random() * possible.length));
+    	}
+    }
+    
 	var params = {
 	  TableName : 'surgery-concierge-surgeries',
 	  Item: {
-	    'access_key': { "S": "test2" },
+	    'access_key': { "S": key },
 	    'insns': { "S": JSON.stringify(o) },
 	    'date': { "S": document.getElementsByName("date")[0].value }
 		}
 	};
-    
-    dynamoDB.scan({ TableName: 'surgery-concierge-surgeries' }, function(err, data) {
-	    if (err) console.log(err, err.stack);
-	    else {
-		for (var i = 0; i < data.Items.length; i++) {
-		    var info = JSON.parse(data.Items[i].template_name['S']);
-		    console.log(n);
-		    console.log(info['title']);
-		    if (info['title'] == n) {
-			console.log(n + " is an existing template; please retitle your new template.");
-			return;
-		    }
-		}
-	    }
-	});
-
-    dynamoDB.putItem(params, function(err, data) {
+	dynamoDB.putItem(params, function(err, data) {
         if (err) {
-	    console.log("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
-	    alert("Error adding template. Please try again.");
-	} else {
-	    console.log("PutItem succeeded:", JSON.stringify(data, null, 2));
-	    document.getElementByID("the-form").reset();
-	    alert(n +  " has been added.");
-	}
+		    console.log("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
+		    alert("Error adding template. Please try again.");
+		} else {
+		    console.log("PutItem succeeded:", JSON.stringify(data, null, 2));
+			var h = document.getElementById("key");
+			var t = document.createTextNode(key);
+			h.appendChild(t); 
+			var w = window.open();
+		  	var head = $("#toNewWindowHead").html();
+		    $(w.document.head).html(head);
+		  	var body = $("#toNewWindowBody").html();
+		    $(w.document.body).html(body);
+		    location.reload();
+		}
     });
 }
 

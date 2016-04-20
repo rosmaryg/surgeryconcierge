@@ -20,7 +20,7 @@
 			<br><div id="header-text">Surgery Concierge</div>
 		</div>
 		<div id="template-form" style="text-align:center">
-			<form id="the-form" name="myform" onsubmit="return onSubmitForm();">
+			<form id="the-form" name="myform">
 				<section id="sect">Schedule a Patient's Surgery</section>
 				<br><br>
 				<div class="bfh-datepicker" data-min="today" data-align="left" data-name="date"></div><br><br>
@@ -43,10 +43,62 @@
 						<tbody></tbody>
 					</table>
 					<br><br><br>
-					<input style="width:50%" type='submit' class="btn btn-default" value="Complete Template"/>
+					<button style="width:50%" type='button' class="btn btn-default" onclick="onSubmitForm();">Complete Template</button>
 					<br><br>
 				</div>
 			</form>
+		</div>
+
+
+		<div id="toNewWindowHead" style="display:none">
+			<style type="text/css">
+				#header {
+					width: 100%;
+					height: 80px;
+					margin: auto;
+					position: relative;
+					background-color: #7FC7AF;
+					border-bottom-left-radius: 5px;
+					border-bottom-right-radius: 5px;
+				}
+				#header-text {
+					font-family: Verdana, Arial, sans-serif;
+					font-size: 2em;
+					font-weight: bold;
+					display: block;
+					text-align: center;
+					color: #FFFFFF;
+				}
+				words {
+					font-size: 2em;
+					display: block;
+					text-align: center;
+				}
+				h1 {
+					font-size: 4em;
+					display: block;
+					text-align: center;
+				}
+				form {
+					width: 80%;
+					background-color: #F0F0FF;
+					font-size: 0.8em;
+					position: absolute;
+					left:10%;
+				}
+			</style>
+		</div>
+		<div id="toNewWindowBody" style="display:none">
+			<div id="header">
+				<br><div id="header-text">Surgery Concierge</div>
+			</div>
+			<div style="text-align:center;">
+				<form>
+					<words>The patient's instruction profile has been created. The access key to use on the patient portal is:</words><br>
+					<h1 id="key"></h1><br><br>
+					<words>Close this window to go back to the scheduler portal.</words><br><br>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>

@@ -8,9 +8,22 @@ AWS.config.update({accessKeyId: 'AKIAIRI6C6H53B2DJWKA',
 var dynamoDB = new AWS.DynamoDB({endpoint: "https://dynamodb.us-east-1.amazonaws.com", region:"us-east-1"});
 
 function getPatientInsns() {
+	var params = {
+		TableName : 'surgery-concierge-surgeries',
+		Key: {
+			'access_key': { "S": document.getElementById("accessKey").value}
+		}
+	};
+
+	dynamoDB.getItem(params, function(err, data) {
+		if (err) console.log(err, err.stack); // an error occurred
+		else     console.log(data);           // successful response
+	});
+
 	dynamoDB.scan({ TableName: 'surgery-concierge-surgeries' }, function(err, data) {
 		if (err) console.log(err, err.stack);
 		else {
+			console.log(data);
 			var key_found = false;
 			var patient_object;
 			var key_entered = document.getElementById("accessKey").value;
@@ -21,10 +34,10 @@ function getPatientInsns() {
 					patient_object = returned_items[key];
 					console.log(patient_object);
 					document.getElementById("insns_ics").value = patient_object.insns.S;
-					document.getElementById("insns_pdf").value = patient_object.insns.S.replace("\"", "'").replace("\\", "");
+					document.getElementById("insns_pdf").value = patient_object.insns.S.replace(/'/g, "'").replace("\\", "");
 					document.getElementById("insns_text").value = patient_object.insns.S;
 					document.getElementById("date_ics").value = patient_object.date.S;
-					document.getElementById("date_pdf").value = patient_object.date.S.replace("\"", "'").replace("\\", "");
+					document.getElementById("date_pdf").value = patient_object.date.S.replace(/'/g, "'").replace("\\", "");
 					document.getElementById("date_text").value = patient_object.date.S;
 					break;
 				}
