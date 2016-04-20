@@ -1,19 +1,20 @@
 <html>
 	<head>
-		<title>Surgery Concierge</title>
+		<title>Surgery Concierge - Scheduling Portal</title>
 		<!-- JS and CSS -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	    <script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/bootstrap-formhelpers.min.js') }}"></script>
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.2.min.js"></script>
-		<script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom_style.css') }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.css') }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formhelpers.min.css') }}" />
 		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="{{ url_for('static', filename='js/custom_script.js') }}"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -25,25 +26,21 @@
 				<br><br>
 				<div class="bfh-datepicker" data-min="today" data-align="left" data-name="date"></div><br><br>
 				<div class="dropdown">
-					<button type="button" onclick="myFunction()" class="dropbtn">View Templates</button>
-					<div id="myDropdown" class="dropdown-content">
-						<a href="#">Link 1</a>
-						<a href="#">Link 2</a>
-						<a href="#">Link 3</a>
-					</div>
-				</div>
+		      		<button type="button" onclick="myFunction()" class="dropbtn btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Available Protocols <span class="caret"></button>
+		      		<div id="myDropdown" class="dropdown-content"></div>
+		    	</div>
 				<br><br><br>
 				<div id="insn-table" style="display:none;">
-					<table style="width:90%" id="myTable">
+					<table style="width:95%; margin: 0px auto; text-align:center;" id="myTable">
 						<thead>
-							<th></th>
+							<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
 							<th>Patient Condition</th>
 							<th>Patient Instruction Preview</th>
 						</thead>
 						<tbody></tbody>
 					</table>
 					<br><br><br>
-					<button style="width:50%" type='button' class="btn btn-default" onclick="onSubmitForm();">Complete Template</button>
+					<button style="width:50%;" type='button' class="btn btn-default" onclick="onSubmitForm();">Complete Template</button>
 					<br><br>
 				</div>
 			</form>
@@ -80,13 +77,16 @@
 					text-align: center;
 				}
 				form {
-					width: 80%;
+					width: 90%;
 					background-color: #F0F0FF;
 					font-size: 0.8em;
 					position: absolute;
-					left:10%;
+					left:5%;
 				}
 			</style>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		</div>
 		<div id="toNewWindowBody" style="display:none">
 			<div id="header">
@@ -96,7 +96,7 @@
 				<form>
 					<words>The patient's instruction profile has been created. The access key to use on the patient portal is:</words><br>
 					<h1 id="key"></h1><br><br>
-					<words>Close this window to go back to the scheduler portal.</words><br><br>
+					<words>Close this window to go back to the scheduling portal.</words><br><br>
 				</form>
 			</div>
 		</div>

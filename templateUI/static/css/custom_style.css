@@ -52,12 +52,15 @@ section {
 }
 
 form {
-  width: 80%;
+  width: 90%;
   background-color: #F0F0FF;
   font-size: 0.8em;
   position: absolute;
-  left:10%;
+  left:5%;
 }
+
+@media (min-width:800px){#time_entry { width:25% }}
+@media (max-width:799px){#time_entry { width:75% }}
 
 .bfh-phone {
 	margin-left:20px;
@@ -114,17 +117,6 @@ input {
 }
 
 
-
-/* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
@@ -142,7 +134,7 @@ input {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 190px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 

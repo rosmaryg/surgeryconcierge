@@ -2,13 +2,13 @@ AWS.config.update({accessKeyId: 'AKIAJUJB7DVFDSGOBNOQ',
 	    secretAccessKey: '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'});
 
 var dynamoDB = new AWS.DynamoDB({endpoint: "https://dynamodb.us-east-1.amazonaws.com", region:"us-east-1"});
-
+$('.dropdown-toggle').dropdown()
 
 // dynamoDB.listTables({}, function(err, data) {
 // 	if (err) console.log(err, err.stack);
 // 	else     console.log(data);
 //     });
-// toDelete = ["piViunrKgL"]
+// toDelete = ["Dw2iOJ6DEH"]
 // for (var i = 0; i < toDelete.length; i++) {
 // 	var params = {
 // 	  TableName : 'surgery-concierge-surgeries',
@@ -38,7 +38,7 @@ dynamoDB.scan({ TableName: 'surgery-concierge-templates' }, function(err, data) 
 			}
 	    }
 	    menu.innerHTML = putIn;
-	}                                                                   
+	}                                                        
 });
 
 var existing_access_keys = [];
@@ -137,9 +137,13 @@ function displayContents(info) {
 		cell4.style.display = "none";
 		cell5.style.display = "none";
 		cell6.style.display = "none";
+		var plural = "";
+		if (info[k][2].time > 1) {
+			plural = "s";
+		}
 		cell1.innerHTML = "<input type='checkbox' checked/>";
 		cell2.innerHTML = info[k][0].cond;
-		cell3.innerHTML = info[k][1].insn + " " + info[k][2].time + " " + info[k][3].time_unit + " before the surgery";
+		cell3.innerHTML = info[k][1].insn + " " + info[k][2].time + " " + info[k][3].time_unit.slice(0, -1) + plural + " before the surgery";
 		cell4.innerHTML = "<input type='text' value='" + info[k][1].insn + "'/>";
 		cell5.innerHTML = "<input type='text' value='" + info[k][2].time + "'/>";
 		cell6.innerHTML = "<input type='text' value='" + info[k][3].time_unit + "'/>";

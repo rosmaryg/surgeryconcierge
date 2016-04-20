@@ -33,12 +33,12 @@ function getPatientInsns() {
 					key_found = true;
 					patient_object = returned_items[key];
 					console.log(patient_object);
-					document.getElementById("insns_ics").value = patient_object.insns.S;
+					document.getElementById("insns_ics").value = patient_object.insns.S.replace(/'/g, "'").replace("\\", "");
 					document.getElementById("insns_pdf").value = patient_object.insns.S.replace(/'/g, "'").replace("\\", "");
-					document.getElementById("insns_text").value = patient_object.insns.S;
-					document.getElementById("date_ics").value = patient_object.date.S;
+					document.getElementById("insns_text").value = patient_object.insns.S.replace(/'/g, "'").replace("\\", "");
+					document.getElementById("date_ics").value = patient_object.date.S.replace(/'/g, "'").replace("\\", "");
 					document.getElementById("date_pdf").value = patient_object.date.S.replace(/'/g, "'").replace("\\", "");
-					document.getElementById("date_text").value = patient_object.date.S;
+					document.getElementById("date_text").value = patient_object.date.S.replace(/'/g, "'").replace("\\", "");
 					break;
 				}
 			}

@@ -2,7 +2,7 @@ AWS.config.update({accessKeyId: 'AKIAIEZXTTUAHGFBCKZQ',
 	    secretAccessKey: '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'});
 
 var dynamoDB = new AWS.DynamoDB({endpoint: "https://dynamodb.us-east-1.amazonaws.com", region:"us-east-1"});
-
+$('.dropdown-toggle').dropdown()
 // var params = {
 //   TableName : 'surgery-concierge-templates',
 //   Key: {
@@ -121,17 +121,19 @@ function addToDB(params, name) {
 function displayContents(info) {
     var idx = 1;
     for (var k in info) {
-	if (k == "title") continue;
-	var table = document.getElementById("myTable");
-	var row = table.insertRow(idx++);
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-	var cell3 = row.insertCell(2);
-	var cell4 = row.insertCell(3);
-	cell1.innerHTML = "<input type='checkbox' checked/>";
-	cell2.innerHTML = "<input type='text' value='" + info[k][0].cond + "'/>";
-	cell3.innerHTML = "<input type='text' value='" + info[k][1].insn + "'/>";
-	cell4.innerHTML = "<input type='text' value='" + info[k][2].time + "'/>";
-	console.log(info[k][0].cond);
+		if (k == "title") continue;
+		var table = document.getElementById("myTable");
+		var row = table.insertRow(idx++);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var plural = "";
+		var timeUnit = "<select name='time_unit'><option value='days'>days</option><option value='weeks'>weeks</option></select>";
+		cell1.innerHTML = "<input type='checkbox' checked/>";
+		cell2.innerHTML = "<input type='text' value='" + info[k][0].cond + "'/>";
+		cell3.innerHTML = "<input type='text' value='" + info[k][1].insn + "'/>";
+		cell4.innerHTML = "<input id='time_entry' style='width:25%' type='number' min='0' value='" + info[k][2].time + "'/> " + timeUnit;
+		cell4.children[1].value = info[k][3].time_unit;
     }
 }

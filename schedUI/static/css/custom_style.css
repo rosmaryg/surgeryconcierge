@@ -52,11 +52,11 @@ section {
 }
 
 form {
-  width: 80%;
+  width: 90%;
   background-color: #F0F0FF;
   font-size: 0.8em;
   position: absolute;
-  left:10%;
+  left:5%;
 }
 
 .bfh-phone {
@@ -70,8 +70,8 @@ form {
 }
 
 .bfh-datepicker{
-  margin-left:10px;
-  width:75%;
+  margin-left:25%;
+  width:50%;
 }
 
 .buttons {
@@ -117,16 +117,6 @@ table .last, td:last-child {
     padding: 2px 24px 2px 0px; 
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
@@ -144,7 +134,7 @@ table .last, td:last-child {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 190px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
