@@ -59,9 +59,6 @@ form {
   left:5%;
 }
 
-@media (min-width:800px){#time_entry { width:25% }}
-@media (max-width:799px){#time_entry { width:75% }}
-
 .bfh-phone {
 	margin-left:20px;
   margin-right:10px

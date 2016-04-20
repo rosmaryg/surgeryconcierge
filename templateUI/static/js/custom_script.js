@@ -133,7 +133,7 @@ function displayContents(info) {
 		cell1.innerHTML = "<input type='checkbox' checked/>";
 		cell2.innerHTML = "<input type='text' value='" + info[k][0].cond + "'/>";
 		cell3.innerHTML = "<input type='text' value='" + info[k][1].insn + "'/>";
-		cell4.innerHTML = "<input id='time_entry' style='width:25%' type='number' min='0' value='" + info[k][2].time + "'/> " + timeUnit;
+		cell4.innerHTML = "<input id='time_entry' style='width:60px' type='number' min='0' value='" + info[k][2].time + "'/> " + timeUnit;
 		cell4.children[1].value = info[k][3].time_unit;
     }
 }
