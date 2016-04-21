@@ -87,7 +87,7 @@ function onSubmitForm() {
 			}
 		    var toAdd = [{"cond": table.rows[i].cells[1].firstChild.value},
 				 {"insn": table.rows[i].cells[2].firstChild.value},
-				 {"time": table.rows[i].cells[3].children[0].value},
+				 {"time": Number(String(table.rows[i].cells[3].children[0].value))},
 				 {"time_unit": table.rows[i].cells[3].children[1].value}];
 		    o[idx++] = toAdd;
 		}
