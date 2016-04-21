@@ -87,6 +87,7 @@ function onSubmitForm() {
     var key = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     while (key == "" | existing_access_keys.indexOf(key) != -1) {
+	key = "";
     	for ( var i=0; i < 10; i++ ) {
     		key += possible.charAt(Math.floor(Math.random() * possible.length));
     	}
