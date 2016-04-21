@@ -1,0 +1,27 @@
+<template name="createNewSprint">
+<div class="sprint-info" id="{{this._id}}">
+	<button class="back-btn" id="{{_id}}">
+		<a href={{pathFor 'allSprints' _id=projectId}}>
+			<strong>Back</strong>
+		</a>
+	</button>
+	<br><br>
+	<strong>You are creating a new sprint for: {{projectName}}</strong>
+	<form>
+		<strong>Description: </strong><br>
+		<input type="text" name="description">
+		<br><br>
+
+		<strong>Sprint Start Date: </strong><br>
+		<input type="date" name="startDate">
+		<br><br>
+
+		<strong>Sprint End Date: </strong><br>
+		<input type="date" name="endDate">
+		<br><br>
+
+		<input type="submit" value="Create New Sprint">
+	</form>
+</div>
+
+</template>

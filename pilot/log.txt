@@ -1,0 +1,504 @@
+Retrieving logs...
+============= i-2d5ca8a9 ==============
+-------------------------------------
+/var/log/eb-version-deployment.log
+-------------------------------------
+2016-02-22 03:56:08,013 [INFO] Found the latest version manifest file <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456113163066> from bucket elasticbeanstalk-us-east-1-107068055334 and prefix resources/environments/e-xy3pvmjp9w/_runtime/versions/
+2016-02-22 03:56:08,066 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 03:56:08,630 [INFO] Downloaded version label app-160221_225157 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160221_225157>
+2016-02-22 04:14:08,035 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456114443375
+2016-02-22 04:14:08,090 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 04:14:08,638 [INFO] Downloaded version label app-160221_231317 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160221_231317>
+2016-02-22 04:16:33,241 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456114588221
+2016-02-22 04:16:33,291 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 04:16:33,748 [INFO] Downloaded version label app-160221_231541 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160221_231541>
+2016-02-22 04:24:06,679 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456115041722
+2016-02-22 04:24:06,740 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 04:24:07,327 [INFO] Downloaded version label app-160221_232315 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160221_232315>
+2016-02-22 04:29:25,163 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456115360421
+2016-02-22 04:29:25,256 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 04:29:25,678 [INFO] Downloaded version label app-160221_232835 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160221_232835>
+2016-02-22 06:09:05,587 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1456121340797
+2016-02-22 06:09:05,644 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-22 06:09:06,259 [INFO] Downloaded version label app-160222_010814 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160222_010814>
+2016-03-03 20:58:37,163 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1457038712234
+2016-03-03 20:58:37,216 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-03 20:58:37,910 [INFO] Downloaded version label app-160303_155821 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160303_155821>
+2016-03-04 05:35:44,737 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1457069739401
+2016-03-04 05:35:44,826 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 05:35:45,308 [INFO] Downloaded version label app-160304_003451 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160304_003451>
+2016-03-04 05:43:42,617 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1457070217846
+2016-03-04 05:43:42,668 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 05:43:43,126 [INFO] Downloaded version label app-160304_004249 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160304_004249>
+2016-03-04 05:51:56,669 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-xy3pvmjp9w/_runtime/versions/manifest_1457070711733
+2016-03-04 05:51:56,724 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 05:51:57,286 [INFO] Downloaded version label app-160304_005101 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-xy3pvmjp9w/_runtime/_versions/pilot/app-160304_005101>
+
+
+
+-------------------------------------
+/var/log/httpd/error_log
+-------------------------------------
+[Fri Mar 04 05:47:51.365317 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:47:51.365345 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:47:51.365384 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:47:56.372214 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:47:56.372247 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:47:56.372267 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] Traceback (most recent call last):
+[Fri Mar 04 05:47:56.372286 2016] [:error] [pid 11892] [remote 127.0.0.1:36559]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:47:56.372315 2016] [:error] [pid 11892] [remote 127.0.0.1:36559]     import requests
+[Fri Mar 04 05:47:56.372333 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] ImportError: No module named requests
+[Fri Mar 04 05:48:01.379629 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:01.379664 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:01.379685 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] Traceback (most recent call last):
+[Fri Mar 04 05:48:01.379705 2016] [:error] [pid 11892] [remote 127.0.0.1:32463]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:01.379734 2016] [:error] [pid 11892] [remote 127.0.0.1:32463]     import requests
+[Fri Mar 04 05:48:01.379753 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] ImportError: No module named requests
+[Fri Mar 04 05:48:06.386998 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:06.387030 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:06.387050 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:06.387070 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:06.387097 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:06.387115 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:48:11.394043 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:11.394076 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:11.394097 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:11.394126 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:11.394153 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:11.394171 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:48:16.401242 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:16.401275 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:16.401295 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] Traceback (most recent call last):
+[Fri Mar 04 05:48:16.401313 2016] [:error] [pid 11892] [remote 127.0.0.1:31183]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:16.401340 2016] [:error] [pid 11892] [remote 127.0.0.1:31183]     import requests
+[Fri Mar 04 05:48:16.401357 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] ImportError: No module named requests
+[Fri Mar 04 05:48:21.408441 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:21.408475 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:21.408495 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:21.408514 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:21.408543 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:21.408561 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:48:26.415927 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:26.415974 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:26.415996 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] Traceback (most recent call last):
+[Fri Mar 04 05:48:26.416016 2016] [:error] [pid 11892] [remote 127.0.0.1:36559]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:26.416058 2016] [:error] [pid 11892] [remote 127.0.0.1:36559]     import requests
+[Fri Mar 04 05:48:26.416077 2016] [:error] [pid 11892] [remote 127.0.0.1:36559] ImportError: No module named requests
+[Fri Mar 04 05:48:31.423154 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:31.423186 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:31.423206 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] Traceback (most recent call last):
+[Fri Mar 04 05:48:31.423224 2016] [:error] [pid 11892] [remote 127.0.0.1:32463]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:31.423251 2016] [:error] [pid 11892] [remote 127.0.0.1:32463]     import requests
+[Fri Mar 04 05:48:31.423268 2016] [:error] [pid 11892] [remote 127.0.0.1:32463] ImportError: No module named requests
+[Fri Mar 04 05:48:36.429759 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:36.429791 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:36.429820 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:36.429839 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:36.429867 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:36.429885 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:48:41.436930 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:41.436962 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:41.436982 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:41.437001 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:41.437029 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:41.437047 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:48:46.444092 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:46.444138 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:46.444171 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] Traceback (most recent call last):
+[Fri Mar 04 05:48:46.444191 2016] [:error] [pid 11892] [remote 127.0.0.1:31183]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:46.444239 2016] [:error] [pid 11892] [remote 127.0.0.1:31183]     import requests
+[Fri Mar 04 05:48:46.444258 2016] [:error] [pid 11892] [remote 127.0.0.1:31183] ImportError: No module named requests
+[Fri Mar 04 05:48:51.451379 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:48:51.451412 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:48:51.451432 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] Traceback (most recent call last):
+[Fri Mar 04 05:48:51.451451 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:48:51.451481 2016] [:error] [pid 11892] [remote 127.0.0.1:36303]     import requests
+[Fri Mar 04 05:48:51.451513 2016] [:error] [pid 11892] [remote 127.0.0.1:36303] ImportError: No module named requests
+[Fri Mar 04 05:49:25.717687 2016] [:error] [pid 11892] [remote 172.31.25.40:36559] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:49:25.717723 2016] [:error] [pid 11892] [remote 172.31.25.40:36559] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:49:25.717746 2016] [:error] [pid 11892] [remote 172.31.25.40:36559] Traceback (most recent call last):
+[Fri Mar 04 05:49:25.717769 2016] [:error] [pid 11892] [remote 172.31.25.40:36559]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:49:25.717800 2016] [:error] [pid 11892] [remote 172.31.25.40:36559]     import requests
+[Fri Mar 04 05:49:25.717820 2016] [:error] [pid 11892] [remote 172.31.25.40:36559] ImportError: No module named requests
+[Fri Mar 04 05:49:26.397265 2016] [:error] [pid 11892] [remote 172.31.25.40:32463] mod_wsgi (pid=11892): Target WSGI script '/opt/python/current/app/application.py' cannot be loaded as Python module.
+[Fri Mar 04 05:49:26.397295 2016] [:error] [pid 11892] [remote 172.31.25.40:32463] mod_wsgi (pid=11892): Exception occurred processing WSGI script '/opt/python/current/app/application.py'.
+[Fri Mar 04 05:49:26.397317 2016] [:error] [pid 11892] [remote 172.31.25.40:32463] Traceback (most recent call last):
+[Fri Mar 04 05:49:26.397341 2016] [:error] [pid 11892] [remote 172.31.25.40:32463]   File "/opt/python/current/app/application.py", line 2, in <module>
+[Fri Mar 04 05:49:26.397393 2016] [:error] [pid 11892] [remote 172.31.25.40:32463]     import requests
+[Fri Mar 04 05:49:26.397417 2016] [:error] [pid 11892] [remote 172.31.25.40:32463] ImportError: No module named requests
+[Fri Mar 04 05:52:02.307708 2016] [mpm_prefork:notice] [pid 11889] AH00169: caught SIGTERM, shutting down
+[Fri Mar 04 05:52:03.362113 2016] [suexec:notice] [pid 12179] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Mar 04 05:52:03.373284 2016] [so:warn] [pid 12179] AH01574: module wsgi_module is already loaded, skipping
+[Fri Mar 04 05:52:03.375721 2016] [auth_digest:notice] [pid 12179] AH01757: generating secret for digest authentication ...
+[Fri Mar 04 05:52:03.376376 2016] [lbmethod_heartbeat:notice] [pid 12179] AH02282: No slotmem from mod_heartmonitor
+[Fri Mar 04 05:52:03.376421 2016] [:warn] [pid 12179] mod_wsgi: Compiled for Python/2.7.9.
+[Fri Mar 04 05:52:03.376427 2016] [:warn] [pid 12179] mod_wsgi: Runtime using Python/2.7.10.
+[Fri Mar 04 05:52:03.378447 2016] [mpm_prefork:notice] [pid 12179] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Fri Mar 04 05:52:03.378466 2016] [core:notice] [pid 12179] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+Traceback (most recent call last):
+  File "new_text.py", line 5, in <module>
+    from twilio.rest import TwilioRestClient
+ImportError: No module named twilio.rest
+
+
+
+-------------------------------------
+/opt/python/log/supervisord.log
+-------------------------------------
+2016-02-22 03:56:15,977 CRIT Supervisor running as root (no user in config file)
+2016-02-22 03:56:15,999 INFO RPC interface 'supervisor' initialized
+2016-02-22 03:56:15,999 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-22 03:56:16,000 INFO supervisord started with pid 2628
+2016-02-22 03:56:17,002 INFO spawned: 'httpd' with pid 2710
+2016-02-22 03:56:18,649 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 03:57:00,857 INFO stopped: httpd (exit status 0)
+2016-02-22 03:57:01,863 INFO spawned: 'httpd' with pid 2910
+2016-02-22 03:57:02,912 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 04:14:14,430 INFO stopped: httpd (exit status 0)
+2016-02-22 04:14:15,435 INFO spawned: 'httpd' with pid 3412
+2016-02-22 04:14:16,472 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 04:16:38,112 INFO stopped: httpd (exit status 0)
+2016-02-22 04:16:39,117 INFO spawned: 'httpd' with pid 3638
+2016-02-22 04:16:40,156 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 04:24:11,819 INFO stopped: httpd (exit status 0)
+2016-02-22 04:24:12,824 INFO spawned: 'httpd' with pid 3967
+2016-02-22 04:24:13,857 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 04:29:30,180 INFO stopped: httpd (exit status 0)
+2016-02-22 04:29:31,185 INFO spawned: 'httpd' with pid 4257
+2016-02-22 04:29:32,224 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-22 06:09:10,765 INFO stopped: httpd (exit status 0)
+2016-02-22 06:09:11,770 INFO spawned: 'httpd' with pid 28206
+2016-02-22 06:09:12,809 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-03 20:58:42,324 INFO stopped: httpd (exit status 0)
+2016-03-03 20:58:43,329 INFO spawned: 'httpd' with pid 3527
+2016-03-03 20:58:44,366 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 05:35:49,494 INFO stopped: httpd (exit status 0)
+2016-03-04 05:35:50,500 INFO spawned: 'httpd' with pid 11585
+2016-03-04 05:35:51,538 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 05:43:47,363 INFO stopped: httpd (exit status 0)
+2016-03-04 05:43:48,367 INFO spawned: 'httpd' with pid 11889
+2016-03-04 05:43:49,405 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 05:52:02,319 INFO stopped: httpd (exit status 0)
+2016-03-04 05:52:03,324 INFO spawned: 'httpd' with pid 12179
+2016-03-04 05:52:04,362 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+
+
+
+-------------------------------------
+/var/log/httpd/access_log
+-------------------------------------
+127.0.0.1 (-) - - [04/Mar/2016:05:40:38 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:40:43 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:40:48 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:40:53 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:41:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:41:37 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:41:40 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:41:40 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+::1 (-) - - [04/Mar/2016:05:42:36 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:37 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:38 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:39 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:40 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:41 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:42 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:42:48 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:05:43:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:43:56 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:01 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:11 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:16 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:21 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:26 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:31 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:41 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:46 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:44:56 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:01 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:11 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:16 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:21 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:26 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:31 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:41 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:46 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:45:56 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:01 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:11 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:16 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:21 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:26 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:31 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:41 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:46 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:46:56 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:01 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:06 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:11 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:16 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:21 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:26 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:31 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:36 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:37 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:47:37 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:41 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:46 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:47:56 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:01 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:06 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+::1 (-) - - [04/Mar/2016:05:48:06 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:48:07 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:11 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:16 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:21 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:26 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:31 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:36 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+::1 (-) - - [04/Mar/2016:05:48:38 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:48:39 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:48:40 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:41 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:46 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+127.0.0.1 (-) - - [04/Mar/2016:05:48:51 +0000] "GET / HTTP/1.1" 500 527 "-" "Python-urllib/2.7"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:49:25 +0000] "GET / HTTP/1.1" 500 527 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.25.40 (165.123.217.52) - - [04/Mar/2016:05:49:26 +0000] "GET /favicon.ico HTTP/1.1" 500 527 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+::1 (-) - - [04/Mar/2016:05:50:25 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:50:26 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:05:50:39 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:05:52:05 +0000] "GET / HTTP/1.1" 200 10138 "-" "Python-urllib/2.7"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:15 +0000] "GET / HTTP/1.1" 200 10138 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:15 +0000] "GET /static/js/bootstrap-formhelpers.min.js HTTP/1.1" 200 290425 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:16 +0000] "GET /static/css/bootstrap-formhelpers.css HTTP/1.1" 200 33130 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:16 +0000] "GET /static/css/bootstrap-formhelpers.min.css HTTP/1.1" 200 28691 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:16 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.13.182 (165.123.217.52) - - [04/Mar/2016:05:53:32 +0000] "GET /generate-text?date=03%2F04%2F2016&month=01&day=01&year=2016&pickup=yes&phone-number=%2B1+%28484%29+222-9088&insn0=0&insn2=2&insn3h=3h&insn3j=3j&insn9e=9e&insn10=&get=Get+Texts HTTP/1.1" 500 291 "http://pilot-env.ztkutemth6.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+
+
+
+-------------------------------------
+/var/log/eb-activity.log
+-------------------------------------
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/DESCRIPTION.rst  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/entry_points.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/LICENSE.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/METADATA  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/metadata.json  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/RECORD  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/RECORD.jws  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/top_level.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/WHEEL  
+     creating: /opt/python/ondeck/app/static/css/
+    inflating: /opt/python/ondeck/app/static/css/bootstrap-formhelpers.css  
+    inflating: /opt/python/ondeck/app/static/css/bootstrap-formhelpers.min.css  
+     creating: /opt/python/ondeck/app/static/img/
+    inflating: /opt/python/ondeck/app/static/img/bootstrap-formhelpers-countries.flags-LICENSE.txt  
+    inflating: /opt/python/ondeck/app/static/img/bootstrap-formhelpers-countries.flags.png  
+    inflating: /opt/python/ondeck/app/static/img/bootstrap-formhelpers-currencies.flags.png  
+    inflating: /opt/python/ondeck/app/static/img/bootstrap-formhelpers-googlefonts.png  
+     creating: /opt/python/ondeck/app/static/js/
+    inflating: /opt/python/ondeck/app/static/js/bootstrap-formhelpers.js  
+    inflating: /opt/python/ondeck/app/static/js/bootstrap-formhelpers.min.js  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/index.html  
+[2016-03-04T05:51:58.694Z] INFO  [12045] - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-03-04T05:51:59.687Z] INFO  [12045] - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): apiclient==1.0.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): easygui==0.97.4 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): fpdf==1.7.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): google-api-python-client==1.4.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): httplib2==0.9.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): icalendar==3.9.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 8))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.8 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 9))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 10))
+  Requirement already satisfied (use --upgrade to upgrade): oauth2client==1.5.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 11))
+  Requirement already satisfied (use --upgrade to upgrade): pyasn1==0.1.9 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 12))
+  Requirement already satisfied (use --upgrade to upgrade): pyasn1-modules==0.0.8 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 13))
+  Requirement already satisfied (use --upgrade to upgrade): python-dateutil==2.4.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 14))
+  Requirement already satisfied (use --upgrade to upgrade): pytz==2015.7 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 15))
+  Collecting requests==2.9.1 (from -r /opt/python/ondeck/app/requirements.txt (line 16))
+    Downloading requests-2.9.1-py2.py3-none-any.whl (501kB)
+  Requirement already satisfied (use --upgrade to upgrade): rsa==3.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 17))
+  Requirement already satisfied (use --upgrade to upgrade): simplejson==3.8.1 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 18))
+  Requirement already satisfied (use --upgrade to upgrade): six==1.10.0 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 19))
+  Requirement already satisfied (use --upgrade to upgrade): uritemplate==0.6 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 20))
+  Requirement already satisfied (use --upgrade to upgrade): urllib3==1.14 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 21))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.11.4 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 22))
+  Requirement already satisfied (use --upgrade to upgrade): wheel==0.24.0 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 23))
+  Requirement already satisfied (use --upgrade to upgrade): setuptools in /opt/python/run/venv/lib/python2.7/site-packages (from icalendar==3.9.2->-r /opt/python/ondeck/app/requirements.txt (line 7))
+  Installing collected packages: requests
+  Successfully installed requests-2.9.1
+  You are using pip version 7.1.2, however version 8.0.3 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-03-04T05:51:59.688Z] INFO  [12045] - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-03-04T05:52:01.263Z] INFO  [12045] - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-03-04T05:52:01.264Z] INFO  [12045] - [Application update/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-03-04T05:52:01.264Z] INFO  [12045] - [Application update/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-03-04T05:52:01.628Z] INFO  [12045] - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-03-04T05:52:01.628Z] INFO  [12045] - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-03-04T05:52:01.649Z] INFO  [12045] - [Application update/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-03-04T05:52:01.649Z] INFO  [12045] - [Application update/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-03-04T05:52:01.659Z] INFO  [12045] - [Application update/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-03-04T05:52:01.659Z] INFO  [12045] - [Application update/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-03-04T05:52:01.660Z] INFO  [12045] - [Application update/AppDeployStage1] : Starting activity...
+[2016-03-04T05:52:01.660Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-03-04T05:52:01.660Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-03-04T05:52:06.112Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 12179, uptime 0:00:02
+[2016-03-04T05:52:06.112Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-03-04T05:52:06.211Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-03-04T05:52:06.211Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AddonsAfter] : Starting activity...
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-03-04T05:52:06.212Z] INFO  [12045] - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-03-04T05:52:06.308Z] INFO  [12045] - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-03-04T05:52:06.308Z] INFO  [12045] - [Application update/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-03-04T05:52:06.309Z] INFO  [12045] - [Application update/AddonsAfter] : Completed activity.
+[2016-03-04T05:52:06.309Z] INFO  [12045] - [Application update] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-03-04T05:53:47.264Z] INFO  [12252] - [CMD-TailLogs - stage ] : Starting activity...
+[2016-03-04T05:53:47.520Z] INFO  [12252] - [CMD-TailLogs - stage /AddonsBefore] : Starting activity...
+[2016-03-04T05:53:47.520Z] INFO  [12252] - [CMD-TailLogs - stage /AddonsBefore] : Completed activity.
+[2016-03-04T05:53:47.520Z] INFO  [12252] - [CMD-TailLogs - stage /TailLogs] : Starting activity...
+[2016-03-04T05:53:47.520Z] INFO  [12252] - [CMD-TailLogs - stage /TailLogs/TailLogs] : Starting activity...
+
+
+
+-------------------------------------
+/var/log/eb-commandprocessor.log
+-------------------------------------
+[2016-03-04T05:49:36.954Z] DEBUG [11990] : Checking if the command processor should execute...
+[2016-03-04T05:49:36.955Z] DEBUG [11990] : Checking whether the command is applicable to instance (i-2d5ca8a9)..
+[2016-03-04T05:49:36.956Z] INFO  [11990] : Command is applicable to this instance (i-2d5ca8a9)..
+[2016-03-04T05:49:36.956Z] DEBUG [11990] : Checking if the received command stage is valid..
+[2016-03-04T05:49:36.956Z] INFO  [11990] : No stage_num in command. Valid stage..
+[2016-03-04T05:49:36.956Z] INFO  [11990] : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAIEFBUO3CXPE4CQ5A\",\"signature\":\"3IZQddQ2LpCT3WDe46s+eytWWtU=\",\"security_token\":\"AQoDYXdzED8awALv1\\\/8\\\/9pFLVXKVWGrMFeTJ0cEl7ZbG7Tv4TrWj2FZAyt6\\\/dFAnmeILHymZ3kSvg1PJEc6D+75mhiZAH2xm+SzxVZkPgjmpd8dUo\\\/TLa6mpOtTVsqw5MbhNh\\\/j+5hjnvHOeZWrgzm48NBCcyjjWZmIVo7u09CLIvZs1H3BZm8TaKn9thQpJtP8yRivsau3j7xc9UWdANcROj4wyxgKGjw5uCvYtar5O24KTrjiAY+D860rz8nOM3C3rejprucjIek+L0O\\\/GiofOaZiE0nMd0\\\/ClXbSfDIiH+ZR64HiDdttRt\\\/2zgWW6pQDyYRM\\\/MpccBSf8wBdquazuR6Ap1H+1QJnvHaNDcU9v4vJ9Gx7Ryulxlejo1Zz9g+hNkpCIjfR8u+jZzfKhXTscoDDpcVjLNxP1N\\\/0ytpTXikmo8eJrLPN1lyDuw+S2BQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNi0wMy0wNFQwNjoxOTozNC4yMThaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy1lYXN0LTEtMTA3MDY4MDU1MzM0Il0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-2d5ca8a9"],"data":"df4a896e-e1cc-11e5-933f-e9c083b04973","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"df4a896e-e1cc-11e5-933f-e9c083b04973","command_timeout":"600"}
+[2016-03-04T05:49:36.956Z] INFO  [11990] : Command processor should execute command.
+[2016-03-04T05:49:36.956Z] DEBUG [11990] : Storing current stage..
+[2016-03-04T05:49:36.956Z] DEBUG [11990] : Stage_num does not exist. Not saving null stage. Returning..
+[2016-03-04T05:49:36.956Z] INFO  [11990] : Executing CMD-TailLogs - stage 
+[2016-03-04T05:49:36.956Z] INFO  [11990] : Executing command: CMD-TailLogs...
+[2016-03-04T05:49:36.956Z] DEBUG [11990] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T05:49:36.956Z] DEBUG [11990] : Refreshing metadata..
+[2016-03-04T05:49:37.212Z] DEBUG [11990] : Refreshed environment metadata.
+[2016-03-04T05:49:37.212Z] DEBUG [11990] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T05:49:37.213Z] DEBUG [11990] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T05:49:37.213Z] INFO  [11990] : Found enabled addons: ["logpublish"].
+[2016-03-04T05:49:37.214Z] INFO  [11990] : Updating Command definition of addon logpublish.
+[2016-03-04T05:49:37.214Z] DEBUG [11990] : Loaded definition of Command CMD-TailLogs.
+[2016-03-04T05:49:37.215Z] INFO  [11990] : Executing command CMD-TailLogs activities...
+[2016-03-04T05:49:37.215Z] DEBUG [11990] : Setting environment variables..
+[2016-03-04T05:49:37.215Z] INFO  [11990] : Running AddonsBefore for command CMD-TailLogs...
+[2016-03-04T05:49:37.215Z] DEBUG [11990] : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2016-03-04T05:49:37.215Z] INFO  [11990] : Running stage 0 of command CMD-TailLogs...
+[2016-03-04T05:49:37.215Z] DEBUG [11990] : Loaded 1 actions for stage 0.
+[2016-03-04T05:49:37.215Z] INFO  [11990] : Running 1 of 1 actions: TailLogs...
+[2016-03-04T05:49:37.436Z] INFO  [11990] : Running AddonsAfter for command CMD-TailLogs...
+[2016-03-04T05:49:37.436Z] INFO  [11990] : Command CMD-TailLogs succeeded!
+[2016-03-04T05:49:37.436Z] INFO  [11990] : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"[Instance: i-2d5ca8a9] Successfully finished tailing 6 log(s)","severity":"INFO","timestamp":1457070577436}]}]}
+[2016-03-04T05:51:55.623Z] DEBUG [12045] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T05:51:55.623Z] DEBUG [12045] : Checking if the command processor should execute...
+[2016-03-04T05:51:55.625Z] DEBUG [12045] : Checking whether the command is applicable to instance (i-2d5ca8a9)..
+[2016-03-04T05:51:55.625Z] INFO  [12045] : Command is applicable to this instance (i-2d5ca8a9)..
+[2016-03-04T05:51:55.625Z] DEBUG [12045] : Checking if the received command stage is valid..
+[2016-03-04T05:51:55.625Z] INFO  [12045] : No stage_num in command. Valid stage..
+[2016-03-04T05:51:55.626Z] INFO  [12045] : Received command CMD-AppDeploy: {"execution_data":"{\"leader_election\":\"true\"}","instance_ids":["i-2d5ca8a9"],"data":"manifest_1457070711733","command_name":"CMD-AppDeploy","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"2e4f1d13-e1cd-11e5-b059-ab17b5b69142","command_timeout":"600"}
+[2016-03-04T05:51:55.626Z] INFO  [12045] : Command processor should execute command.
+[2016-03-04T05:51:55.626Z] DEBUG [12045] : Storing current stage..
+[2016-03-04T05:51:55.626Z] DEBUG [12045] : Stage_num does not exist. Not saving null stage. Returning..
+[2016-03-04T05:51:55.626Z] INFO  [12045] : Executing Application update
+[2016-03-04T05:51:55.626Z] INFO  [12045] : Executing command: CMD-AppDeploy...
+[2016-03-04T05:51:55.626Z] DEBUG [12045] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T05:51:55.626Z] DEBUG [12045] : Refreshing metadata..
+[2016-03-04T05:51:55.883Z] DEBUG [12045] : Refreshed environment metadata.
+[2016-03-04T05:51:55.883Z] DEBUG [12045] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T05:51:55.884Z] DEBUG [12045] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T05:51:55.884Z] INFO  [12045] : Found enabled addons: ["logpublish"].
+[2016-03-04T05:51:55.886Z] INFO  [12045] : Updating Command definition of addon logpublish.
+[2016-03-04T05:51:55.886Z] DEBUG [12045] : Loaded definition of Command CMD-AppDeploy.
+[2016-03-04T05:51:55.886Z] INFO  [12045] : Executing command CMD-AppDeploy activities...
+[2016-03-04T05:51:55.886Z] DEBUG [12045] : Setting environment variables..
+[2016-03-04T05:51:55.886Z] INFO  [12045] : Running AddonsBefore for command CMD-AppDeploy...
+[2016-03-04T05:51:55.886Z] DEBUG [12045] : Running stages of Command CMD-AppDeploy from stage 0 to stage 1...
+[2016-03-04T05:51:55.886Z] INFO  [12045] : Running stage 0 of command CMD-AppDeploy...
+[2016-03-04T05:51:55.886Z] INFO  [12045] : Running leader election...
+[2016-03-04T05:51:56.141Z] INFO  [12045] : Instance is Leader.
+[2016-03-04T05:51:56.141Z] DEBUG [12045] : Loaded 7 actions for stage 0.
+[2016-03-04T05:51:56.141Z] INFO  [12045] : Running 1 of 7 actions: InfraWriteConfig...
+[2016-03-04T05:51:56.143Z] INFO  [12045] : Running 2 of 7 actions: InfraWriteApp1...
+[2016-03-04T05:51:56.145Z] INFO  [12045] : Running 3 of 7 actions: InfraWriteApp2...
+[2016-03-04T05:51:57.328Z] INFO  [12045] : Running 4 of 7 actions: EbExtensionPreBuild...
+[2016-03-04T05:51:57.610Z] INFO  [12045] : Running 5 of 7 actions: AppDeployPreHook...
+[2016-03-04T05:52:01.264Z] INFO  [12045] : Running 6 of 7 actions: EbExtensionPostBuild...
+[2016-03-04T05:52:01.649Z] INFO  [12045] : Running 7 of 7 actions: InfraCleanEbextension...
+[2016-03-04T05:52:01.659Z] INFO  [12045] : Running stage 1 of command CMD-AppDeploy...
+[2016-03-04T05:52:01.660Z] DEBUG [12045] : Loaded 2 actions for stage 1.
+[2016-03-04T05:52:01.660Z] INFO  [12045] : Running 1 of 2 actions: AppDeployEnactHook...
+[2016-03-04T05:52:06.211Z] INFO  [12045] : Running 2 of 2 actions: AppDeployPostHook...
+[2016-03-04T05:52:06.212Z] INFO  [12045] : Running AddonsAfter for command CMD-AppDeploy...
+[2016-03-04T05:52:06.309Z] INFO  [12045] : Command CMD-AppDeploy succeeded!
+[2016-03-04T05:52:06.309Z] INFO  [12045] : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2016-03-04T05:53:47.260Z] DEBUG [12252] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T05:53:47.261Z] DEBUG [12252] : Checking if the command processor should execute...
+[2016-03-04T05:53:47.263Z] DEBUG [12252] : Checking whether the command is applicable to instance (i-2d5ca8a9)..
+[2016-03-04T05:53:47.263Z] INFO  [12252] : Command is applicable to this instance (i-2d5ca8a9)..
+[2016-03-04T05:53:47.263Z] DEBUG [12252] : Checking if the received command stage is valid..
+[2016-03-04T05:53:47.263Z] INFO  [12252] : No stage_num in command. Valid stage..
+[2016-03-04T05:53:47.263Z] INFO  [12252] : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAJQATEZGGZAX2OY6A\",\"signature\":\"sStcrdaax3hEjo4gniXRoM0e+yc=\",\"security_token\":\"AQoDYXdzED8awAK+z74MX69XHpit0l3ntkZ1CfZd3d27hGdu+IKz+j+clVWgQ45RioHAcxCYJDWzkjxZ5zfpPLSr9FIH7nSY4iwPd2elA53sy0WXhuq7V2pW4gQs5foOBxmjK2rErk8q1E5FGy273Hlq3AdvMDjSR2DXD7+Yk\\\/dnAZS1z1cPoCgsspxwN6l+9KLMWOoAjTocbKQkYul+M1heSEc+jiLjUOc+vm14075MmGchiVnqmPhFRksUMP2PDY1WMKmAlsiCeKwfvDczjF06pQmm5GzaJOkLuZs1RNIoaNf2Zx09Iy2G+IxWFwAoq4i3DBcmLrejVOlPILf59SRNVlrtGMTMtgOTt6K\\\/07wsefF91bq3XwBrKp7jaGEnGcgoOGlEqgP\\\/+Ew7zdMwf2l4dxn\\\/agytYMwDsCNnkKPcsQrbYZJ9dmH5ryDoxeS2BQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNi0wMy0wNFQwNjoyMzo0NC45NTVaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy1lYXN0LTEtMTA3MDY4MDU1MzM0Il0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-2d5ca8a9"],"data":"74b12687-e1cd-11e5-8f2f-5181eb05fd80","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"74b12687-e1cd-11e5-8f2f-5181eb05fd80","command_timeout":"600"}
+[2016-03-04T05:53:47.263Z] INFO  [12252] : Command processor should execute command.
+[2016-03-04T05:53:47.263Z] DEBUG [12252] : Storing current stage..
+[2016-03-04T05:53:47.263Z] DEBUG [12252] : Stage_num does not exist. Not saving null stage. Returning..
+[2016-03-04T05:53:47.264Z] INFO  [12252] : Executing CMD-TailLogs - stage 
+[2016-03-04T05:53:47.264Z] INFO  [12252] : Executing command: CMD-TailLogs...
+[2016-03-04T05:53:47.264Z] DEBUG [12252] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T05:53:47.264Z] DEBUG [12252] : Refreshing metadata..
+[2016-03-04T05:53:47.517Z] DEBUG [12252] : Refreshed environment metadata.
+[2016-03-04T05:53:47.517Z] DEBUG [12252] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T05:53:47.518Z] DEBUG [12252] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T05:53:47.518Z] INFO  [12252] : Found enabled addons: ["logpublish"].
+[2016-03-04T05:53:47.519Z] INFO  [12252] : Updating Command definition of addon logpublish.
+[2016-03-04T05:53:47.519Z] DEBUG [12252] : Loaded definition of Command CMD-TailLogs.
+[2016-03-04T05:53:47.519Z] INFO  [12252] : Executing command CMD-TailLogs activities...
+[2016-03-04T05:53:47.519Z] DEBUG [12252] : Setting environment variables..
+[2016-03-04T05:53:47.519Z] INFO  [12252] : Running AddonsBefore for command CMD-TailLogs...
+[2016-03-04T05:53:47.520Z] DEBUG [12252] : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2016-03-04T05:53:47.520Z] INFO  [12252] : Running stage 0 of command CMD-TailLogs...
+[2016-03-04T05:53:47.520Z] DEBUG [12252] : Loaded 1 actions for stage 0.
+[2016-03-04T05:53:47.520Z] INFO  [12252] : Running 1 of 1 actions: TailLogs...
+
+
+

@@ -1,0 +1,121 @@
+<template name="allNotifications">
+<style>
+	.proj-contents {
+		/*display: none;*/
+	}
+
+	.proj-name:hover: {
+		font-color: #8E8EA3;
+	}
+</style>
+	{{#each singleProject}}
+		<div class="{{this.name}} project">
+			<h3 class="proj-name">{{this.name}} 
+				<i class="proj-expander fa fa-minus-square-o"></i></h3>
+
+			<div class="categories">
+			{{#if notificationsPresent}}
+				{{#if created}}
+				<div class="proj-contents" id="{{this.name}}">
+				<h5 class="proj-categ created">Newly created</h5>
+				<button class="mark-read btn-default btn-xs">Mark all as read</button>
+				<table class="table table-hover table-striped">
+					<thead>
+				        <tr>
+				            <th>Task</th>
+				            <th>User</th>
+				            <th></th>
+				        </tr>
+			    	</thead>
+					<tbody>
+					{{#each created}}
+						<tr>
+							<td>
+							<a class="notification-message" href="{{notificationPostPath}}">{{this.taskName}}
+							</a>
+							</td>
+							<td>{{this.actionByUser}}</td>
+							<td><a class="notif-read" href="#"><i class="fa fa-times notif-read" style="font-size: 12px;"></i></a></td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+				</div>
+				{{/if}}
+
+				{{#if deleted}}
+				<div class="proj-contents" id="{{this.name}}">
+				<h5 class="proj-categ deleted">Pending deletions</h5>
+				<span class="delete-action">
+				{{#if deleteOptionButton}}
+				<button class="select-req-del btn-default btn-xs" id="select-req-approve">Approve</button>
+				<button class="select-req-del btn-default btn-xs" id="select-req-reject">Reject</button> selected requests. 
+				{{/if}}
+				</span>
+				{{#if approveOrRejectDeletions}}
+				<button class="delete-req-update btn-xs">Click here to update</button>
+				{{/if}}
+				<table class="table table-hover table-striped">
+					<thead>
+				        <tr>
+				            <th>Task</th>
+				            <th>User</th>
+				            <th><input type="checkbox" class="select-all-del"></th>
+				        </tr>
+			    	</thead>
+					<tbody>
+					{{#each deleted}}
+						<tr>
+							<td><a class="notification-message" href="{{notificationPostPath}}">{{this.taskName}}
+							</a></td>
+							<td>{{this.actionByUser}}</td>
+							<td><input type="checkbox" value="{{this._id}}" class="single-check-del" id="{{this.taskId}}"></td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+				</div>
+				{{/if}}
+
+				{{#if completed}}
+				<div class="proj-contents" id="{{this.name}}">
+				<h5 class="proj-categ completed">Pending completions</h5>
+				<span class="complete-action">
+				{{#if completeOptionButton}}
+				<button class="select-req-compl btn-default btn-xs" id="select-req-approve">Approve</button>
+				<button class="select-req-compl btn-default btn-xs" id="select-req-reject">Reject</button> selected requests. 
+				{{/if}}
+				</span>
+				{{#if approveOrRejectCompletions}}
+				<button class="complete-req-update btn-xs">Click here to update</button>
+				{{/if}}
+				<table class="table table-hover table-striped">
+					<thead>
+				        <tr>
+				            <th>Task</th>
+				            <th>User</th>
+				            <th><input type="checkbox" class="select-all-compl"></th>
+				        </tr>
+			    	</thead>
+					<tbody>
+					{{#each completed}}
+						<tr>
+							<td><a class="notification-message" href="{{notificationPostPath}}">{{this.taskName}}
+							</a></td>
+							<td>{{this.actionByUser}}</td>
+							<td><input type="checkbox" value="{{this._id}}" class="single-check-compl" id="{{this.taskId}}"></td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+				</div>
+				{{/if}}
+			{{else}}
+				No new pending task updates. 
+			{{/if}}
+
+			</div>
+			
+		</div>
+	{{/each}}
+</template>

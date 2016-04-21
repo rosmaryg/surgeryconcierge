@@ -1,0 +1,437 @@
+Retrieving logs...
+============= i-ea060b6f ==============
+-------------------------------------
+/var/log/eb-version-deployment.log
+-------------------------------------
+2016-02-14 21:37:35,785 [INFO] Found the latest version manifest file <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-rqjfapwnkb/_runtime/versions/manifest_1455485609797> from bucket elasticbeanstalk-us-east-1-107068055334 and prefix resources/environments/e-rqjfapwnkb/_runtime/versions/
+2016-02-14 21:37:35,836 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-14 21:37:36,374 [INFO] Downloaded version label app-160214_163241 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-rqjfapwnkb/_runtime/_versions/surgeryconcierge-pilot/app-160214_163241>
+2016-02-14 21:41:26,690 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-rqjfapwnkb/_runtime/versions/manifest_1455486081779
+2016-02-14 21:41:26,752 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-14 21:41:27,196 [INFO] Downloaded version label app-160214_164046 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-rqjfapwnkb/_runtime/_versions/surgeryconcierge-pilot/app-160214_164046>
+2016-02-14 21:58:56,404 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-rqjfapwnkb/_runtime/versions/manifest_1455487130438
+2016-02-14 21:58:56,454 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-02-14 21:58:56,889 [INFO] Downloaded version label app-160214_165811 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-rqjfapwnkb/_runtime/_versions/surgeryconcierge-pilot/app-160214_165811>
+
+
+
+-------------------------------------
+/var/log/httpd/error_log
+-------------------------------------
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+Traceback (most recent call last):
+  File "new_calendar.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+Traceback (most recent call last):
+  File "new_calendar.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+Traceback (most recent call last):
+  File "new_pdf.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+Traceback (most recent call last):
+  File "new_pdf.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+[Sun Feb 14 21:59:00.907585 2016] [mpm_prefork:notice] [pid 3161] AH00169: caught SIGTERM, shutting down
+[Sun Feb 14 21:59:01.982956 2016] [suexec:notice] [pid 3763] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Sun Feb 14 21:59:01.994127 2016] [so:warn] [pid 3763] AH01574: module wsgi_module is already loaded, skipping
+[Sun Feb 14 21:59:02.001686 2016] [auth_digest:notice] [pid 3763] AH01757: generating secret for digest authentication ...
+[Sun Feb 14 21:59:02.002347 2016] [lbmethod_heartbeat:notice] [pid 3763] AH02282: No slotmem from mod_heartmonitor
+[Sun Feb 14 21:59:02.002399 2016] [:warn] [pid 3763] mod_wsgi: Compiled for Python/2.7.9.
+[Sun Feb 14 21:59:02.002402 2016] [:warn] [pid 3763] mod_wsgi: Runtime using Python/2.7.10.
+[Sun Feb 14 21:59:02.004257 2016] [mpm_prefork:notice] [pid 3763] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Sun Feb 14 21:59:02.004272 2016] [core:notice] [pid 3763] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+Traceback (most recent call last):
+  File "new_pdf.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+Traceback (most recent call last):
+  File "new_calendar.py", line 227, in <module>
+    generate_calendar()
+  File "new_calendar.py", line 122, in generate_calendar
+    credentials = get_credentials()
+  File "new_calendar.py", line 91, in get_credentials
+    os.makedirs(credential_dir)
+  File "/opt/python/run/venv/lib64/python2.7/os.py", line 150, in makedirs
+    makedirs(head, mode)
+  File "/opt/python/run/venv/lib64/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/home/wsgi'
+Traceback (most recent call last):
+  File "new_calendar.py", line 227, in <module>
+    generate_calendar()
+  File "new_calendar.py", line 122, in generate_calendar
+    credentials = get_credentials()
+  File "new_calendar.py", line 91, in get_credentials
+    os.makedirs(credential_dir)
+  File "/opt/python/run/venv/lib64/python2.7/os.py", line 150, in makedirs
+    makedirs(head, mode)
+  File "/opt/python/run/venv/lib64/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/home/wsgi'
+Traceback (most recent call last):
+  File "new_pdf.py", line 13, in <module>
+    import easygui
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/__init__.py", line 34, in <module>
+    from .boxes.base_boxes import buttonbox
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/base_boxes.py", line 15, in <module>
+    from . import utils as ut
+  File "/opt/python/run/venv/local/lib/python2.7/site-packages/easygui/boxes/utils.py", line 36, in <module>
+    raise ImportError("Unable to find tkinter package.")
+ImportError: Unable to find tkinter package.
+
+
+
+-------------------------------------
+/opt/python/log/supervisord.log
+-------------------------------------
+2016-02-14 21:37:45,114 CRIT Supervisor running as root (no user in config file)
+2016-02-14 21:37:45,139 INFO RPC interface 'supervisor' initialized
+2016-02-14 21:37:45,139 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-14 21:37:45,139 INFO supervisord started with pid 2636
+2016-02-14 21:37:46,141 INFO spawned: 'httpd' with pid 2715
+2016-02-14 21:37:47,943 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-14 21:38:36,062 INFO stopped: httpd (exit status 0)
+2016-02-14 21:38:37,066 INFO spawned: 'httpd' with pid 2918
+2016-02-14 21:38:38,103 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-14 21:41:31,307 INFO stopped: httpd (exit status 0)
+2016-02-14 21:41:32,311 INFO spawned: 'httpd' with pid 3161
+2016-02-14 21:41:33,347 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-02-14 21:59:00,919 INFO stopped: httpd (exit status 0)
+2016-02-14 21:59:01,936 INFO spawned: 'httpd' with pid 3763
+2016-02-14 21:59:02,982 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+
+
+
+-------------------------------------
+/var/log/httpd/access_log
+-------------------------------------
+127.0.0.1 (-) - - [14/Feb/2016:21:38:39 +0000] "GET / HTTP/1.1" 200 9642 "-" "Python-urllib/2.7"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:39:56 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:39:56 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:40:02 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:40:13 +0000] "GET /generate-calendar?month=1&day=1&year=2016&pickup=yes&phone-number=&insn10=10&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:40:24 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&insn9=9&insn9d=9d&insn10=10&insn10e=10e&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:40:33 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:40:57 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:41:02 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:41:03 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:41:04 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [14/Feb/2016:21:41:34 +0000] "GET / HTTP/1.1" 200 9642 "-" "Python-urllib/2.7"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:42:00 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:42:06 +0000] "GET /generate-pdf?month=11&day=1&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:42:11 +0000] "GET /generate-calendar?month=11&day=1&year=2016&pickup=yes&phone-number=&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:42:47 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:42:48 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:42:51 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:42:52 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:43:00 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:43:01 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:43:05 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:43:06 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=8082379659&insn0=0&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:43:06 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:43:07 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.218.95) - - [14/Feb/2016:21:43:08 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56"
+172.31.20.39 (165.123.218.95) - - [14/Feb/2016:21:43:08 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56"
+::1 (-) - - [14/Feb/2016:21:43:13 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:43:14 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:43:18 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.95) - - [14/Feb/2016:21:43:21 +0000] "GET /generate-calendar?month=1&day=1&year=2016&pickup=yes&phone-number=&insn0=0&insn1=1&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56"
+172.31.15.15 (165.123.218.95) - - [14/Feb/2016:21:43:26 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&insn0=0&insn1=1&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:43:30 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:43:41 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=8082379659&insn0=0&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:43:46 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:43:52 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:43:53 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:43:58 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn16=16&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:44:04 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:44:08 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:44:10 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:44:12 +0000] "GET /generate-calendar?month=3&day=3&year=2016&pickup=yes&phone-number=&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:44:18 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:44:21 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:44:26 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.218.168) - - [14/Feb/2016:21:44:26 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn4=4&insn17=17&insn17a=17a&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:45:27 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:45:28 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:45:29 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.20.39 (165.123.218.168) - - [14/Feb/2016:21:45:34 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn4=4&insn17=17&insn17a=17a&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.219.83) - - [14/Feb/2016:21:50:06 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.219.83) - - [14/Feb/2016:21:50:26 +0000] "GET /generate-calendar?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.219.83) - - [14/Feb/2016:21:50:33 +0000] "GET /generate-calendar?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.219.83) - - [14/Feb/2016:21:50:49 +0000] "GET /generate-calendar?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn2=2&insn4=4&insn6=6&insn8=8&insn8b=8b&insn8d=8d&insn8f=8f&insn8h=8h&insn8j=8j&insn8l=8l&insn9=9&insn9a=9a&insn9c=9c&insn9e=9e&insn9g=9g&insn9i=9i&insn11=11&insn13=13&insn15=15&insn15c=15c&insn15e=15e&insn15g=15g&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:51:31 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:51:33 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:51:34 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:51:49 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:51:54 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.214.28) - - [14/Feb/2016:21:54:47 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.214.28) - - [14/Feb/2016:21:54:52 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (177.226.120.217) - - [14/Feb/2016:21:55:48 +0000] "GET /papa-en-mexico/2016/644595/6/el-papa-reprende-al-alto-clero-de-mexico.htm HTTP/1.1" 404 233 "http://m.facebook.com/" "Mozilla/5.0 (Linux; Android 4.4.2; LG-D280 Build/KOT49I.V10a) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36"
+::1 (-) - - [14/Feb/2016:21:55:52 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [14/Feb/2016:21:55:54 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:58:21 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:58:23 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:58:30 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+127.0.0.1 (-) - - [14/Feb/2016:21:59:04 +0000] "GET / HTTP/1.1" 200 9642 "-" "Python-urllib/2.7"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:59:53 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:21:59:56 +0000] "GET / HTTP/1.1" 200 9642 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:21:59:57 +0000] "GET /generate-pdf?month=1&day=1&year=2016&pickup=yes&phone-number=&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:22:00:05 +0000] "GET /generate-calendar?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn1=1&insn15=15&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.20.39 (165.123.214.28) - - [14/Feb/2016:22:00:07 +0000] "GET /generate-calendar?month=1&day=1&year=2016&pickup=yes&phone-number=&get=Get+Calendar HTTP/1.1" 200 21 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+172.31.15.15 (165.123.219.83) - - [14/Feb/2016:22:00:07 +0000] "GET /generate-pdf?month=3&day=3&year=2016&pickup=yes&phone-number=&insn0=0&insn1=1&insn15=15&get=Get+PDF HTTP/1.1" 500 291 "http://surgeryconcierge-pilot.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+::1 (-) - - [14/Feb/2016:22:00:54 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+
+
+
+-------------------------------------
+/var/log/eb-activity.log
+-------------------------------------
+     creating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/test/simple.dist/simpledist/
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/test/simple.dist/simpledist/__init__.py  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/test/simple.dist/simpledist/__init__.pyc  
+     creating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/tool/
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/tool/__init__.py  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel/tool/__init__.pyc  
+     creating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/DESCRIPTION.rst  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/entry_points.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/LICENSE.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/METADATA  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/metadata.json  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/RECORD  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/RECORD.jws  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/top_level.txt  
+    inflating: /opt/python/ondeck/app/pilot-env/lib/python2.7/site-packages/wheel-0.24.0.dist-info/WHEEL  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/index.html  
+[2016-02-14T21:58:58.145Z] INFO  [3629]  - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-02-14T21:58:58.581Z] INFO  [3629]  - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): apiclient==1.0.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): easygui==0.97.4 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): fpdf==1.7.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): google-api-python-client==1.4.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): httplib2==0.9.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.8 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 8))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 9))
+  Requirement already satisfied (use --upgrade to upgrade): oauth2client==1.5.2 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 10))
+  Requirement already satisfied (use --upgrade to upgrade): pyasn1==0.1.9 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 11))
+  Requirement already satisfied (use --upgrade to upgrade): pyasn1-modules==0.0.8 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 12))
+  Requirement already satisfied (use --upgrade to upgrade): rsa==3.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 13))
+  Requirement already satisfied (use --upgrade to upgrade): simplejson==3.8.1 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 14))
+  Requirement already satisfied (use --upgrade to upgrade): six==1.10.0 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 15))
+  Requirement already satisfied (use --upgrade to upgrade): uritemplate==0.6 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 16))
+  Requirement already satisfied (use --upgrade to upgrade): urllib3==1.14 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 17))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.11.4 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 18))
+  Requirement already satisfied (use --upgrade to upgrade): wheel==0.24.0 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 19))
+  You are using pip version 7.1.2, however version 8.0.2 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-02-14T21:58:58.581Z] INFO  [3629]  - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-02-14T21:59:00.042Z] INFO  [3629]  - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-02-14T21:59:00.042Z] INFO  [3629]  - [Application update/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-02-14T21:59:00.042Z] INFO  [3629]  - [Application update/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-02-14T21:59:00.337Z] INFO  [3629]  - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-02-14T21:59:00.337Z] INFO  [3629]  - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-02-14T21:59:00.354Z] INFO  [3629]  - [Application update/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-02-14T21:59:00.354Z] INFO  [3629]  - [Application update/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-02-14T21:59:00.359Z] INFO  [3629]  - [Application update/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-02-14T21:59:00.359Z] INFO  [3629]  - [Application update/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-02-14T21:59:00.359Z] INFO  [3629]  - [Application update/AppDeployStage1] : Starting activity...
+[2016-02-14T21:59:00.359Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-02-14T21:59:00.359Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-02-14T21:59:04.691Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 3763, uptime 0:00:03
+[2016-02-14T21:59:04.691Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AddonsAfter] : Starting activity...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-02-14T21:59:04.881Z] INFO  [3629]  - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-02-14T21:59:04.881Z] INFO  [3629]  - [Application update/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-02-14T21:59:04.881Z] INFO  [3629]  - [Application update/AddonsAfter] : Completed activity.
+[2016-02-14T21:59:04.881Z] INFO  [3629]  - [Application update] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-02-14T22:00:07.881Z] INFO  [3865]  - [CMD-TailLogs - stage ] : Starting activity...
+[2016-02-14T22:00:08.174Z] INFO  [3865]  - [CMD-TailLogs - stage /AddonsBefore] : Starting activity...
+[2016-02-14T22:00:08.174Z] INFO  [3865]  - [CMD-TailLogs - stage /AddonsBefore] : Completed activity.
+[2016-02-14T22:00:08.174Z] INFO  [3865]  - [CMD-TailLogs - stage /TailLogs] : Starting activity...
+[2016-02-14T22:00:08.174Z] INFO  [3865]  - [CMD-TailLogs - stage /TailLogs/TailLogs] : Starting activity...
+[2016-02-14T22:00:08.473Z] INFO  [3865]  - [CMD-TailLogs - stage /TailLogs/TailLogs] : Completed activity.
+[2016-02-14T22:00:08.474Z] INFO  [3865]  - [CMD-TailLogs - stage /TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-02-14T22:00:08.474Z] INFO  [3865]  - [CMD-TailLogs - stage /AddonsAfter] : Starting activity...
+[2016-02-14T22:00:08.474Z] INFO  [3865]  - [CMD-TailLogs - stage /AddonsAfter] : Completed activity.
+[2016-02-14T22:00:08.474Z] INFO  [3865]  - [CMD-TailLogs - stage ] : Completed activity. Result:
+  CMD-TailLogs - stage  - Command CMD-TailLogs succeeded
+[2016-02-14T22:00:55.621Z] INFO  [3916]  - [CMD-TailLogs - stage ] : Starting activity...
+[2016-02-14T22:00:55.872Z] INFO  [3916]  - [CMD-TailLogs - stage /AddonsBefore] : Starting activity...
+[2016-02-14T22:00:55.872Z] INFO  [3916]  - [CMD-TailLogs - stage /AddonsBefore] : Completed activity.
+[2016-02-14T22:00:55.872Z] INFO  [3916]  - [CMD-TailLogs - stage /TailLogs] : Starting activity...
+[2016-02-14T22:00:55.872Z] INFO  [3916]  - [CMD-TailLogs - stage /TailLogs/TailLogs] : Starting activity...
+
+
+
+-------------------------------------
+/var/log/eb-commandprocessor.log
+-------------------------------------
+[2016-02-14T21:58:55.412Z] DEBUG [3629]  : Checking if the command processor should execute...
+[2016-02-14T21:58:55.414Z] DEBUG [3629]  : Checking whether the command is applicable to instance (i-ea060b6f)..
+[2016-02-14T21:58:55.414Z] INFO  [3629]  : Command is applicable to this instance (i-ea060b6f)..
+[2016-02-14T21:58:55.414Z] DEBUG [3629]  : Checking if the received command stage is valid..
+[2016-02-14T21:58:55.414Z] INFO  [3629]  : No stage_num in command. Valid stage..
+[2016-02-14T21:58:55.415Z] INFO  [3629]  : Received command CMD-AppDeploy: {"execution_data":"{\"leader_election\":\"true\"}","instance_ids":["i-ea060b6f"],"data":"manifest_1455487130438","command_name":"CMD-AppDeploy","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"1ed6da95-d366-11e5-8b1f-3be4b5bf1abc","command_timeout":"600"}
+[2016-02-14T21:58:55.415Z] INFO  [3629]  : Command processor should execute command.
+[2016-02-14T21:58:55.415Z] DEBUG [3629]  : Storing current stage..
+[2016-02-14T21:58:55.415Z] DEBUG [3629]  : Stage_num does not exist. Not saving null stage. Returning..
+[2016-02-14T21:58:55.415Z] INFO  [3629]  : Executing Application update
+[2016-02-14T21:58:55.415Z] INFO  [3629]  : Executing command: CMD-AppDeploy...
+[2016-02-14T21:58:55.415Z] DEBUG [3629]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-02-14T21:58:55.415Z] DEBUG [3629]  : Refreshing metadata..
+[2016-02-14T21:58:55.663Z] DEBUG [3629]  : Refreshed environment metadata.
+[2016-02-14T21:58:55.663Z] DEBUG [3629]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-02-14T21:58:55.664Z] DEBUG [3629]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-02-14T21:58:55.664Z] INFO  [3629]  : Found enabled addons: ["logpublish"].
+[2016-02-14T21:58:55.665Z] INFO  [3629]  : Updating Command definition of addon logpublish.
+[2016-02-14T21:58:55.665Z] DEBUG [3629]  : Loaded definition of Command CMD-AppDeploy.
+[2016-02-14T21:58:55.665Z] INFO  [3629]  : Executing command CMD-AppDeploy activities...
+[2016-02-14T21:58:55.665Z] DEBUG [3629]  : Setting environment variables..
+[2016-02-14T21:58:55.666Z] INFO  [3629]  : Running AddonsBefore for command CMD-AppDeploy...
+[2016-02-14T21:58:55.666Z] DEBUG [3629]  : Running stages of Command CMD-AppDeploy from stage 0 to stage 1...
+[2016-02-14T21:58:55.666Z] INFO  [3629]  : Running stage 0 of command CMD-AppDeploy...
+[2016-02-14T21:58:55.666Z] INFO  [3629]  : Running leader election...
+[2016-02-14T21:58:55.961Z] INFO  [3629]  : Instance is Leader.
+[2016-02-14T21:58:55.962Z] DEBUG [3629]  : Loaded 7 actions for stage 0.
+[2016-02-14T21:58:55.962Z] INFO  [3629]  : Running 1 of 7 actions: InfraWriteConfig...
+[2016-02-14T21:58:55.964Z] INFO  [3629]  : Running 2 of 7 actions: InfraWriteApp1...
+[2016-02-14T21:58:55.965Z] INFO  [3629]  : Running 3 of 7 actions: InfraWriteApp2...
+[2016-02-14T21:58:56.927Z] INFO  [3629]  : Running 4 of 7 actions: EbExtensionPreBuild...
+[2016-02-14T21:58:57.204Z] INFO  [3629]  : Running 5 of 7 actions: AppDeployPreHook...
+[2016-02-14T21:59:00.042Z] INFO  [3629]  : Running 6 of 7 actions: EbExtensionPostBuild...
+[2016-02-14T21:59:00.354Z] INFO  [3629]  : Running 7 of 7 actions: InfraCleanEbextension...
+[2016-02-14T21:59:00.359Z] INFO  [3629]  : Running stage 1 of command CMD-AppDeploy...
+[2016-02-14T21:59:00.359Z] DEBUG [3629]  : Loaded 2 actions for stage 1.
+[2016-02-14T21:59:00.359Z] INFO  [3629]  : Running 1 of 2 actions: AppDeployEnactHook...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  : Running 2 of 2 actions: AppDeployPostHook...
+[2016-02-14T21:59:04.788Z] INFO  [3629]  : Running AddonsAfter for command CMD-AppDeploy...
+[2016-02-14T21:59:04.881Z] INFO  [3629]  : Command CMD-AppDeploy succeeded!
+[2016-02-14T21:59:04.881Z] INFO  [3629]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2016-02-14T22:00:07.877Z] DEBUG [3865]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-02-14T22:00:07.877Z] DEBUG [3865]  : Checking if the command processor should execute...
+[2016-02-14T22:00:07.880Z] DEBUG [3865]  : Checking whether the command is applicable to instance (i-ea060b6f)..
+[2016-02-14T22:00:07.880Z] INFO  [3865]  : Command is applicable to this instance (i-ea060b6f)..
+[2016-02-14T22:00:07.880Z] DEBUG [3865]  : Checking if the received command stage is valid..
+[2016-02-14T22:00:07.880Z] INFO  [3865]  : No stage_num in command. Valid stage..
+[2016-02-14T22:00:07.880Z] INFO  [3865]  : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAJR3VQR5R22DV2SRA\",\"signature\":\"XFvsSszLfuvuq8yGSwXJ19AxMNc=\",\"security_token\":\"AQoDYXdzEGcawAJYH2BUaUjjSSgzh9NA7syUGken17EQYJUXMGWrw0boiD3oNHjSdyPVOt+2uCOorqqkE3Z5hC+KI9J4MVN7HnrJgtFtY9UtviXELFTuYyO1iVFOECuNWZHXonvyAWw6q3ok79\\\/LFWZFtk5JEKqrFz8uoeiHPibSEtwD+77JBJ3ZwPMrQP2i2HhnhWk2w9I5JG2NkA4JbJEEUd+rfb7DlW6Nmf\\\/FUQeVcLiCO40efX4lHql4lNkXWVEBmpNWdulhf\\\/Wu+W2tNuGK6ZTGkoJoOfD\\\/NMgz0XuBa6M3iB0pZd4pT9ukI2DyG3qWbcrKMX4TiW9pqe3+a0efqsQ+1lFJdtWJ2bzo4n6EflNojKSiu9D7RZprRbz\\\/LV87nETourBYA5nIFptiPO6fleAlfmRsi+Gvzv\\\/NPeZ5mps5yWYpll1M3iDk8YO2BQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNi0wMi0xNFQyMjozMDowNC4yMzhaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy1lYXN0LTEtMTA3MDY4MDU1MzM0Il0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-ea060b6f"],"data":"4d4943b4-d366-11e5-bec3-754b3ea99240","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"4d4943b4-d366-11e5-bec3-754b3ea99240","command_timeout":"600"}
+[2016-02-14T22:00:07.880Z] INFO  [3865]  : Command processor should execute command.
+[2016-02-14T22:00:07.880Z] DEBUG [3865]  : Storing current stage..
+[2016-02-14T22:00:07.880Z] DEBUG [3865]  : Stage_num does not exist. Not saving null stage. Returning..
+[2016-02-14T22:00:07.880Z] INFO  [3865]  : Executing CMD-TailLogs - stage 
+[2016-02-14T22:00:07.881Z] INFO  [3865]  : Executing command: CMD-TailLogs...
+[2016-02-14T22:00:07.881Z] DEBUG [3865]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-02-14T22:00:07.881Z] DEBUG [3865]  : Refreshing metadata..
+[2016-02-14T22:00:08.172Z] DEBUG [3865]  : Refreshed environment metadata.
+[2016-02-14T22:00:08.172Z] DEBUG [3865]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-02-14T22:00:08.172Z] DEBUG [3865]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-02-14T22:00:08.173Z] INFO  [3865]  : Found enabled addons: ["logpublish"].
+[2016-02-14T22:00:08.174Z] INFO  [3865]  : Updating Command definition of addon logpublish.
+[2016-02-14T22:00:08.174Z] DEBUG [3865]  : Loaded definition of Command CMD-TailLogs.
+[2016-02-14T22:00:08.174Z] INFO  [3865]  : Executing command CMD-TailLogs activities...
+[2016-02-14T22:00:08.174Z] DEBUG [3865]  : Setting environment variables..
+[2016-02-14T22:00:08.174Z] INFO  [3865]  : Running AddonsBefore for command CMD-TailLogs...
+[2016-02-14T22:00:08.174Z] DEBUG [3865]  : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2016-02-14T22:00:08.174Z] INFO  [3865]  : Running stage 0 of command CMD-TailLogs...
+[2016-02-14T22:00:08.174Z] DEBUG [3865]  : Loaded 1 actions for stage 0.
+[2016-02-14T22:00:08.174Z] INFO  [3865]  : Running 1 of 1 actions: TailLogs...
+[2016-02-14T22:00:08.474Z] INFO  [3865]  : Running AddonsAfter for command CMD-TailLogs...
+[2016-02-14T22:00:08.474Z] INFO  [3865]  : Command CMD-TailLogs succeeded!
+[2016-02-14T22:00:08.474Z] INFO  [3865]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"[Instance: i-ea060b6f] Successfully finished tailing 6 log(s)","severity":"INFO","timestamp":1455487208474}]}]}
+[2016-02-14T22:00:55.618Z] DEBUG [3916]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-02-14T22:00:55.618Z] DEBUG [3916]  : Checking if the command processor should execute...
+[2016-02-14T22:00:55.620Z] DEBUG [3916]  : Checking whether the command is applicable to instance (i-ea060b6f)..
+[2016-02-14T22:00:55.620Z] INFO  [3916]  : Command is applicable to this instance (i-ea060b6f)..
+[2016-02-14T22:00:55.620Z] DEBUG [3916]  : Checking if the received command stage is valid..
+[2016-02-14T22:00:55.620Z] INFO  [3916]  : No stage_num in command. Valid stage..
+[2016-02-14T22:00:55.620Z] INFO  [3916]  : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAJDQHPYJ7LBPPMKFA\",\"signature\":\"fZDR2nj9HIWG6sw63V+lNvEgZb4=\",\"security_token\":\"AQoDYXdzEGcawAJt\\\/zFQns+RzJNXF\\\/o9BiU7PGIG1V\\\/QeN7p7dRN1Vh3jtXrVlcFK3YLGaWbcVUTMcKTuHVuOJ2at+CvN\\\/VarstN1l3mHLalzOCY9SKkWQr71ZkUJN8Z0zTnHM5jkHJkpRpJTaeJrO6JqSh8PfDZcanLxkGwTIvulaS9RzvxpBVySJPLWUUJ1ysl9EzswJ2Q3dEGA6TdVLHanakNFwYrKmszuUBj5moZchj7hbQbTH9ak+JBFtmK8z8IB07cTd8wFUB9S5PzB8f6ulTwXNSciWSQtJcyUSvSbAQEjp5r1EKxHEguxKeG1ARnH7AYVtar31rxUR7vHTBk78mXqnMVeayXXIbooti9Jd5EE8f5Zv5UOAtpSvp8woLiCkvyYcPTJDMKGVuExAK3qp90KMg+uhGzgfpMVCb8FnR\\\/jRzYdMg+5CCV8oO2BQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNi0wMi0xNFQyMjozMDo1My41NTRaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy1lYXN0LTEtMTA3MDY4MDU1MzM0Il0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-ea060b6f"],"data":"6aa26354-d366-11e5-961d-e720d696179c","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"6aa26354-d366-11e5-961d-e720d696179c","command_timeout":"600"}
+[2016-02-14T22:00:55.620Z] INFO  [3916]  : Command processor should execute command.
+[2016-02-14T22:00:55.620Z] DEBUG [3916]  : Storing current stage..
+[2016-02-14T22:00:55.620Z] DEBUG [3916]  : Stage_num does not exist. Not saving null stage. Returning..
+[2016-02-14T22:00:55.621Z] INFO  [3916]  : Executing CMD-TailLogs - stage 
+[2016-02-14T22:00:55.621Z] INFO  [3916]  : Executing command: CMD-TailLogs...
+[2016-02-14T22:00:55.621Z] DEBUG [3916]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-02-14T22:00:55.621Z] DEBUG [3916]  : Refreshing metadata..
+[2016-02-14T22:00:55.869Z] DEBUG [3916]  : Refreshed environment metadata.
+[2016-02-14T22:00:55.869Z] DEBUG [3916]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-02-14T22:00:55.870Z] DEBUG [3916]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-02-14T22:00:55.870Z] INFO  [3916]  : Found enabled addons: ["logpublish"].
+[2016-02-14T22:00:55.871Z] INFO  [3916]  : Updating Command definition of addon logpublish.
+[2016-02-14T22:00:55.871Z] DEBUG [3916]  : Loaded definition of Command CMD-TailLogs.
+[2016-02-14T22:00:55.871Z] INFO  [3916]  : Executing command CMD-TailLogs activities...
+[2016-02-14T22:00:55.871Z] DEBUG [3916]  : Setting environment variables..
+[2016-02-14T22:00:55.871Z] INFO  [3916]  : Running AddonsBefore for command CMD-TailLogs...
+[2016-02-14T22:00:55.872Z] DEBUG [3916]  : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2016-02-14T22:00:55.872Z] INFO  [3916]  : Running stage 0 of command CMD-TailLogs...
+[2016-02-14T22:00:55.872Z] DEBUG [3916]  : Loaded 1 actions for stage 0.
+[2016-02-14T22:00:55.872Z] INFO  [3916]  : Running 1 of 1 actions: TailLogs...
+
+
+

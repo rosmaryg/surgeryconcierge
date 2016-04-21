@@ -1,0 +1,24 @@
+<template name="postsList">
+  <div class="posts page">
+    <div class="wrapper">
+      {{#each posts}}
+            {{#if myProj}} 
+                {{> postItem}}
+            {{/if}}
+      {{/each}}
+      <!-- show following text if no announcements are displayed -->
+      {{#if notShown}}
+        <h5 class="col-md-8" > No announcements to show. </h5>
+      {{/if}}
+
+    </div>
+    
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>

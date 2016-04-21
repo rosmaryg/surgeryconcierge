@@ -1,0 +1,44 @@
+<template name="activityLog">
+	<h3>Project History</h3>
+	<a href="{{pathFor 'projectView' _id= this.projectId}}">Back</a>	
+		
+	<div class="activity-log-table">
+
+		{{#if filtering}}
+		<button class="default-log">Restore Default View</button>	
+		{{/if}}
+		{{#if notMyActivitiesView}}
+		<button class="my-activities">My Activities</button>
+		{{/if}}
+
+		<table class="table table-bordered table-striped">
+			<thead>
+		        <tr>
+		            <th>Tag</th>
+		            <th>Date</th>
+		            <th>Action</th>
+		        </tr>
+	    	</thead>
+			<tbody>
+			{{#each logItems}}
+				<tr class="{{this.tag}} {{this.color}} info">
+					<td><i class="fa fa-tags" style="color: {{this.color}};"></i>
+					{{#each this.tagArray}}
+					<span class="tag"><a href="#" class="{{this}}">{{this}}</a></span>
+					{{/each}}
+					</td>
+					<td>{{this.submitted}}</td>
+					<td>
+						{{#if this.link}}
+							<a href="#" id="{{this.link}}" class="description-link">{{this.description}}</a>
+						{{else}}
+							{{this.description}}
+						{{/if}}
+
+					</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

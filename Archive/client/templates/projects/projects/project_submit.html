@@ -1,0 +1,29 @@
+<!-- template for handling layout of project view looks like -->
+<template name="projectSubmit">
+    <div id="mainContainer">
+        <div id="container1">
+            <form class="main form page">
+                <div class="form-group {{errorClass 'url'}}">
+                    <label class="control-label" for="project-name">Project Name</label>
+                    <div class="controls">
+                        <input name="project-name" id="project-name" type="text" value="" placeholder="Your Project" class="form-control"/>
+                        <span class="help-block">{{errorMessage 'name'}}</span>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </form>
+        </div>
+        <div id="container2">
+            <h1>My Project List (To-Do: {{incompleteCount}})</h1>
+                <label class="hide-completed">
+                    <input type="checkbox" checked="{{hideCompleted}}" />
+                    Hide Completed Projects
+                </label>
+            <ul>
+                {{> userProjectsList}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+

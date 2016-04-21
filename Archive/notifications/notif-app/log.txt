@@ -1,0 +1,330 @@
+Retrieving logs...
+============= i-22f4e8ba ==============
+-------------------------------------
+/var/log/eb-version-deployment.log
+-------------------------------------
+2016-03-04 02:56:17,588 [INFO] Found the latest version manifest file <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-pskdsamwwi/_runtime/versions/manifest_1457059940661> from bucket elasticbeanstalk-us-east-1-107068055334 and prefix resources/environments/e-pskdsamwwi/_runtime/versions/
+2016-03-04 02:56:17,670 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 02:56:17,757 [INFO] Downloaded version label app-160303_215209 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-pskdsamwwi/_runtime/_versions/notif-app/app-160303_215209>
+2016-03-04 03:13:52,260 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-pskdsamwwi/_runtime/versions/manifest_1457061226852
+2016-03-04 03:13:52,323 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 03:13:52,391 [INFO] Downloaded version label app-160303_221340 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-pskdsamwwi/_runtime/_versions/notif-app/app-160303_221340>
+2016-03-04 03:41:27,952 [INFO] Version manifest file name already known. The latest version manifest file key is resources/environments/e-pskdsamwwi/_runtime/versions/manifest_1457062883183
+2016-03-04 03:41:28,046 [INFO] Downloaded the manifest file to /tmp/version_file_manifest
+2016-03-04 03:41:28,110 [INFO] Downloaded version label app-160303_224115 from s3 key <Key: elasticbeanstalk-us-east-1-107068055334,resources/environments/e-pskdsamwwi/_runtime/_versions/notif-app/app-160303_224115>
+
+
+
+-------------------------------------
+/opt/python/log/supervisord.log
+-------------------------------------
+2016-03-04 02:56:25,811 CRIT Supervisor running as root (no user in config file)
+2016-03-04 02:56:25,847 INFO RPC interface 'supervisor' initialized
+2016-03-04 02:56:25,847 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-03-04 02:56:25,848 INFO supervisord started with pid 2632
+2016-03-04 02:56:26,850 INFO spawned: 'httpd' with pid 2714
+2016-03-04 02:56:27,851 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 02:57:24,448 INFO stopped: httpd (exit status 0)
+2016-03-04 02:57:25,453 INFO spawned: 'httpd' with pid 2876
+2016-03-04 02:57:26,487 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 03:13:56,252 INFO stopped: httpd (exit status 0)
+2016-03-04 03:13:57,257 INFO spawned: 'httpd' with pid 3332
+2016-03-04 03:13:58,292 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-03-04 03:41:36,089 INFO stopped: httpd (exit status 0)
+2016-03-04 03:41:37,094 INFO spawned: 'httpd' with pid 26131
+2016-03-04 03:41:38,130 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+
+
+
+-------------------------------------
+/var/log/httpd/error_log
+-------------------------------------
+[Fri Mar 04 02:56:28.022636 2016] [suexec:notice] [pid 2714] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Mar 04 02:56:28.034104 2016] [auth_digest:notice] [pid 2714] AH01757: generating secret for digest authentication ...
+[Fri Mar 04 02:56:28.034644 2016] [lbmethod_heartbeat:notice] [pid 2714] AH02282: No slotmem from mod_heartmonitor
+[Fri Mar 04 02:56:28.034675 2016] [:warn] [pid 2714] mod_wsgi: Compiled for Python/2.7.9.
+[Fri Mar 04 02:56:28.034680 2016] [:warn] [pid 2714] mod_wsgi: Runtime using Python/2.7.10.
+[Fri Mar 04 02:56:28.036240 2016] [mpm_prefork:notice] [pid 2714] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Fri Mar 04 02:56:28.036255 2016] [core:notice] [pid 2714] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Mar 04 02:57:24.436111 2016] [mpm_prefork:notice] [pid 2714] AH00169: caught SIGTERM, shutting down
+[Fri Mar 04 02:57:25.487706 2016] [suexec:notice] [pid 2876] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Mar 04 02:57:25.498484 2016] [so:warn] [pid 2876] AH01574: module wsgi_module is already loaded, skipping
+[Fri Mar 04 02:57:25.501307 2016] [auth_digest:notice] [pid 2876] AH01757: generating secret for digest authentication ...
+[Fri Mar 04 02:57:25.501972 2016] [lbmethod_heartbeat:notice] [pid 2876] AH02282: No slotmem from mod_heartmonitor
+[Fri Mar 04 02:57:25.502021 2016] [:warn] [pid 2876] mod_wsgi: Compiled for Python/2.7.9.
+[Fri Mar 04 02:57:25.502025 2016] [:warn] [pid 2876] mod_wsgi: Runtime using Python/2.7.10.
+[Fri Mar 04 02:57:25.503984 2016] [mpm_prefork:notice] [pid 2876] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Fri Mar 04 02:57:25.504001 2016] [core:notice] [pid 2876] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Mar 04 03:13:56.240341 2016] [mpm_prefork:notice] [pid 2876] AH00169: caught SIGTERM, shutting down
+[Fri Mar 04 03:13:57.292650 2016] [suexec:notice] [pid 3332] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Mar 04 03:13:57.303832 2016] [so:warn] [pid 3332] AH01574: module wsgi_module is already loaded, skipping
+[Fri Mar 04 03:13:57.306375 2016] [auth_digest:notice] [pid 3332] AH01757: generating secret for digest authentication ...
+[Fri Mar 04 03:13:57.306987 2016] [lbmethod_heartbeat:notice] [pid 3332] AH02282: No slotmem from mod_heartmonitor
+[Fri Mar 04 03:13:57.307026 2016] [:warn] [pid 3332] mod_wsgi: Compiled for Python/2.7.9.
+[Fri Mar 04 03:13:57.307030 2016] [:warn] [pid 3332] mod_wsgi: Runtime using Python/2.7.10.
+[Fri Mar 04 03:13:57.308945 2016] [mpm_prefork:notice] [pid 3332] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Fri Mar 04 03:13:57.308961 2016] [core:notice] [pid 3332] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Mar 04 03:41:36.077543 2016] [mpm_prefork:notice] [pid 3332] AH00169: caught SIGTERM, shutting down
+[Fri Mar 04 03:41:37.130146 2016] [suexec:notice] [pid 26131] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Mar 04 03:41:37.140895 2016] [so:warn] [pid 26131] AH01574: module wsgi_module is already loaded, skipping
+[Fri Mar 04 03:41:37.143613 2016] [auth_digest:notice] [pid 26131] AH01757: generating secret for digest authentication ...
+[Fri Mar 04 03:41:37.144226 2016] [lbmethod_heartbeat:notice] [pid 26131] AH02282: No slotmem from mod_heartmonitor
+[Fri Mar 04 03:41:37.144271 2016] [:warn] [pid 26131] mod_wsgi: Compiled for Python/2.7.9.
+[Fri Mar 04 03:41:37.144278 2016] [:warn] [pid 26131] mod_wsgi: Runtime using Python/2.7.10.
+[Fri Mar 04 03:41:37.146189 2016] [mpm_prefork:notice] [pid 26131] AH00163: Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 configured -- resuming normal operations
+[Fri Mar 04 03:41:37.146206 2016] [core:notice] [pid 26131] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+
+
+
+-------------------------------------
+/var/log/httpd/access_log
+-------------------------------------
+127.0.0.1 (-) - - [04/Mar/2016:02:57:28 +0000] "GET / HTTP/1.1" 200 266 "-" "Python-urllib/2.7"
+172.31.31.73 (165.123.217.52) - - [04/Mar/2016:03:01:18 +0000] "GET / HTTP/1.1" 200 266 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.31.73 (165.123.217.52) - - [04/Mar/2016:03:01:19 +0000] "GET /favicon.ico HTTP/1.1" 200 131 "http://node.p9s9sjcatq.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+::1 (-) - - [04/Mar/2016:03:02:24 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:02:25 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:02:26 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:03:13:59 +0000] "GET / HTTP/1.1" 200 28 "-" "Python-urllib/2.7"
+172.31.57.196 (165.123.217.52) - - [04/Mar/2016:03:14:22 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "http://node.p9s9sjcatq.us-east-1.elasticbeanstalk.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.57.196 (165.123.217.52) - - [04/Mar/2016:03:14:30 +0000] "GET / HTTP/1.1" 200 28 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.57.196 (165.123.217.52) - - [04/Mar/2016:03:14:35 +0000] "GET /schedule_texts HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+172.31.31.73 (173.252.90.240) - - [04/Mar/2016:03:15:11 +0000] "GET /schedule_texts HTTP/1.1" 200 16 "-" "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
+172.31.31.73 (66.220.152.37) - - [04/Mar/2016:03:15:13 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "-" "facebookexternalhit/1.1"
+172.31.31.73 (66.220.152.38) - - [04/Mar/2016:03:15:13 +0000] "GET /schedule_texts HTTP/1.1" 200 16 "-" "facebookexternalhit/1.1"
+172.31.57.196 (173.252.102.114) - - [04/Mar/2016:03:15:13 +0000] "GET /schedule_texts HTTP/1.1" 200 16 "-" "facebookexternalhit/1.1"
+172.31.57.196 (173.252.102.118) - - [04/Mar/2016:03:15:13 +0000] "GET /favicon.ico HTTP/1.1" 404 233 "-" "facebookexternalhit/1.1"
+::1 (-) - - [04/Mar/2016:03:15:22 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:23 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:24 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:25 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:28 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:30 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:15:31 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:13 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:14 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:15 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:16 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:17 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:18 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:19 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:20 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:21 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+::1 (-) - - [04/Mar/2016:03:16:22 +0000] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.16 (Amazon) mod_wsgi/3.5 Python/2.7.10 (internal dummy connection)"
+127.0.0.1 (-) - - [04/Mar/2016:03:41:39 +0000] "GET / HTTP/1.1" 200 28 "-" "Python-urllib/2.7"
+172.31.57.196 (165.123.217.52) - - [04/Mar/2016:03:42:39 +0000] "GET / HTTP/1.1" 200 28 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+
+
+
+-------------------------------------
+/var/log/eb-activity.log
+-------------------------------------
+[2016-03-04T03:41:28.443Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-03-04T03:41:28.443Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-03-04T03:41:28.771Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-03-04T03:41:28.771Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-03-04T03:41:29.111Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+    inflating: /opt/python/ondeck/app/__init__.py  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/new_text.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+[2016-03-04T03:41:29.111Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-03-04T03:41:33.702Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Collecting APScheduler==3.0.5 (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+    Downloading APScheduler-3.0.5-py2.py3-none-any.whl (49kB)
+  Collecting DateTime==4.0.1 (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+    Downloading DateTime-4.0.1.zip (65kB)
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Collecting futures==3.0.5 (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+    Downloading futures-3.0.5-py2-none-any.whl
+  Collecting httplib2==0.9.2 (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+    Downloading httplib2-0.9.2.tar.gz (205kB)
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.8 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 8))
+  Collecting pytz==2015.7 (from -r /opt/python/ondeck/app/requirements.txt (line 9))
+    Downloading pytz-2015.7-py2.py3-none-any.whl (476kB)
+  Collecting six==1.10.0 (from -r /opt/python/ondeck/app/requirements.txt (line 10))
+    Downloading six-1.10.0-py2.py3-none-any.whl
+  Collecting twilio==5.4.0 (from -r /opt/python/ondeck/app/requirements.txt (line 11))
+    Downloading twilio-5.4.0.tar.gz (193kB)
+  Collecting tzlocal==1.2.2 (from -r /opt/python/ondeck/app/requirements.txt (line 12))
+    Downloading tzlocal-1.2.2.tar.gz
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.11.4 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 13))
+  Requirement already satisfied (use --upgrade to upgrade): wheel==0.24.0 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 14))
+  Collecting zope.interface==4.1.3 (from -r /opt/python/ondeck/app/requirements.txt (line 15))
+    Downloading zope.interface-4.1.3.tar.gz (141kB)
+  Requirement already satisfied (use --upgrade to upgrade): setuptools in /opt/python/run/venv/lib/python2.7/site-packages (from zope.interface==4.1.3->-r /opt/python/ondeck/app/requirements.txt (line 15))
+  Building wheels for collected packages: DateTime, httplib2, twilio, tzlocal, zope.interface
+    Running setup.py bdist_wheel for DateTime
+    Stored in directory: /root/.cache/pip/wheels/e2/d1/3e/24ae92b24a68b84a5c5731c4f740bac3abd1a33e0a7dc6cfda
+    Running setup.py bdist_wheel for httplib2
+    Stored in directory: /root/.cache/pip/wheels/e1/a3/05/e66aad1380335ee0a823c8f1b9006efa577236a24b3cb1eade
+    Running setup.py bdist_wheel for twilio
+    Stored in directory: /root/.cache/pip/wheels/06/6c/98/9fa0e5af0f3a8c106fa4c42fe54061064a5964ade04673f6a6
+    Running setup.py bdist_wheel for tzlocal
+    Stored in directory: /root/.cache/pip/wheels/0a/2c/b5/89bc579919734c04a91447d03aba6428e8378e63803a73900d
+    Running setup.py bdist_wheel for zope.interface
+    Stored in directory: /root/.cache/pip/wheels/c9/15/5b/3a7e3c7c3b67b5ee002c0ebe8ac1f46ec3c0379c5037c6ab71
+  Successfully built DateTime httplib2 twilio tzlocal zope.interface
+  Installing collected packages: six, futures, pytz, tzlocal, APScheduler, zope.interface, DateTime, httplib2, twilio
+  Successfully installed APScheduler-3.0.5 DateTime-4.0.1 futures-3.0.5 httplib2-0.9.2 pytz-2015.7 six-1.10.0 twilio-5.4.0 tzlocal-1.2.2 zope.interface-4.1.3
+  You are using pip version 7.1.2, however version 8.0.3 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-03-04T03:41:33.702Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-03-04T03:41:35.201Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-03-04T03:41:35.201Z] INFO  [25961] - [Application update/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-03-04T03:41:35.201Z] INFO  [25961] - [Application update/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-03-04T03:41:35.529Z] INFO  [25961] - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-03-04T03:41:35.529Z] INFO  [25961] - [Application update/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-03-04T03:41:35.552Z] INFO  [25961] - [Application update/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-03-04T03:41:35.552Z] INFO  [25961] - [Application update/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-03-04T03:41:35.554Z] INFO  [25961] - [Application update/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-03-04T03:41:35.554Z] INFO  [25961] - [Application update/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-03-04T03:41:35.554Z] INFO  [25961] - [Application update/AppDeployStage1] : Starting activity...
+[2016-03-04T03:41:35.554Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-03-04T03:41:35.554Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-03-04T03:41:40.004Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 26131, uptime 0:00:02
+[2016-03-04T03:41:40.004Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-03-04T03:41:40.103Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-03-04T03:41:40.103Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AddonsAfter] : Starting activity...
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-03-04T03:41:40.104Z] INFO  [25961] - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-03-04T03:41:40.201Z] INFO  [25961] - [Application update/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-03-04T03:41:40.202Z] INFO  [25961] - [Application update/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-03-04T03:41:40.202Z] INFO  [25961] - [Application update/AddonsAfter] : Completed activity.
+[2016-03-04T03:41:40.202Z] INFO  [25961] - [Application update] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-03-04T03:43:28.000Z] INFO  [26209] - [CMD-TailLogs - stage ] : Starting activity...
+[2016-03-04T03:43:28.259Z] INFO  [26209] - [CMD-TailLogs - stage /AddonsBefore] : Starting activity...
+[2016-03-04T03:43:28.260Z] INFO  [26209] - [CMD-TailLogs - stage /AddonsBefore] : Completed activity.
+[2016-03-04T03:43:28.260Z] INFO  [26209] - [CMD-TailLogs - stage /TailLogs] : Starting activity...
+[2016-03-04T03:43:28.260Z] INFO  [26209] - [CMD-TailLogs - stage /TailLogs/TailLogs] : Starting activity...
+
+
+
+-------------------------------------
+/var/log/eb-commandprocessor.log
+-------------------------------------
+[2016-03-04T03:13:51.198Z] DEBUG [3199]  : Refreshing metadata..
+[2016-03-04T03:13:51.452Z] DEBUG [3199]  : Refreshed environment metadata.
+[2016-03-04T03:13:51.452Z] DEBUG [3199]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T03:13:51.453Z] DEBUG [3199]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T03:13:51.453Z] INFO  [3199]  : Found enabled addons: ["logpublish"].
+[2016-03-04T03:13:51.454Z] INFO  [3199]  : Updating Command definition of addon logpublish.
+[2016-03-04T03:13:51.454Z] DEBUG [3199]  : Loaded definition of Command CMD-AppDeploy.
+[2016-03-04T03:13:51.454Z] INFO  [3199]  : Executing command CMD-AppDeploy activities...
+[2016-03-04T03:13:51.454Z] DEBUG [3199]  : Setting environment variables..
+[2016-03-04T03:13:51.454Z] INFO  [3199]  : Running AddonsBefore for command CMD-AppDeploy...
+[2016-03-04T03:13:51.455Z] DEBUG [3199]  : Running stages of Command CMD-AppDeploy from stage 0 to stage 1...
+[2016-03-04T03:13:51.455Z] INFO  [3199]  : Running stage 0 of command CMD-AppDeploy...
+[2016-03-04T03:13:51.455Z] INFO  [3199]  : Running leader election...
+[2016-03-04T03:13:51.755Z] INFO  [3199]  : Instance is Leader.
+[2016-03-04T03:13:51.756Z] DEBUG [3199]  : Loaded 7 actions for stage 0.
+[2016-03-04T03:13:51.756Z] INFO  [3199]  : Running 1 of 7 actions: InfraWriteConfig...
+[2016-03-04T03:13:51.758Z] INFO  [3199]  : Running 2 of 7 actions: InfraWriteApp1...
+[2016-03-04T03:13:51.759Z] INFO  [3199]  : Running 3 of 7 actions: InfraWriteApp2...
+[2016-03-04T03:13:52.447Z] INFO  [3199]  : Running 4 of 7 actions: EbExtensionPreBuild...
+[2016-03-04T03:13:52.748Z] INFO  [3199]  : Running 5 of 7 actions: AppDeployPreHook...
+[2016-03-04T03:13:55.390Z] INFO  [3199]  : Running 6 of 7 actions: EbExtensionPostBuild...
+[2016-03-04T03:13:55.698Z] INFO  [3199]  : Running 7 of 7 actions: InfraCleanEbextension...
+[2016-03-04T03:13:55.700Z] INFO  [3199]  : Running stage 1 of command CMD-AppDeploy...
+[2016-03-04T03:13:55.700Z] DEBUG [3199]  : Loaded 2 actions for stage 1.
+[2016-03-04T03:13:55.700Z] INFO  [3199]  : Running 1 of 2 actions: AppDeployEnactHook...
+[2016-03-04T03:14:00.104Z] INFO  [3199]  : Running 2 of 2 actions: AppDeployPostHook...
+[2016-03-04T03:14:00.104Z] INFO  [3199]  : Running AddonsAfter for command CMD-AppDeploy...
+[2016-03-04T03:14:00.203Z] INFO  [3199]  : Command CMD-AppDeploy succeeded!
+[2016-03-04T03:14:00.203Z] INFO  [3199]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2016-03-04T03:41:26.980Z] DEBUG [25961] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T03:41:26.980Z] DEBUG [25961] : Checking if the command processor should execute...
+[2016-03-04T03:41:26.983Z] DEBUG [25961] : Checking whether the command is applicable to instance (i-22f4e8ba)..
+[2016-03-04T03:41:26.983Z] INFO  [25961] : Command is applicable to this instance (i-22f4e8ba)..
+[2016-03-04T03:41:26.983Z] DEBUG [25961] : Checking if the received command stage is valid..
+[2016-03-04T03:41:26.983Z] INFO  [25961] : No stage_num in command. Valid stage..
+[2016-03-04T03:41:26.983Z] INFO  [25961] : Received command CMD-AppDeploy: {"execution_data":"{\"leader_election\":\"true\"}","instance_ids":["i-22f4e8ba"],"data":"manifest_1457062883183","command_name":"CMD-AppDeploy","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"f40c474c-e1ba-11e5-9e65-e50f01202ed4","command_timeout":"600"}
+[2016-03-04T03:41:26.983Z] INFO  [25961] : Command processor should execute command.
+[2016-03-04T03:41:26.983Z] DEBUG [25961] : Storing current stage..
+[2016-03-04T03:41:26.983Z] DEBUG [25961] : Stage_num does not exist. Not saving null stage. Returning..
+[2016-03-04T03:41:26.984Z] INFO  [25961] : Executing Application update
+[2016-03-04T03:41:26.984Z] INFO  [25961] : Executing command: CMD-AppDeploy...
+[2016-03-04T03:41:26.984Z] DEBUG [25961] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T03:41:26.984Z] DEBUG [25961] : Refreshing metadata..
+[2016-03-04T03:41:27.236Z] DEBUG [25961] : Refreshed environment metadata.
+[2016-03-04T03:41:27.236Z] DEBUG [25961] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T03:41:27.237Z] DEBUG [25961] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T03:41:27.238Z] INFO  [25961] : Found enabled addons: ["logpublish"].
+[2016-03-04T03:41:27.239Z] INFO  [25961] : Updating Command definition of addon logpublish.
+[2016-03-04T03:41:27.239Z] DEBUG [25961] : Loaded definition of Command CMD-AppDeploy.
+[2016-03-04T03:41:27.239Z] INFO  [25961] : Executing command CMD-AppDeploy activities...
+[2016-03-04T03:41:27.239Z] DEBUG [25961] : Setting environment variables..
+[2016-03-04T03:41:27.239Z] INFO  [25961] : Running AddonsBefore for command CMD-AppDeploy...
+[2016-03-04T03:41:27.239Z] DEBUG [25961] : Running stages of Command CMD-AppDeploy from stage 0 to stage 1...
+[2016-03-04T03:41:27.239Z] INFO  [25961] : Running stage 0 of command CMD-AppDeploy...
+[2016-03-04T03:41:27.239Z] INFO  [25961] : Running leader election...
+[2016-03-04T03:41:27.538Z] INFO  [25961] : Instance is Leader.
+[2016-03-04T03:41:27.538Z] DEBUG [25961] : Loaded 7 actions for stage 0.
+[2016-03-04T03:41:27.539Z] INFO  [25961] : Running 1 of 7 actions: InfraWriteConfig...
+[2016-03-04T03:41:27.541Z] INFO  [25961] : Running 2 of 7 actions: InfraWriteApp1...
+[2016-03-04T03:41:27.541Z] INFO  [25961] : Running 3 of 7 actions: InfraWriteApp2...
+[2016-03-04T03:41:28.154Z] INFO  [25961] : Running 4 of 7 actions: EbExtensionPreBuild...
+[2016-03-04T03:41:28.443Z] INFO  [25961] : Running 5 of 7 actions: AppDeployPreHook...
+[2016-03-04T03:41:35.201Z] INFO  [25961] : Running 6 of 7 actions: EbExtensionPostBuild...
+[2016-03-04T03:41:35.552Z] INFO  [25961] : Running 7 of 7 actions: InfraCleanEbextension...
+[2016-03-04T03:41:35.554Z] INFO  [25961] : Running stage 1 of command CMD-AppDeploy...
+[2016-03-04T03:41:35.554Z] DEBUG [25961] : Loaded 2 actions for stage 1.
+[2016-03-04T03:41:35.554Z] INFO  [25961] : Running 1 of 2 actions: AppDeployEnactHook...
+[2016-03-04T03:41:40.104Z] INFO  [25961] : Running 2 of 2 actions: AppDeployPostHook...
+[2016-03-04T03:41:40.104Z] INFO  [25961] : Running AddonsAfter for command CMD-AppDeploy...
+[2016-03-04T03:41:40.202Z] INFO  [25961] : Command CMD-AppDeploy succeeded!
+[2016-03-04T03:41:40.202Z] INFO  [25961] : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2016-03-04T03:43:27.997Z] DEBUG [26209] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T03:43:27.997Z] DEBUG [26209] : Checking if the command processor should execute...
+[2016-03-04T03:43:28.000Z] DEBUG [26209] : Checking whether the command is applicable to instance (i-22f4e8ba)..
+[2016-03-04T03:43:28.000Z] INFO  [26209] : Command is applicable to this instance (i-22f4e8ba)..
+[2016-03-04T03:43:28.000Z] DEBUG [26209] : Checking if the received command stage is valid..
+[2016-03-04T03:43:28.000Z] INFO  [26209] : No stage_num in command. Valid stage..
+[2016-03-04T03:43:28.000Z] INFO  [26209] : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAICHQRNIOVM74NNYA\",\"signature\":\"idg+borywPWSCnWWruBjF7W2UXs=\",\"security_token\":\"AQoDYXdzED0awAKPEFXzch02+xVEC9kzc9M5ZszRJpIO6gDPIwDXrAKzbLzkh9sGf7oldh032vxYOUMrN1E\\\/CrWpQr5t6LPvlzVdIp5qSgvA0L1MTVciiBpbPRuFUfow3nSSxvgNGhUBYZKxVq5zPONphwv4OpXDFMBv1SYkvx2yoqn751MGYVrxv3EtnnK5tLYk\\\/KgykhzIMrrF3AZiV19ODkXUWGa0fzP0smODBwZI8OtR\\\/PMKcuyQ3PdZusZgKRoT\\\/wCHOIvBb4vcomxM\\\/QyXfDC4USegTDDD+Tl8hVuK2Z8x3Q0cTwka0RqJjReNwh6xGw+4pboaqy9kxyiv3ZG0mL4WqHaQeIXZZ5Nimv0ejLJcsSXHSOHj+lKCJAG7N\\\/kZJcIC4wScAimkUOSki3DI+D46jQSArUT67OYhxU0\\\/SnIRmq1laMifjiDdiOS2BQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNi0wMy0wNFQwNDoxMzoyNS4yMTNaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy1lYXN0LTEtMTA3MDY4MDU1MzM0Il0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-22f4e8ba"],"data":"3fd70cd8-e1bb-11e5-9ef9-038be3e9e058","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"3fd70cd8-e1bb-11e5-9ef9-038be3e9e058","command_timeout":"600"}
+[2016-03-04T03:43:28.000Z] INFO  [26209] : Command processor should execute command.
+[2016-03-04T03:43:28.000Z] DEBUG [26209] : Storing current stage..
+[2016-03-04T03:43:28.000Z] DEBUG [26209] : Stage_num does not exist. Not saving null stage. Returning..
+[2016-03-04T03:43:28.000Z] INFO  [26209] : Executing CMD-TailLogs - stage 
+[2016-03-04T03:43:28.000Z] INFO  [26209] : Executing command: CMD-TailLogs...
+[2016-03-04T03:43:28.001Z] DEBUG [26209] : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-03-04T03:43:28.001Z] DEBUG [26209] : Refreshing metadata..
+[2016-03-04T03:43:28.257Z] DEBUG [26209] : Refreshed environment metadata.
+[2016-03-04T03:43:28.257Z] DEBUG [26209] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-03-04T03:43:28.258Z] DEBUG [26209] : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-03-04T03:43:28.258Z] INFO  [26209] : Found enabled addons: ["logpublish"].
+[2016-03-04T03:43:28.259Z] INFO  [26209] : Updating Command definition of addon logpublish.
+[2016-03-04T03:43:28.259Z] DEBUG [26209] : Loaded definition of Command CMD-TailLogs.
+[2016-03-04T03:43:28.259Z] INFO  [26209] : Executing command CMD-TailLogs activities...
+[2016-03-04T03:43:28.259Z] DEBUG [26209] : Setting environment variables..
+[2016-03-04T03:43:28.259Z] INFO  [26209] : Running AddonsBefore for command CMD-TailLogs...
+[2016-03-04T03:43:28.260Z] DEBUG [26209] : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2016-03-04T03:43:28.260Z] INFO  [26209] : Running stage 0 of command CMD-TailLogs...
+[2016-03-04T03:43:28.260Z] DEBUG [26209] : Loaded 1 actions for stage 0.
+[2016-03-04T03:43:28.260Z] INFO  [26209] : Running 1 of 1 actions: TailLogs...
+
+
+
