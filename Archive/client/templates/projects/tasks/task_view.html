@@ -1,0 +1,102 @@
+<template name="taskView">
+<style>
+	.pend-delete {
+      background-color: rgba(205, 85, 85, 0.3);
+    }
+
+    .pend-compl {
+    	background-color: rgba(51, 255, 153, 0.3);
+    }
+</style>
+    <!-- Display all task info -->
+	<div class="task-info" id="{{this._id}}">
+		<strong>This task belongs to </strong> 
+		<a href={{pathFor 'projectView' _id=this.projectID}}>{{this.projectName}}</a>
+		<br> <br> 
+		{{#if pendingDeletionByManager}}
+			<div class="pend-delete" style="width: auto;">
+			  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			  <span class="">Pending: <a class="delete-task" href="{{pathFor 'projectView' _id=this.projectID}}">delete this task</a> 
+			  or <a href="#" class="mark-resolved-del">mark as resolved.</a></span>
+			</div>
+			<br />
+		{{else}}
+			{{#if pendingCompletionByManager}}
+				<div class="pend-compl" style="width: auto;">
+				  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				  <span class="">Pending: <a class="complete-task" href="#">approve</a> 
+				  or <a href="{{pathFor 'projectView' _id=this.projectID}}" class="mark-resolved-compl">reject</a> this completed task.</span>
+				</div>
+				<br />
+			{{/if}}
+		{{/if}}
+		<div class="task details">
+		<strong>User Story Name:</strong> 
+		<br> {{this.taskName}} 
+		<br> <br> <strong>User Story Description:</strong> 
+		<br> {{this.taskDescription}}
+		<br> <br> <strong>Difficulty:</strong> 
+		<br> {{this.taskDifficulty}}
+		<br> <br> <strong>Time Estimate:</strong> 
+		<br> {{this.taskLength}}
+		<br> <br> <strong>Task Creator:</Strong> 
+		<br> {{this.taskCreator}}
+		<br> <br> <strong>Task Create Date:</Strong> <div id="displayCreateDate"></div>
+		<br>
+		<button class="edit-task" id="{{_id}}"><a href={{pathFor 'editTask' _id=this._id project=this.projectID}}><strong>Edit Task Information</strong></a></button>
+
+		<br><br><br><br><Strong>TASK ASSIGNMENT INFORMATION:</strong>
+		<br> <br> <strong>Task Sprint:</Strong> 
+		<br> <div id="displaySprint">
+			 <a href={{pathFor 'allSprints' _id=this.projectID}}>Sprint {{this.taskSprintNumber}}</a>
+			</div>
+		<br> <strong>Task Owner:</Strong> 
+		<br> {{this.taskOwner}}
+		<br><br><strong>Task Start Date:</Strong> 
+		<div>{{printStartDate}}</div>
+		<br><br><strong>Task Due Date:</Strong> 
+		<div>{{printDueDate}}</div>
+		<div id="displayDueDate"></div>
+		<br><strong>Task Status:</strong> 
+		<br> {{this.taskStatus}}
+		<br>
+		<br>
+		<script type="text/javascript">
+            (function() 
+			{	
+			var createMoment = moment(this.taskCreateDate);
+			var createMomentDisplay = document.getElementById("displayCreateDate");
+			var dueMomentDisplay = document.getElementById("displayDueDate");
+			createMomentDisplay.innerHTML = createMoment.format('MMMM Do, YYYY');})();
+		</script>
+        <!-- Button and click assignments  -->
+		<button class="delete-task"><strong>Delete Task</strong></button>
+	    <div class='move-tasks'>
+	      <form class='moveForm' id='moveForm'>
+	        <input type='submit' value='Move' class='btn btn-primary'/>
+	        <select class = 'moveDropDown'>
+	          <option value='ToDo'>To Do</option>
+	          <option value='InProgress'>In Progress</option>
+	          <option value='Completed'>Completed</option>
+	        </select><br/>
+	      </form>
+	    </div>
+		<br><br><br>
+		<strong>Add a note to this task:</strong>
+		<br>
+		<form>
+		<textarea name="taskNoteInput" value="" class="input-xlarge" required>Type your new note here...</textarea>
+		<input type="submit" value="Add Note">
+		</form>
+		<br><br>
+		<div id="task-notes">
+		<Strong>Task Notes:</strong>
+		<br><br>
+		{{#each this.taskNotes}} 
+  			<pre>{{this}}</pre>
+			<br><br>
+		{{/each}}
+		</div>
+		</div>
+</div>
+</template>

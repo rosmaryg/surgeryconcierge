@@ -1,0 +1,60 @@
+<template name="allSprints">
+
+	<div class="sprints-header">
+		<h2>Sprints for 
+		<a href={{pathFor 'projectView' this._id}}>{{name}}</a>
+		</h2>	
+	</div>
+	
+	<div class="create-new-sprint" align="right">
+		<button class="create-sprint" id="{{_id}}"><a href={{pathFor 'createNewSprint' _id=this._id}}><strong>New Sprint</strong></a></button>
+		<br><br>
+	</div>
+	
+	<h3>Active Sprints</h3>
+	<div class="active-sprints">
+		{{#each activeSprintsList}}
+		<label class="sprint-collapsible" for="{{this.sprintNumber}}" id="active-sprint">
+			<button class="delete-sprint-btn" id="{{this._id}}">&times;</button>
+			Sprint {{this.sprintNumber}}
+		</label>
+		<input id="{{this.sprintNumber}}" type="checkbox">
+		<div class="sprint-details">
+			<strong>Description:</strong> {{this.sprintDescription}} <br>
+			<strong>Start Date:</strong> {{sprintDate this.sprintStartDate}} <br>
+			<strong>End Date:</strong> {{sprintDate this.sprintEndDate}} <br>
+			<strong>Tasks:</strong>				
+				{{#each sprintTasks this._id}}
+					<li><a href={{pathFor 'taskView' _id=this._id project=projectId}}>{{this.taskName}}</a></li>
+				{{else}}
+					No tasks assigned yet.<br>
+				{{/each}}
+			<br>
+		</div>
+		{{/each}}
+		<br><br>
+	</div>
+
+	<h3>Expired Sprints</h3>
+	<div class="expired-sprints">
+		{{#each expiredSprintsList}}
+		<label class="sprint-collapsible" for="{{this.sprintNumber}}" id="expired-sprint">
+			Sprint {{this.sprintNumber}}
+		</label>
+		<input id="{{this.sprintNumber}}" type="checkbox">
+		<div class="sprint-details">
+			<strong>Description:</strong> {{this.sprintDescription}} <br>
+			<strong>Start Date:</strong> {{sprintDate this.sprintStartDate}} <br>
+			<strong>End Date:</strong> {{sprintDate this.sprintEndDate}} <br>
+			<strong>Tasks:</strong>				
+				{{#each sprintTasks this._id}}
+					<li><a href={{pathFor 'taskView' _id=this._id project=projectId}}>{{this.taskName}}</a></li>
+				{{else}}
+					No tasks assigned yet.<br>
+				{{/each}}
+			<br>
+		</div>
+		{{/each}}
+	</div>
+
+</template>

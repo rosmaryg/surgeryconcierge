@@ -1,0 +1,34 @@
+<template name="createNewTask">
+    <!-- Create of new task, include text boxes to enter info  -->
+    <div class="task-info" id="{{this._id}}">
+		<strong>You are creating a new task for: </strong>{{this.name}}
+		<form>
+			<strong>User Story Name: </strong><br>
+			<input type="text" name="taskName" required>
+			<br><br>
+
+			<strong>User Story Description: </strong><br>
+			<textarea name="taskDescription" class="input-xlarge" required></textarea>
+			<br><br>
+
+			<strong>Difficulty:</strong><br>
+			<input type="number" name="taskDifficulty" required>
+			<br><br>
+
+			<strong>Time Estimate (hrs): </strong><br>
+			<input type="number" name="taskLength" required>
+			<br><br>
+
+			<strong>Sprint: </strong><br>
+			<select name="taskSprint">
+				<option value="Unassigned">Unassigned</option>
+				{{#each activeSprints}}
+				<option id={{this._id}} value={{this.sprintNumber}}>Sprint {{this.sprintNumber}}</option>
+				{{/each}}
+			</select>
+			<br><br>
+			
+			<input type="submit" value="Create New Task">
+		</form>
+	</div>
+</template>

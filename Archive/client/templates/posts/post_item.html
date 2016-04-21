@@ -1,0 +1,25 @@
+<template name="postItem">
+  <div class="post">
+    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
+    <div class="post-content">
+      <h3>{{title}} <a href="{{pathFor 'projectView' _id=findProj}}">{{projectName}}</a></h3>
+      <p>
+        {{pluralize votes "Vote"}},
+        submitted by {{author}},
+        <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
+        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+      </p>
+      
+        <ul class="collapsibleList">
+          <li>
+            Show announcement
+            <ul>
+                <span>{{ message }}</span>
+            </ul>
+          </li>
+        </ul>
+
+    </div>
+    {{#if ownPost}}<a class="discuss btn btn-default" href="#">Delete</a>{{/if}}
+  </div>
+</template>

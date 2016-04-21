@@ -1,0 +1,43 @@
+<template name="header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{pathFor 'loginPage'}}">PM Tool</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}
+<!--            <li class="{{activeRouteClass 'userProjectsList'}}">
+              <a href="{{pathFor 'userProjectsList'}}">All Projects</a>
+            </li> -->
+            <li class="{{activeRouteClass 'projectSubmit'}}">
+              <a href="{{pathFor 'projectSubmit'}}">My Projects</a>
+            </li>
+            
+            <li class="{{activeRouteClass 'home' 'newPosts'}}">
+            <a href="{{pathFor 'newPosts'}}">Announcements</a>
+            </li>
+
+            <li class="{{activeRouteClass 'calendar'}}">
+            <a href="{{pathFor 'calendar'}}">Calendar</a>
+            </li>
+
+            <li class="dropdown notifications">
+              {{> notifications}}
+            </li>
+
+            <ul class="nav navbar-nav navbar-right">
+              {{> loginButtons}}
+            </ul>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>

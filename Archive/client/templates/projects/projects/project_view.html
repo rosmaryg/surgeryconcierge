@@ -1,0 +1,242 @@
+<template name="projectView">
+  <style>
+    .pend-delete {
+      background-color: rgba(205, 85, 85, 0.3);
+    }
+
+    .pend-compl {
+      background-color: rgba(51, 255, 153, 0.3);
+    }
+
+    .single-task {
+      padding: 5px;
+    }
+
+    a:link.quick-delete {
+      color: black !important;
+    }
+
+    a:hover.quick-delete {
+      color: white;
+    }
+
+    a:link.quick-approve {
+      color: black !important;
+    }
+
+    a:hover.quick-approve {
+      color: white;
+    }
+
+  </style>
+
+  <!-- Text box for adding users to project; has autocomplete -->
+  <center><h3>Project {{this.name}}</h3></center><br/>
+  <div class="container">
+  <div class="container top">
+    <div class="pull-right project-user-management col-lg-4">
+      <!-- list view of project members -->
+      <div class="dropdown project-info" id="{{this._id}}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <h4>Project Members <b class="caret"></b></h4>
+          </a>
+          <ul class="notification dropdown-menu">
+            <div class="user-list" style="padding-left: 10px;">
+            {{#each this.users}}
+            <li>{{this}} {{#if isManager}}{{#if notSelf}}<a href="#" class="remove-user" id="{{this}}">delete</a>{{/if}}{{/if}}</li>
+            {{/each}}
+            </div>
+          </ul>  
+      </div>
+      {{#if isManager}}
+        <div class="project-users-search" style="margin-top: 20px;">
+            <div class="add-user">
+              <strong>Add a user to this project:</strong>  
+              {{> esInput index="searchUsers" placeholder="Search for a user..." id="user-search-bar" }}
+              <ul>
+                  {{#esEach id="user-search-bar" index="searchUsers"}}
+                      <button class="project-user-add" id="{{_id}}">User <strong>{{username}}</strong></button>
+                      <br />
+                  {{/esEach}}
+              </ul>
+            </div>
+        </div>
+      {{/if}}
+      
+    </div>
+    <!-- button group at the top of the page -->
+    <div class="btn-group btn-group-justified pull-left" style="width: auto; padding-bottom: 10px;" role="group" aria-label="...">
+      
+      <button type="button" class="project-log-btn btn-danger" id="{{_id}}"><a style="color: white;" href={{pathFor "activityLog" _id=this._id}}>Activity Log</a></button>
+      <!--Section to display and add new sprints -->
+      <button type="button" class="project-sprints-button btn-default" id="{{_id}}"><a href={{pathFor 'allSprints'}}><strong>Sprints</strong></a></button>
+
+      <button type="button" class="create-task btn-default" id="{{_id}}"><a href={{pathFor 'createNewTask' _id=this._id}}><strong><i class="fa fa-plus"></i> New Task</strong></a></button>
+
+      <button type="button" class="announcement btn-default"><strong><a href="{{pathFor 'postSubmit'}}"><i class="fa fa-plus"></i> Announcement</a></strong></button>
+    </div>
+  </div>
+    <!-- move tasks button and dropDowns -->
+    <div class="move-tasks">
+      <form class="moveForm" id="moveForm">
+        <input type="submit" value="Move" class="btn btn-primary"/>
+        <select class = "tasksDropDown">
+          {{#each taskList}}
+            <option value="{{this.taskName}}">{{this.taskName}}</option>
+          {{/each}}
+        </select>
+        <select class = "moveDropDown">
+          <option value="ToDo">To Do</option>
+          <option value="InProgress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select><br/>
+      </form>
+    </div>
+
+    <!-- collapsible list view -->
+  <div class="task-manual-mgmt">
+    <br />
+    <div class="project-collapsible-tasks pull-left">
+        <ul class="treeView" id = "collapsible">
+          <li>
+            Tasks
+            <ul class="collapsibleList">
+              <li id = "cat1">
+                To Do
+                <ul>
+                  {{#each toDoTasks}}
+                    <li>
+                      
+                      <span class="single-task {{#if viewPendingDeletion}} pend-delete {{/if}} {{#if viewPendingCompletion}} pend-compl {{/if}}">
+                      <a href = "{{pathFor 'taskView' _id=this._id project=this.projectID}}" class="projectTasks" id="{{this.taskName}}">{{this.taskName}}</a>
+                      
+                      {{#if isManager}}
+                        {{#if pendingDeletion}}
+                          <a href="#" class="quick-delete"><i class="fa fa-trash"></i></a>
+                        {{else}}
+                          {{#if pendingCompletion}}
+                            <a href="#" class="quick-approve"><i class="fa fa-check"></i></a>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                      </span>
+                    </li><br>
+                  {{/each}}
+                </ul>
+              </li>
+              <li id = "cat2">
+                In Progress
+                <ul>
+                  {{#each inProgressTasks}}
+                    <li>
+                      <span class="single-task {{#if viewPendingDeletion}} pend-delete {{/if}} {{#if viewPendingCompletion}} pend-compl {{/if}}">
+                      <a href = "{{pathFor 'taskView' _id=this._id project=this.projectID}}" class="projectTasks" id="{{this.taskName}}">{{this.taskName}}</a>
+                      
+                      {{#if isManager}}
+                        {{#if pendingDeletion}}
+                          <a href="#" class="quick-delete"><i class="fa fa-trash"></i></a>
+                        {{else}}
+                          {{#if pendingCompletion}}
+                            <a href="#" class="quick-approve"><i class="fa fa-check"></i></a>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                      </span>
+                    </li><br>
+                  {{/each}}
+                </ul>
+              </li>
+              <li id = "cat3">
+                Completed
+                <ul>
+                  {{#each completedTasks}}
+                    <li>
+                      <span class="single-task {{#if viewPendingDeletion}} pend-delete {{/if}} {{#if viewPendingCompletion}} pend-compl {{/if}}">
+                      <a href = "{{pathFor 'taskView' _id=this._id project=this.projectID}}" class="projectTasks" id="{{this.taskName}}">{{this.taskName}}</a>
+                      
+                      {{#if isManager}}
+                        {{#if pendingDeletion}}
+                          <a href="#" class="quick-delete"><i class="fa fa-trash"></i></a>
+                        {{else}}
+                          {{#if pendingCompletion}}
+                            <a href="#" class="quick-approve"><i class="fa fa-check"></i></a>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                      </span>
+                    </li><br>
+                  {{/each}}
+                </ul>
+              </li>
+              <li id = "cat4">
+                Pending
+                <ul>
+                  {{#each pendingTasks}}
+                    <li>
+                      <span class="single-task {{#if viewPendingDeletion}} pend-delete {{/if}} {{#if viewPendingCompletion}} pend-compl {{/if}}">
+                      <a href = "{{pathFor 'taskView' _id=this._id project=this.projectID}}" class="projectTasks" id="{{this.taskName}}">{{this.taskName}}</a>
+                      
+                      {{#if isManager}}
+                        {{#if pendingDeletion}}
+                          <a href="#" class="quick-delete"><i class="fa fa-trash"></i></a>
+                        {{else}}
+                          {{#if pendingCompletion}}
+                            <a href="#" class="quick-approve"><i class="fa fa-check"></i></a>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                      </span>
+                    </li><br>
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- sorted task view and sort button-->
+    <div class="all-sorted-tasks pull-right col-lg-4" style="left: 30px;">
+        <form class="sortForm" id="sortForm">
+          <input type="submit" value="Sort" class="btn btn-primary"/>
+          <select class = "sortDropDown">
+            <option value="a-z">From A-Z</option>
+            <option value="z-a">From Z-A</option>
+            <option value="difficultyA">Ascending Difficulty</option>
+            <option value="difficultyD">Decending Difficulty</option>
+            <option value="due-dateA">Ascending Due Date</option>
+            <option value="due-dateD">Decending Due Date</option>
+            <option value="owner">By Owner</option>
+          </select><br/>
+          <strong>List View of Tasks</strong><br/>
+            {{#each taskList}}
+            <li>
+            <span class="single-task {{#if viewPendingDeletion}} pend-delete {{/if}} {{#if viewPendingCompletion}} pend-compl {{/if}}">
+            <a href = "{{pathFor 'taskView' _id=this._id project=this.projectID}}" class="projectTasks" id="{{this.taskName}}">{{this.taskName}}</a>
+            
+            {{#if isManager}}
+              {{#if pendingDeletion}}
+                <a href="#" class="quick-delete"><i class="fa fa-trash"></i></a>
+                {{else}}
+                {{#if pendingCompletion}}
+                  <a href="#" class="quick-approve"><i class="fa fa-check"></i></a>
+                {{/if}}
+              {{/if}}
+
+            {{/if}}
+            </span>
+            </li><br>
+            {{/each}}
+        </form>
+      </div>
+  </div>
+  </div>
+  <!--layout definitely needs to be worked out--> 
+
+  <script type="text/javascript" src="CollapsibleLists.js">
+    CollapsibleLists.applyTo(document.getElementById("collapsible"));
+  </script>
+
+</template>

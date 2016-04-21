@@ -1,0 +1,22 @@
+<template name="postEdit">
+  <form class="main form page">
+    <!-- Text entry for title -->
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="{{title}}" placeholder="Name your announcement" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    <!-- Text entry for message of announcement -->
+    <div class="form-group {{errorClass 'message'}}">
+        <label class="control-label" for="message">Message</label>
+        <div class="controls">
+            <input name="message" id="message" type="text" value="{{message}}" placeholder="Write your message" class="form-control"/>
+            <span class="help-block">{{errorMessage 'message'}}</span>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+  </form>
+</template>

@@ -1,0 +1,24 @@
+<template name="loginPage">
+<head>
+  <title>Login Page</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      {{#if currentUser}}
+        <!--<form class="new-task">
+          <input type="text" name="text" placeholder="Type to add new tasks" />
+        </form>-->
+        <!--{{> userProjectsList}}-->
+        {{redirectToProjectSubmit}}
+      {{else}}
+        <center><h1>Project Management Tool</h1></center>        
+        <!--login ui provided by meteor's accounts pkg-->
+        <center>{{> loginButtons}}</center>
+      {{/if}}
+
+    </header>
+  </div>
+</body>
+</template>

@@ -1,0 +1,11 @@
+<template name="layout">
+  <div class="container">
+  {{#if currentUser}}
+    {{> header}}
+  {{/if}}
+    {{> errors}}
+    <div id="main">
+    	{{> yield}}
+    </div>
+  </div>
+</template>

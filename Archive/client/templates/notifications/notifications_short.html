@@ -1,0 +1,74 @@
+<template name="notifications" class="notifications-container">
+<style>
+  .notification-message {
+    font-size: 12px;
+    width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  a:link.ack-notification {
+    color: black;
+  }
+
+  a:hover.ack-notification {
+    color: #337ab7;
+  }
+
+</style>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Notifications
+    {{#if notificationCount}}
+      <span class="badge badge-inverse">{{notificationCount}}</span>
+    {{/if}}
+    <b class="caret"></b>
+  </a>
+  <ul class="notification dropdown-menu">
+    {{#if notificationCount}}
+      {{#each notifications}}
+        {{> notificationItem}}
+      {{/each}}
+      <li>
+        {{#if isManager}}<a href="{{pathFor 'allNotifications'}}" style="font-size: 12px;"><strong>See All</strong></a>{{/if}}
+      </li>
+    {{else}}
+      <li><span>No Notifications</span></li>
+    {{/if}}
+  </ul>
+
+</template>
+
+<template name="notificationItem">
+  <li style="width: 340px; height: 20px;">
+    {{#if taskUpdate}}
+        {{#if notificationPostPath}}
+          <div class="pull-left notification-message" style="padding-left: 10px;">
+          <a class="notification-message" href="{{notificationPostPath}}">
+          <u>{{this.projectName}}</u>: {{notificationMessage}}<strong>{{this.taskName}}</strong>
+          </a></div>
+        {{else}}
+        <!-- no link present --> 
+          <div class="pull-left notification-message" style="padding-left: 10px;">
+          <u>{{this.projectName}}</u>: {{notificationMessage}}<strong>{{this.taskName}}</strong>
+          </div>
+        {{/if}}
+
+        <div><a class="{{#if notificationPostPath}} ack-notification {{else}} del-notification {{/if}}" href="#"><i class="fa fa-times" style="font-size: 12px;"></i></a></div>
+    
+    {{/if}}
+
+    {{#if postUpdate}} 
+      {{#if notificationPostPath}}
+        <div class="pull-left notification-message" style="padding-left: 10px;">
+        <a class="post-update notification-message" href="{{notificationPostPath}}">
+        <u>{{this.actionByUser}}</u>: {{notificationMessage}}<strong>{{this.postTitle}}</strong>
+        </a></div>
+      {{/if}}
+      <div><a class="ack-notification" href="#"><i class="fa fa-times ack-notification" style="font-size: 12px;"></i></a></div>
+    {{/if}}
+
+  </li>
+</template>
