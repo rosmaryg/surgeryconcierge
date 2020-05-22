@@ -1,6 +1,6 @@
 apiclient==1.0.2
 easygui==0.97.4
-Flask==0.10.1
+Flask==1.0
 fpdf==1.7.2
 google-api-python-client==1.4.2
 httplib2==0.18.0
