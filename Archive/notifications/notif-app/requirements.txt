@@ -1,6 +1,6 @@
 APScheduler==3.0.5
 DateTime==4.0.1
-Flask==0.10.1
+Flask==1.0
 futures==3.0.5
 httplib2==0.18.0
 itsdangerous==0.24
