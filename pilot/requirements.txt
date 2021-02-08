@@ -3,7 +3,7 @@ easygui==0.97.4
 Flask==1.0
 fpdf==1.7.2
 google-api-python-client==1.4.2
-httplib2==0.18.0
+httplib2==0.19.0
 icalendar==3.9.2
 itsdangerous==0.24
 Jinja2==2.8
