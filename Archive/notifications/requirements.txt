@@ -3,7 +3,7 @@ Flask==1.0
 futures==3.0.5
 httplib2==0.18.0
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 MarkupSafe==0.23
 pytz==2015.7
 six==1.10.0
